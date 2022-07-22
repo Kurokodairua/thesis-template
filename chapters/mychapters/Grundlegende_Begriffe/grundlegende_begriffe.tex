@@ -12,20 +12,27 @@ und legte mit seiner Forschung einen der Grundsteine für die Entwicklung von k�
 In seinem Paper „On computable numbers, with an application to the Entscheidungsproblem“ \cite{turing} 
 beschreibt er den Umgang mit „computable numbers“ und wie diese durch eine - später als Turing Machine bezeichnete - Maschine berechnet werden könnte.
 Diese Turing Machine ''[\dots] ist damit ein Model physischer digitaler Computer, die zu jener Zeit jedoch noch nicht existieren. [\dots]'' \cite[p.4]{pallay2020turing}
-Hierbei kam er zur Erkenntnis, dass sich nicht alle mathematischen Probleme durch eine fixe Vorgehensweise lösen lassen.
+Hierbei kam er zur Erkenntnis, dass sich nicht alle mathematischen Probleme durch eine fixe Vorgehensweise, also einen Algorithmus, lösen lassen. 
 Erst später wurde festgestellt, dass Turing Maschinen und Computer jeweils vom anderen simuliert werden können. \cite[p.647]{geniusofturing} \cite[p.4]{pallay2020turing} %TODO: Formulierung
 
 Turing beschäftigte sich bis zu seinem frühen Tod weiterhin mit maschineller Intelligenz 
 und ''[\dots] beschreibt [\dots] das, was man heute als [\dots] künstliche Intelligenz bezeichnet.'' \cite[p.10]{pallay2020turing}
 Durch seine Überzeugung, dass eines Tages maschinelle Intelligenzen entwickelt werden (können), 
 entwickelte Turing in seinem Paper ''Computing Machinery and Intelligence'' \cite[p.23ff]{turing2009computing} 
-eine Methode des Testens der Intelligenz einer Maschine. \cite[p.11ff]{pallay2020turing}
-Das Ziel bei der Entwicklung von Künstlicher Intelligenz ist heute das Bestehen dieser Turing Tests.
+eine Methode des Testens der Intelligenz einer Maschine. 
+Um die Notwendigkeit von genauen Definitionen zu vermeiden, nutzt er deshalb ein Abwandlung eines Verfahren - des ''imitation games''. 
+''Hierbei kommuniziert ein Juror maschinen-schriftlich mit einem Menschen und einer Maschine.'' \cite[p.12]{pallay2020turing}
+Sollte der Juror nicht feststellen können, welcher Gesprächspartner der Mensch ist, gilt der Test als bestanden. \cite[p.11ff]{pallay2020turing}
+
+Dieses Verfahren wird heute oftmals als Turing Test bezeichnet. 
 
 \section{CAPTCHA}
 %label
 Bei der Abkürzung CAPTCHA handelt es sich um „completely automated public turing tests to tell computers and humans apart“. 
 Sie werden genutzt, um Webseiten vor Angriffen durch Bots zu schützen. 
+Dies wird durch die im vorherigen Kapitel bereits erläuterten Turing Tests erreicht. 
+Hier ist das Ziel, durch für Computer schwer, für Menschen jedoch leicht zu verarbeitende Medien, das Tracken von Mausbewegungen
+oder das Prüfen der Browseraktivität zu prüfen, ob es sich wirklich um eine*n menschliche*n Nutzer*in handelt.
 
 Fast identisch zu CAPTCHA sind sogenannte HIP – „Human Interactive Proofs“. 
 Dieser Begriff hat sich entwickelt, da manche Tests nicht „public“ sind. \cite[p.1]{chellapilla} \cite{tutorial} 
