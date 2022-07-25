@@ -9,8 +9,8 @@ Zuletzt wird ein grundlegendes Verständnis für UX geschaffen.
 \label{ch:basics:turing}
 Alan M. Turing $($1912-1954$)$ ist einer der Mitbegründer der heutigen Informatik 
 und legte mit seiner Forschung einen der Grundsteine für die Entwicklung von künstlicher Intelligenz. 
-In seinem Paper „On computable numbers, with an application to the Entscheidungsproblem“ \cite{turing} 
-beschreibt er den Umgang mit „computable numbers“ und wie diese durch eine - später als Turing Machine bezeichnete - Maschine berechnet werden könnte.
+In seinem Paper ''On computable numbers, with an application to the Entscheidungsproblem'' \cite{turing} 
+beschreibt er den Umgang mit ''computable numbers'' und wie diese durch eine - später als Turing Machine bezeichnete - Maschine berechnet werden könnte.
 Diese Turing Machine ''[\dots] ist damit ein Model physischer digitaler Computer, die zu jener Zeit jedoch noch nicht existieren. [\dots]'' \cite[p.4]{pallay2020turing}
 Hierbei kam er zur Erkenntnis, dass sich nicht alle mathematischen Probleme durch eine fixe Vorgehensweise, also einen Algorithmus, lösen lassen. 
 Erst später wurde festgestellt, dass Turing Maschinen und Computer jeweils vom anderen simuliert werden können. \cite[p.647]{geniusofturing} \cite[p.4]{pallay2020turing} %TODO: Formulierung
@@ -28,48 +28,34 @@ Dieses Verfahren wird heute oftmals als Turing Test bezeichnet.
 
 \section{CAPTCHA}
 %label
-Bei der Abkürzung CAPTCHA handelt es sich um „completely automated public turing tests to tell computers and humans apart“. 
+Bei der Abkürzung CAPTCHA handelt es sich um ''completely automated public turing tests to tell computers and humans apart''. 
 Sie werden genutzt, um Webseiten vor Angriffen durch Bots zu schützen. 
 Dies wird durch die im vorherigen Kapitel bereits erläuterten Turing Tests erreicht. 
 Hier ist das Ziel, durch für Computer schwer, für Menschen jedoch leicht zu verarbeitende Medien, das Tracken von Mausbewegungen
 oder das Prüfen der Browseraktivität zu prüfen, ob es sich wirklich um eine*n menschliche*n Nutzer*in handelt.
 
-Fast identisch zu CAPTCHA sind sogenannte HIP – „Human Interactive Proofs“. 
-Dieser Begriff hat sich entwickelt, da manche Tests nicht „public“ sind. \cite[p.1]{chellapilla} \cite{tutorial} 
+Fast identisch zu CAPTCHA sind sogenannte HIP – ''Human Interactive Proofs''. 
+Dieser Begriff hat sich entwickelt, da manche Tests nicht ''public'' sind. \cite[p.1]{chellapilla} \cite{tutorial} 
 
 %RECAPTCHA???
 
-\subsection{Textbasierte CAPTCHA}
+\subsection{Arten von CAPTCHA}
+Textbasierte CAPTCHA waren bereits 2008 die am häufigsten verwendete Art von CAPTCHA.
+Sie zeichnen sich durch eine Verzerrung eines Wortes oder mehreren Wörtern aus, sodass diese für Bilderkennungstools nicht erkennbar sind.
+Eine weitere Variante textbasierter CAPTCHA ist die einer einfachen Rechenaufgabe. 
+Auch hier soll erreicht werden, dass ein Bot die angegebenen Zahlen nicht korrekt erkennen kann und die Gleichung somit nicht lösen kann. \cite{usabilityofcaptchas} \cite{surveyofresearch} \cite{shinde2018DIFFERENTTO}
 
-Textbasierte CAPTCHA waren bereits 2008 die am häufigsten verwendete Art von CAPTCHA 
+Es gibt verschiedene Arten von bildbasierten CAPTCHAs. 
+Die wohl bekannteste ist ein in Quadrate aufgeteiltes Bild, wobei man jene Quadrate auswählen soll, welche einen bestimmten Gegenstand enthalten.
+Eine Variation dieses CAPTCHAs besteht aus einer Zahl verschiedener Bilder, von denen eine Teilmenge ebenfalls ein gesuchtes Objekt beinhalten.
 
-%TODO:
-\begin{figure}
-    \centering
-    \includegraphics{gfx/mygraphics/platzhalter.png}
-    \caption{Platzhalter}
-    \label{fig:platzhalter}
-\end{figure}
+%Audiobasiert
 
-\subsection{Bildbasierte CAPTCHA}
-%TODO:
-\begin{figure}
-    \centering
-    \includegraphics{gfx/mygraphics/platzhalter.png}
-    \caption{Platzhalter}
-    \label{fig:platzhalter}
-\end{figure}
-\subsection{Audiobasierte CAPTCHA}
-\subsection{Logik-CAPTCHA}
-%TODO:
-\begin{figure}
-    \centering
-    \includegraphics{gfx/mygraphics/platzhalter.png}
-    \caption{Platzhalter}
-    \label{fig:platzhalter}
-\end{figure}
-\subsection{Gamification}
+%Logik
 
+% Gamification
+
+Eine 
 \begin{figure}
     \centering
     \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/genshincaptcha.png}}
@@ -78,18 +64,18 @@ Textbasierte CAPTCHA waren bereits 2008 die am häufigsten verwendete Art von CA
     \caption{Gamification-CAPTCHA bei Login in Genshin Impact $(a$) und dem Forum Hoyolab $(b$)}   
 \end{figure}
 
-\subsection{Alternativen zu CAPTCHA}
-\subsubsection{Anti Spam Plugins}
-\subsubsection{Multi-Faktor Authentifikation}
-\subsubsection{Biometrie}
-\subsubsection{Honeypots}
+\subsection{Alternativen zu klassischen CAPTCHA}
+%anti spam plugins
+%multi faktor authentifikation
+%biometrie
+%honeypots
 
-Eine Alternative zu klassischen CAPTCHA sind sogenannte Honeypots. 
+Eine weitere Alternative zu klassischen CAPTCHA sind sogenannte Honeypots. 
 Geprägt wurde der Begriff erstmals im Kalten Krieg als Spionagetechnik eingesetzt wurde. \cite[p.2]{joshi:2011} 
 
 Auch heute werden Honeypots eingesetzt, und zwar in der IT-Sicherheit. 
-Oft werden sie mit „Fallen“ assoziiert, welche Hacker anlocken sollen. 
-Dadurch können Angriffsarten analysiert werden und „echte“ Systeme werden nicht angegriffen.
+Oft werden sie mit ``Fallen'' assoziiert, welche Hacker anlocken sollen. 
+Dadurch können Angriffsarten analysiert werden und ''echte'' Systeme werden nicht angegriffen.
 
 Doch auch im Kontext der Unterscheidung von Menschen und Maschine gibt es Honeypots. 
 So kann man HTML-Inputfelder durch CSS verstecken, sodass diese nur durch Bots, welche den Quellcode der Seite scannen, ausgefüllt werden 
