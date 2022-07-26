@@ -1,11 +1,11 @@
 \chapter{Entwurf einer Bewertungsmatrix}
 \label{ch:matrix}
 
-Um die verschiedenen CAPTCHA-Arten bewerten zu können, muss eine Bewertungsmatrix entwickelt werden. 
-Hierzu wird zuerst der Stand der Wissenschaft hinsichtlich bereits vorhandener Bewertungsmatrizen betrachtet 
-und wie diese auf den vorliegenden Anwendungsfall anzuwenden sind. 
+Um die verschiedenen CAPTCHA-Arten bewerten zu können, muss eine Bewertungsmatrix entwickelt werden.
+Hierzu wird zuerst der Stand der Wissenschaft hinsichtlich bereits vorhandener Bewertungsmatrizen betrachtet
+und wie diese auf den vorliegenden Anwendungsfall anzuwenden sind.
 
-Anschließend werden die Kategorien Aufwand, also wie schwierig die Tests auszufüllen sind, Accessibility, technische Umsetzbarkeit 
+Anschließend werden die Kategorien Aufwand, also wie schwierig die Tests auszufüllen sind, Accessibility, technische Umsetzbarkeit
 und Sicherheit näher erläutert und es werden Fragen festgelegt, anhand derer man die Bewertung vornehmen kann.
 
 Die gegebenen Kategorien wurden gewählt, um einerseits Fokus auf die verschiedenen Aspekte der Nutzererfahrung legen zu können,
@@ -13,23 +13,23 @@ andererseits jedoch auch nicht die Sicherheit als initialen Grund für die Verwe
 
 Um die Bewertung zu erleichtern, werden je Kategorien einige beispielhafte Leitfragen angegeben, welche bei Bedarf auch angepasst werden können.
 In diesem Fall sollte dies jedoch für alle zu betrachtenden Techniken getan werden, um die Vergleichbarkeit zu gewährleisten.
-Basierend auf diesen Fragen können Punkte von 0 bis 10 vergeben werden. 
+Basierend auf diesen Fragen können Punkte von 0 bis 10 vergeben werden.
 
 \section{Stand der Wissenschaft}
 \label{ch:matrix:sdw}
 
 Es gibt bereits Methoden zur Bewertung von CAPTCHA.
 
-In ihrem Paper ``A survey of research on CAPTCHA designing and breaking techniques'' beschreiben Zhang et al. das Design 
-und mögliche Angriffe verschiedener CAPTCHA-Technologien – textbasiert, bildbasiert und audio-/videobasiert. 
-Diese werden basierend auf „usability, robustness and their weaknesses and strengths“ bewertet.  \cite[p.75]{surveyofresearch}  
+In ihrem Paper ``A survey of research on CAPTCHA designing and breaking techniques'' beschreiben Zhang et al. das Design
+und mögliche Angriffe verschiedener CAPTCHA-Technologien – textbasiert, bildbasiert und audio-/videobasiert.
+Diese werden basierend auf „usability, robustness and their weaknesses and strengths“ bewertet.  \cite[p.75]{surveyofresearch}
 
-``If the success rate of solving a CAPTCHA for humans is higher than 90\% and machines only achieve 
-a success rate of less than 1\%, this CAPTCHA can be considered a good one $[$\dots$]$. 
+``If the success rate of solving a CAPTCHA for humans is higher than 90\% and machines only achieve
+a success rate of less than 1\%, this CAPTCHA can be considered a good one $[$\dots$]$.
 Therefore, it is widely accepted that a good CAPTCHA is not only usable but also robust.'' \cite[p.75]{surveyofresearch}
 
-Quellen für diese Metrik sind Paper aus dem Jahre 2005 und 2008. 
-Aus gleicher Quelle wird auch die Aussage gezogen, dass textbasierte CAPTCHA die meistgenutzte Art sei. 
+Quellen für diese Metrik sind Paper aus dem Jahre 2005 und 2008.
+Aus gleicher Quelle wird auch die Aussage gezogen, dass textbasierte CAPTCHA die meistgenutzte Art sei.
 
 %Da es sich bei Veröffentlichung bereits um ein 10 Jahre altes Paper handelte, ist the accuracy of this statement fragwürdig 
 %(schreib das mal in normal wenn du denken kannst).
@@ -46,26 +46,26 @@ Aus gleicher Quelle wird auch die Aussage gezogen, dass textbasierte CAPTCHA die
 \label{ch:matrix:accessibility}
 Das Wörterbuch der Cambridge University definitiert Accessibility als ``$[$\dots$]$ the quality of being easy to understand $[$\dots$]$'' \cite{CACD:2008}
 
-Dies stellt im Grunde auch die Definition für Accessibility im Kontext der zu entwickelnden Bewertungsmatrix dar: 
+Dies stellt im Grunde auch die Definition für Accessibility im Kontext der zu entwickelnden Bewertungsmatrix dar:
 
-Wie leicht lassen sich die verschiedenen CAPTCHA-Arten verstehen? 
+\begin{enumerate}
+\item Wie leicht lassen sich die verschiedenen CAPTCHA-Arten verstehen?
+\item Sind sie für alle Personengruppen gleichermaßen nutzbar?
+\item Welche Probleme könnten auftreten?
+\end{enumerate}
 
-Sind sie für alle Personengruppen gleichermaßen nutzbar? 
-
-Welche Probleme könnten auftreten?
-
-Hierbei ist unter anderem zu beachten, dass CAPTCHA nicht nur an privaten PC-Arbeitsplätzen ausgefüllt werden, 
-sondern auf verschiedensten Geräten und mit unterschiedlichen Gegebenheiten. 
-Audiobasierte CAPTCHA können beispielsweise als störend wahrgenommen und deshalb nicht ausgefüllt werden, 
-wenn das Abspielen von Tönen andere stören könnte $($in öffentlichen Verkehrsmitteln, in Büros, \dots$)$, 
-oder das benutzte Gerät kann keinen Ton abspielen. Videobasierte CAPTCHA können eventuell nicht abgespielt werden, 
+Hierbei ist unter anderem zu beachten, dass CAPTCHA nicht nur an privaten PC-Arbeitsplätzen ausgefüllt werden,
+sondern auf verschiedensten Geräten und mit unterschiedlichen Gegebenheiten.
+Audiobasierte CAPTCHA können beispielsweise als störend wahrgenommen und deshalb nicht ausgefüllt werden,
+wenn das Abspielen von Tönen andere stören könnte $($in öffentlichen Verkehrsmitteln, in Büros, \dots$)$,
+oder das benutzte Gerät kann keinen Ton abspielen. Videobasierte CAPTCHA können eventuell nicht abgespielt werden,
 wenn das Internet schlecht ist.
 
-Nicht zu vergessen sind verschiedene körperliche Einschränkungen von Nutzer*innen, 
-die das Ausfüllen von CAPTCHAs erschweren oder gar unmöglich machen. Auch hier sind audiobasierte CAPTCHA zu erwähnen, 
-da diese für schwerhörige oder gehörlose Menschen nicht absolvierbar sind. 
+Nicht zu vergessen sind verschiedene körperliche Einschränkungen von Nutzer*innen,
+die das Ausfüllen von CAPTCHAs erschweren oder gar unmöglich machen. Auch hier sind audiobasierte CAPTCHA zu erwähnen,
+da diese für schwerhörige oder gehörlose Menschen nicht absolvierbar sind.
 
-Ebenso müssen visuelle CAPTCHA für Screenreader optimiert werden, um sie für blinde Nutzer*innen nutzbar zu machen. 
+Ebenso müssen visuelle CAPTCHA für Screenreader optimiert werden, um sie für blinde Nutzer*innen nutzbar zu machen.
 Auch andere visuelle Beeinträchtigungen, wie beispielsweise Rot-Grün-Schwächen, müssen beachtet werden.
 
 \begin{figure}
@@ -78,29 +78,45 @@ Auch andere visuelle Beeinträchtigungen, wie beispielsweise Rot-Grün-Schwäche
 \section{Technische Umsetzbarkeit}
 \label{ch:matrix:tu}
 
-Bei der technischen Umsetzbarkeit wird das Augenmerk auf die Implementation und Instandhaltung der Techniken gelegt. 
-Unzureichende Dokumentation kann die Implementation und eventuelles Debugging erheblich erschweren 
-und spielt deshalb eine wichtige Rolle bei der Auswahl. 
+Bei der technischen Umsetzbarkeit wird das Augenmerk auf die Implementation und Instandhaltung der Techniken gelegt.
+Unzureichende Dokumentation kann die Implementation und eventuelles Debugging erheblich erschweren
+und spielt deshalb eine wichtige Rolle bei der Auswahl.
 
 Ist die Dokumentation ausreichend? Werden viele Ressourcen benötigt? Muss man vorhandenen Quellcode stark abändern?
 
 \section{Sicherheit}
 \label{ch:matrix:sicherheit}
-Sicherheit ist der Hauptgrund für die Verwendung von Spam-Präventionstechniken. 
+Sicherheit ist der Hauptgrund für die Verwendung von Spam-Präventions\-techniken.
 Wie bereits in den vorherigen Kapiteln erwähnt, werden CAPTCHAs und ihre Alternativen genutzt um bei dem Ausfüllen von Formularen Bots auszusortieren
 und somit Spam zu vermeiden.
-Es muss betrachtet werden, ob es schon Methoden zur Umgehung der CAPTCHAs gibt. 
+Es muss betrachtet werden, ob es schon Methoden zur Umgehung der CAPTCHAs gibt.
 Gibt es sogar bereits künstliche Intelligenzen, die bestimmte Tests lösen können?
 
 \section{Berechnung einer Metrik}
 \label{ch:matrix:berechnung}
-Bei der Berechnung einer Metrik auf Basis der entworfenen Matrix muss eine korrekte Gewichtung gewählt werden. 
+Bei der Berechnung einer Metrik auf Basis der entworfenen Matrix muss eine korrekte Gewichtung gewählt werden.
 Diese ist nötig, um individuelle Entscheidungen für unterschiedliche Einsatzgebiete treffen zu können,
-da die Bedürfnisse dieser stark unterscheiden können. 
+da die Bedürfnisse dieser stark unterscheiden können.
 
 Die Gewichtung für jede Kategorie wird anteilig von 100 Prozent angegeben.
 So wird es ermöglicht, präzise und individuell zu priorisieren.
-Durch die Vergabe von Punkten von 1 bis 10 je Kategorie ergibt sich so ein maximaler Score von 40.
+Durch die Vergabe von Punkten von 1 bis 10 je Kategorie ergibt sich so ein maximaler Score von 10.
+
+\begin{table}[h!]
+    \caption{Beispielhafte Bewertungsmatrix}
+    \begin{center}
+        \begin{tabular}{l|c|c|c}
+            Kategorie                       & Bewertung & Gewichtung & \begin{tabular}{c}Gewichtete \\ Bewertung \end{tabular} \\\hline
+            Aufwand                         & 7         & 25\%       & 1.75       \\
+            Accessibility                   & 10        & 10\%       & 1          \\
+            Technische Umsetzbarkeit        & 3         & 30\%       & 0.9        \\
+            Sicherheit                      & 9         & 35\%       & 3.15       \\ \hline
+            \multicolumn{2}{l|}{Gesamtnote} & 100\%     & 6.8
+        \end{tabular}
+    \end{center}
+\end{table}
+
+
 
 
 

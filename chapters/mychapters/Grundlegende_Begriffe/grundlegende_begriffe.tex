@@ -40,6 +40,7 @@ Dieser Begriff hat sich entwickelt, da manche Tests nicht ''public'' sind. \cite
 %RECAPTCHA???
 
 \subsection{Arten von CAPTCHA}
+Nachfolgend werden verschiedene Arten von CAPTCHAs grundlegend erläutert.
 Textbasierte CAPTCHA waren bereits 2008 die am häufigsten verwendete Art von CAPTCHA.
 Sie zeichnen sich durch eine Verzerrung eines Wortes oder mehreren Wörtern aus, sodass diese für Bilderkennungstools nicht erkennbar sind.
 Eine weitere Variante textbasierter CAPTCHA ist die einer einfachen Rechenaufgabe. 
@@ -64,6 +65,13 @@ Eine
     \caption{Gamification-CAPTCHA bei Login in Genshin Impact $(a$) und dem Forum Hoyolab $(b$)}   
 \end{figure}
 
+Eine aktuell viel genutzte Form von CAPTCHA ist reCAPTCHA v3 von Google. 
+Hier werden keine Turing Tests durchgeführt. Vielmehr wird anhand verschiedener Faktoren bewertet, ob es sich um einen Bot oder einen Menschen handelt.
+Was genau diese Faktoren sind, gibt Google aus Sicherheitsgründen nicht Preis. 
+Denkbar ist jedoch die Betrachtung von Cookies oder der Häufigkeit von Anfragen durch die gegebene IP-Adresse.
+Laut Google selbst soll reCAPTCHA v3 eine sehr gute Nutzererfahrung bieten, da es kaum bis gar keine Zuarbeit durch den Nutzer verlangt. \cite{googleblog:recaptcha}
+
+
 \subsection{Alternativen zu klassischen CAPTCHA}
 %anti spam plugins
 %multi faktor authentifikation
@@ -85,6 +93,10 @@ Nachzulesen sind solche Verfahren in verschiedenen Blogposts, wie \cite{perry:20
 
 
 \section{UX}
+
+%u = user = der nutzer eines systems 
+%x = experience = wie geil die nutzung ist
+%ziel ist es die möglichst hoch / gut zu halten
 
 %Was ist ux, was hat das mit captcha zu tun (nutzungsfluss wird unterbrochen oder so)
 %(Yan & Ahmad, 2008) 
