@@ -18,6 +18,8 @@ Basierend auf diesen Fragen können Punkte von 0 bis 10 vergeben werden.
 \section{Stand der Wissenschaft}
 \label{ch:matrix:sdw}
 
+\textbf{WIP, Quellenarbeit ist doof :$($}
+
 Es gibt bereits Methoden zur Bewertung von CAPTCHA.
 
 In ihrem Paper ``A survey of research on CAPTCHA designing and breaking techniques'' beschreiben Zhang et al. das Design
@@ -37,10 +39,12 @@ Aus gleicher Quelle wird auch die Aussage gezogen, dass textbasierte CAPTCHA die
 
 \section{Aufwand}
 \label{ch:matrix:aufwand}
+Mit Aufwand ist gemeint, wie aufwändig es ist, CAPTCHAs auszufüllen. 
+Dies bedeutet einerseits, dass dies nicht zu lang dauern darf, andererseits darf es auch nicht zu schwierig sein. %(diese seite mit der schlechten ux sehr gutes beispiel)
+Ein weiterer Punkt, der zu Irritationen führen kann, sind zeitbegrenzte CAPTCHA. 
+Diese laufen nach einer bestimmten Zeit ab und man muss die Seite neu laden und den Anmeldevorgang neu beginnen.
 
-%Zeitbegrenzte CAPTCHA wtf???
-%Leute klicken weg wenn es zu lange dauert / zu schwierig ist (diese seite mit der schlechten ux sehr gutes beispiel)
-%Aufwändige implementierung in 4.4
+Die Betrachtung des Aufwands bei der Implementierung findet in Kapitel \ref{ch:matrix:tu} statt, da dieser der technischen Umsetzbarkeit zuzuordnen ist. 
 
 \section{Accessibility}
 \label{ch:matrix:accessibility}
@@ -82,15 +86,21 @@ Bei der technischen Umsetzbarkeit wird das Augenmerk auf die Implementation und 
 Unzureichende Dokumentation kann die Implementation und eventuelles Debugging erheblich erschweren
 und spielt deshalb eine wichtige Rolle bei der Auswahl.
 
-Ist die Dokumentation ausreichend? Werden viele Ressourcen benötigt? Muss man vorhandenen Quellcode stark abändern?
-
+\begin{enumerate}
+    \item Ist die Dokumentation ausreichend? 
+    \item Werden viele Ressourcen benötigt?
+    \item Muss man vorhandenen Quellcode stark abändern?
+\end{enumerate}
+ 
 \section{Sicherheit}
 \label{ch:matrix:sicherheit}
 Sicherheit ist der Hauptgrund für die Verwendung von Spam-Präventions\-techniken.
 Wie bereits in den vorherigen Kapiteln erwähnt, werden CAPTCHAs und ihre Alternativen genutzt um bei dem Ausfüllen von Formularen Bots auszusortieren
 und somit Spam zu vermeiden.
 Es muss betrachtet werden, ob es schon Methoden zur Umgehung der CAPTCHAs gibt.
-Gibt es sogar bereits künstliche Intelligenzen, die bestimmte Tests lösen können?
+\begin{enumerate}
+    \item Gibt es sogar bereits künstliche Intelligenzen, die bestimmte Tests lösen können?
+\end{enumerate}
 
 \section{Berechnung einer Metrik}
 \label{ch:matrix:berechnung}

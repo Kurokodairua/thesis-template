@@ -37,14 +37,18 @@ oder das Prüfen der Browseraktivität zu prüfen, ob es sich wirklich um eine*n
 Fast identisch zu CAPTCHA sind sogenannte HIP – ''Human Interactive Proofs''. 
 Dieser Begriff hat sich entwickelt, da manche Tests nicht ''public'' sind. \cite[p.1]{chellapilla} \cite{tutorial} 
 
-%RECAPTCHA???
-
 \subsection{Arten von CAPTCHA}
 Nachfolgend werden verschiedene Arten von CAPTCHAs grundlegend erläutert.
 Textbasierte CAPTCHA waren bereits 2008 die am häufigsten verwendete Art von CAPTCHA.
 Sie zeichnen sich durch eine Verzerrung eines Wortes oder mehreren Wörtern aus, sodass diese für Bilderkennungstools nicht erkennbar sind.
 Eine weitere Variante textbasierter CAPTCHA ist die einer einfachen Rechenaufgabe. 
-Auch hier soll erreicht werden, dass ein Bot die angegebenen Zahlen nicht korrekt erkennen kann und die Gleichung somit nicht lösen kann. \cite{usabilityofcaptchas} \cite{surveyofresearch} \cite{shinde2018DIFFERENTTO}
+Auch hier soll erreicht werden, dass ein Bot die angegebenen Zahlen nicht korrekt erkennen kann und die Gleichung somit nicht lösen kann. \cite{usabilityofcaptchas} \cite[p.75]{surveyofresearch} \cite{shinde2018DIFFERENTTO} %TODO SEITEN!!!!!!!!!
+Bei der Darstellung dieser Zeichen und Symbole können verschiedene Ansätze verfolgt werden.
+\citeauthor{surveyofresearch} beschreiben hierbei ``anti-segmentation techniques'' und ``anti-recognition techniques''. \cite[p.76]{surveyofresearch}
+Anti-Segmentation Techniques zielen darauf ab, das Separieren der einzelnen Buchstaben durch Algorithmen zu erschweren. 
+Um dies zu erreichen, gibt es verschiedene Herangehensweise.
+Eine von diesen ist 
+
 
 Es gibt verschiedene Arten von bildbasierten CAPTCHAs. 
 Die wohl bekannteste ist ein in Quadrate aufgeteiltes Bild, wobei man jene Quadrate auswählen soll, welche einen bestimmten Gegenstand enthalten.
@@ -65,19 +69,20 @@ Eine
     \caption{Gamification-CAPTCHA bei Login in Genshin Impact $(a$) und dem Forum Hoyolab $(b$)}   
 \end{figure}
 
-Eine aktuell viel genutzte Form von CAPTCHA ist reCAPTCHA v3 von Google. 
-Hier werden keine Turing Tests durchgeführt. Vielmehr wird anhand verschiedener Faktoren bewertet, ob es sich um einen Bot oder einen Menschen handelt.
+Eine aktuell viel genutzte Form der Spam-Prävention ist reCAPTCHA v3 von Google. 
+Hier werden keine Turing Tests durchgeführt. 
+Vielmehr wird anhand verschiedener Faktoren bewertet, ob es sich um einen Bot oder einen Menschen handelt.
 Was genau diese Faktoren sind, gibt Google aus Sicherheitsgründen nicht Preis. 
 Denkbar ist jedoch die Betrachtung von Cookies oder der Häufigkeit von Anfragen durch die gegebene IP-Adresse.
+In der Dokumentation wird angegeben, dass ein Score von 0.0 bis 1.0 vergeben werden kann. 
+Hier gilt: Je niedriger der Score, desto wahrscheinlicher handelt es sich um einen Bot statt eines ``echten'' Nutzers. (Vgl. \cite{recaptchadoc})
 Laut Google selbst soll reCAPTCHA v3 eine sehr gute Nutzererfahrung bieten, da es kaum bis gar keine Zuarbeit durch den Nutzer verlangt. \cite{googleblog:recaptcha}
-
+ReCAPTCHA kann durch das Fehlen eines klassischen Turing Tests auch als eine CAPTCHA-Alternative interpretiert werden.
 
 \subsection{Alternativen zu klassischen CAPTCHA}
 %anti spam plugins
 %multi faktor authentifikation
 %biometrie
-%honeypots
-
 Eine weitere Alternative zu klassischen CAPTCHA sind sogenannte Honeypots. 
 Geprägt wurde der Begriff erstmals im Kalten Krieg als Spionagetechnik eingesetzt wurde. \cite[p.2]{joshi:2011} 
 
@@ -94,9 +99,16 @@ Nachzulesen sind solche Verfahren in verschiedenen Blogposts, wie \cite{perry:20
 
 \section{UX}
 
-%u = user = der nutzer eines systems 
-%x = experience = wie geil die nutzung ist
-%ziel ist es die möglichst hoch / gut zu halten
+Die Abkürzung UX steht für \textbf{U}ser E\textbf{x}perience und beschreibt die Erfahrungen eines Users bei der Nutzung eines Systems. 
+Das Ziel ist, diese Nutzererfahrung möglichst positiv zu halten. 
+Im Kontext dieser Ausarbeitung wird die Definition des  ``international standard on ergonomics of human-system interaction'' $($ISO 9241-210$)$
+aus dem Jahre 2010 verwendet. 
+Diese definitiert UX als die Wahrnehmungen und Resonanzen einer Person, 
+welche aus der $($voraussichtlichen$)$ Nutzung eines Produkts, Systems oder Services entstehen. \cite[p.1629]{berni_borgianni_2021}
 
-%Was ist ux, was hat das mit captcha zu tun (nutzungsfluss wird unterbrochen oder so)
-%(Yan & Ahmad, 2008) 
+Die Nutzererfahrung bei der Wahl und Nutzung von CAPTCHA ist neben der Sicherheit ein essentieller Bestandteil.
+Bei der Entwicklung einer Bewertungsmatrix soll deshalb hier der Hauptfokus liegen.
+Denn wenn ein CAPTCHA schwierig zu lösen ist, oder von bestimmten Personengruppen gar nicht bearbeitet werden kann, so stört dies nicht nur den Nutzungsfluss,
+sondern führt gegebenenfalls auch dazu, dass Nutzer*innen die Seite verlassen, ohne ihre gewünschte Aktion zu vollenden. 
+
+%\cite{surveyofresearch}
