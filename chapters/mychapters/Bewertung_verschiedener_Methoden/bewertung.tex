@@ -11,6 +11,53 @@ um die Accessibility des CAPTCHAs zu gewährleisten.
 Bei optisch verzerrten Wörtern besteht jedoch die Möglichkeit, dass es zu Missverständnissen kommen kann.
 So können beispielsweise ein kleines ``d'' und ein ``cl'' unter Umständen verwechselt werden. (Vgl. \cite[p.3]{usabilityofcaptchas})
 
+Hollow: A main feature of hollow CAPTCHAs is to use
+contour lines to form connected characters with the aim of
+improving security and usability simultaneously, as the
+connected characters are hard to segment, but are easily seen
+by humans. 
+Unfortunately, this mechanism is not as secure as
+people expected, research by Gao [17] used a generic method
+to combine segmentation with recognition to break a series of
+really hollow CAPTCHAs with success rates ranging from
+36% to 89%. 
+
+CCT and overlapping: crowing characters together
+(CCT) and overlapping try to make segmentation more
+difficult by squeezing characters together. However, it may
+reduce user friendliness. For instance, reference [13] broke the
+Google CAPTCHA and reCAPTCHA [14] with success rates
+of 46.75% and 33%, respectively. A novel method was also
+presented in [15] to attack CCT-based CAPTCHAs, achieving
+success rates from 27.1% to 53.2%.
+
+Noise background: The noise background mechanism
+hides the position of the characters. Regrettably, Google’s
+reCAPTCHA, which uses Street View images, is broken by a
+method imitating the probability of a sequence proposed in
+[21]. In addition, Gao [19] used some image processing
+techniques iteratively to break PayPal’s CAPTCHA.
+
+Two-layer structure: A two-layer structure is a vertical
+combination of two single-layers CAPTCHA. The most
+critical issue in breaking this mechanism is segmentation,
+which cannot be solved by common segmentation methods.
+Gao [18] presented a novel two-dimensional segmentation
+approach to separate a CAPTCHA image along both vertical
+and horizontal directions and achieved a success rate of
+44.6%.
+76
+
+Multifonts, Rotation, Waving: These three methods are
+designed to increase the diversity of each character, thereby
+increasing the number of features needed to identify each class
+by machine.
+
+Large character set: A large character set makes the
+solution space much larger than that of traditional text
+CAPTCHAs. It usually chose Chinese, Japanese, etc. 
+\cite{surveyofresearch}
+
 \begin{table}[h!]
     \caption{Beispielhafte Bewertungsmatrix}
     \begin{center}
