@@ -27,7 +27,7 @@ Sollte der Juror nicht feststellen können, welcher Gesprächspartner der Mensch
 Dieses Verfahren wird heute oftmals als Turing Test bezeichnet. 
 
 \section{CAPTCHA}
-%label
+\label{ch:basics:captcha}
 Bei der Abkürzung CAPTCHA handelt es sich um ''completely automated public turing tests to tell computers and humans apart''. 
 Sie werden genutzt, um Webseiten vor Angriffen durch Bots zu schützen. 
 Dies wird durch die im vorherigen Kapitel bereits erläuterten Turing Tests erreicht. 
@@ -38,8 +38,8 @@ Fast identisch zu CAPTCHA sind sogenannte HIP – ''Human Interactive Proofs''.
 Dieser Begriff hat sich entwickelt, da manche Tests nicht ''public'' sind. \cite[p.1]{chellapilla} \cite{tutorial} 
 
 \subsection{Arten von CAPTCHA}
+\label{ch:basics:captcha:arten}
 %Nachfolgend werden verschiedene Arten von CAPTCHAs grundlegend erläutert.
-
 Textbasierte CAPTCHA waren bereits 2008 die am häufigsten verwendete Art von CAPTCHA.
 Sie zeichnen sich durch eine Verzerrung eines Wortes oder mehreren Wörtern aus, sodass diese für Bilderkennungstools nicht erkennbar sind.
 Eine weitere Variante textbasierter CAPTCHA ist die einer einfachen Rechenaufgabe. 
@@ -51,25 +51,31 @@ Bei der Darstellung dieser Zeichen und Symbole können verschiedene Ansätze ver
 Anti-Segmentation Techniques zielen darauf ab, das Separieren der einzelnen Buchstaben durch Algorithmen zu erschweren. 
 Um dies zu erreichen, gibt es verschiedene Herangehensweise.
 Eine von ihnen besteht daraus, dass nur die Konturen der verschiedenen Zeichen angezeigt werden, sodass diese nur von Menschen erkannt werden können,
-Bots hingegen wenig Chancen haben, diese korrekt zu unterscheiden. Diese Art von CAPTCHA nennen \citeauthor{surveyofresearch} ``Hollow CAPTCHAs''. %Formulierung
+Bots hingegen wenig Chancen haben, diese korrekt zu unterscheiden. Diese Art von CAPTCHA nennen \citeauthor[p.76]{surveyofresearch} ``Hollow CAPTCHAs''. %Formulierung
 Eine weitere Methode ist, Zeichen nah beieinander oder sogar überlappend darzustellen, 
 was von \citeauthor{surveyofresearch} als ``crowing characters together $($CCT$)$ and overlapping'' bezeichnet wird.
 Auch unruhige Hintergründe können Segmentierung behindern.
 Ebenfalls beschrieben wird die Kombination von mehreren der beschriebenen CAPTCHAs zu einer ``two-layer'' Struktur,
-wobei die Tatsache, dass es sich um mehrere Zeilen Text handelt, nicht erkannt werden kann.
+wobei die Tatsache, dass es sich um mehrere Zeilen Text handelt, nicht erkannt werden kann. \cite[p.76]{surveyofresearch}
 
 Anti-Recognition Techniques sind zum Beispiel verschiedene Schriftarten, die Rotation von Zeichen und ``Waving'', 
 welche es erschweren, Zeichen als solche zu erkennen. 
 Außerdem können in einigen Fällen auch sehr große Zeichensätze, beispielsweise Mandarin oder Japanisch, genutzt werden, 
 wodurch das Finden von eindeutigen Lösungen erschwert werden kann.
 Diese Techniken werden oftmals miteinander kombiniert.
-\cite{surveyofresearch}
+\cite[p.77]{surveyofresearch}
 
 \begin{figure}
     \centering
     \includegraphics{gfx/mygraphics/unbedingtaustauschen1.png}
     \caption{textbasierte Beispiele die ich unbedingt noch austauschen muss, weil sie aus \cite{surveyofresearch} sind}
 \end{figure}
+
+Es gibt verschiedene Arten von bildbasierten CAPTCHAs. 
+Die wohl bekannteste ist ein in Quadrate aufgeteiltes Bild, wobei man jene Quadrate auswählen soll, welche einen bestimmten Gegenstand enthalten.
+Eine Variation dieses CAPTCHAs besteht aus einer Zahl verschiedener Bilder, von denen eine Teilmenge ebenfalls ein gesuchtes Objekt beinhalten.
+%Discord CAPTCHA: PFERDE AUS WOLKEN!!!!!
+Eine Form von bildbasierten sind Gamification captcha
 
 A. Selection-based CAPTCHA
 The users are required to select the correct answers
@@ -162,59 +168,25 @@ operation. Therefore, it can be easily imitated. The later dragbased CAPTCHAs us
 data analysis. At present, this seems to be the future
 development trend for CAPTCHAs
 
-Es gibt verschiedene Arten von bildbasierten CAPTCHAs. 
-Die wohl bekannteste ist ein in Quadrate aufgeteiltes Bild, wobei man jene Quadrate auswählen soll, welche einen bestimmten Gegenstand enthalten.
-Eine Variation dieses CAPTCHAs besteht aus einer Zahl verschiedener Bilder, von denen eine Teilmenge ebenfalls ein gesuchtes Objekt beinhalten.
-%Discord CAPTCHA: PFERDE AUS WOLKEN!!!!!
-Eine Form von bildbasierten sind Gamification captcha
+\begin{figure}
+    \centering
+    \includegraphics{gfx/mygraphics/fuerfortnite.png}
+    \caption{Bildbasierter CAPTCHA bei Login auf der Epic Games Website}   
+    \label{fig:fortnite}
+\end{figure}
 
-%Audiobasiert
+% Gamification
+\cite{gamified}
 
-A. Audio-based CAPTCHA
-This CAPTCHA is usually considered an alternative to a
-visual CAPTCHA in the case of visually impaired users [44].
-Users in most audio-based CAPTCHAs play the role of
-listeners, and they are required to complete the specified
-challenge based on what they have heard. A spoken
-CAPTCHA system was introduced in [45]. This system
-converts a selected word into speech using a Text-To-Speech
-(TTS) system, then plays the sound clip to users and asks them
-to say the word. In 2012, the SoundsRight audio CAPTCHA
-(Fig. 6(a)) provided in [48] asks users to identify a specific
-sound, such as the sound of a bell or a piano. This work has
-increased the success rates in audio Captchas from less than
-50% to over 90% for blind users. Meutzner et al. presented a
-new type of audio CAPTCHA [50] that uses additional
-nonsense speech sounds that are confusing for speech
-recognizers, while being less critical for human listeners. In
-2016, they also proposed a nonspeech audio CAPTCHA [61],
-which is entirely based on the classification of sound events
-mixed into an environmental scene. Moreover, the HuMan
-CAPTCHA designed in [60] asks users to answer the
-presented questions by combining ambient noise and common
-sense knowledge. There is another type of audio-based
-CAPTCHA in which users play the role of speakers and are
-required to pronounce rather than simply listen. For instance,
-Gao et al. [47] proposed a new sound-based CAPTCHA (Fig.
-6(b)) that exploits the differences between a human voice a
-synthetic voice. A user is required to read out a given sentence
-rather than listening an audio file.
-Fig. 6. Examples of audio-based CAPTCHAs
-Attack and defense always go together. A two-stage attack
-for the listener model can always obtain a good attack result.
-In detail, the audio-based CAPTCHA is segmented into
-several regions regarding the location of each spoken word
-first. Then, the regions are recognized by automatic speech
-recognition programs. Tam et al. achieved success rates of up
-to 71% (Google Audio CAPTCHA, reCAPTCHA Audio
-CAPTCHA, Digg CAPTCHA)[44]. Bursztein et al. achieved
-success rates of 45%, 49% and 83% on the CAPTCHAs of
-Yahoo, Microsoft and eBay, respectively[49]. Some
-78
-Authorized licensed use limited to: Fachhochschule FH Darmstadt. Downloaded on July 29,2022 at 08:34:41 UTC from IEEE Xplore. Restrictions apply.
-researchers have even proposed that most of the digit-based
-audio CAPTCHAs are successfully broken with success rates
-between 50%-90% [44][52][54].
+\begin{figure}
+    \centering
+    \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/genshincaptcha.png}}
+    \qquad
+    \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/hoyoversecaptcha.png}}
+    \caption{Gamification-CAPTCHA bei Login in Genshin Impact $(a$) und dem Forum Hoyolab $(b$)}   
+\end{figure}
+
+Eine weitere Form visueller CAPTCHAs sind videobasierte CAPTCHA. 
 B. Video-based CAPTCHA
 In video-based CAPTCHAs, users are provided a video
 file, and they should choose one option that best matches the
@@ -235,16 +207,17 @@ CAPTCHAs. In 2015, Sano et al. first used HMM-based
 video-based reCAPTCHA from Google with a 31.75%
 success rate [65]. 
 
-% Gamification
-\cite{gamified}
 
-\begin{figure}
-    \centering
-    \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/genshincaptcha.png}}
-    \qquad
-    \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/hoyoversecaptcha.png}}
-    \caption{Gamification-CAPTCHA bei Login in Genshin Impact $(a$) und dem Forum Hoyolab $(b$)}   
-\end{figure}
+%Audiobasiert
+Als Alternative von visuellen CAPTCHAs können audiobasierte CAPTCHA genutzt werden.
+Diese bieten sich vor allem für sehbehinderte Nutzer*innen an, welche bild- oder textbasierte CAPTCHA nur schwer oder gar nicht sehen und erkennen können.
+Oft wird hier Text-To-Speech verwendet, wobei die gehörten Wörter durch die Nutzer*innen wiederholt werden sollen.
+Eine weitere Möglichkeit ist das Abspielen bestimmter Töne, wie die einer Glocke oder eines Klaviers. 
+Die kann auch in Kombination mit verschiedenen Hintergrundgeräuschen angewandt werden, was das Erkennen eines bestimmten Tons für Roboter zusätzlich erschwert.
+Außerdem gibt es Methoden, bei denen eine bestimmte Frage beantwortet werden muss, für die ``common sense'' $($dt. ``Gesunder Menschenverstand''$)$ notwendig ist.
+Neben Techniken, die hauptsächlich auf das Hören ausgelegt sind, kann der Fokus auch auf das Einsprechen von Phrasen durch die Nutzer*innen gelegt werden.
+Es soll so erkannt werden, ob es sich um eine menschliche Stimme handelt.
+\cite[p.78]{surveyofresearch}
 
 Eine aktuell viel genutzte Form der Spam-Prävention ist reCAPTCHA v3 von Google. 
 Hier werden keine Turing Tests durchgeführt. 
