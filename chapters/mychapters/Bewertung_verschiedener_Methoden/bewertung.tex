@@ -21,7 +21,7 @@ mit einer Erfolgsrate von 36 bis 89 Prozent durch Bots gelöst werden konnten. (
 
 Ähnlich verhält es sich bei Überlappungen und CCT (``crowing characters together''):
 Hier konnte bei verschiedenen Technologien mithilfe von unterschiedlichen Methoden
-eine Erfolgsquote von 27,1 bis 53,2 Prozent erreicht werden. \cite[p.xx]{surveyofresearch} %Quellen aus Text och mit aufnehmen
+eine Erfolgsquote von 27,1 bis 53,2 Prozent erreicht werden. \cite[p.xx]{surveyofresearch} %Quellen aus Text noch mit aufnehmen
 
 Auch bei ``noise backgrounds'' und ``two-layer structures'' konnten solche Ergebnisse erzielt werden. 
 (Vgl. \cite[p.xx]{surveyofresearch} \cite{gao})
@@ -33,47 +33,17 @@ Auch bei ``noise backgrounds'' und ``two-layer structures'' konnten solche Ergeb
     \begin{center}
         \begin{tabular}{l|c}
             Kategorie                       & Bewertung \\\hline
-            Aufwand                         & 7         \\
-            Accessibility                   & 10        \\
-            Technische Umsetzbarkeit        & 3         \\
-            Sicherheit                      & 9         
+            Aufwand                         & 7-9         \\
+            Accessibility                   & 5        \\
+            Technische Umsetzbarkeit        & 10         \\
+            Sicherheit                      & 3-5         
         \end{tabular}
     \end{center}
 \end{table}
 
 \section{Bildbasierte CAPTCHA}
 
-
-A. Selection-based CAPTCHA
-The users are required to select the correct answers
-according to a hint for selection-based CAPTCHAs. It is the
-simplest form of an image-based CAPTCHA. Several
-examples of selection-based CAPTCHA are shown in Fig. 2.
-Fig. 2. Examples of selection-based CAPTCHAs
-The Asirra CAPTCHA [27] asks users to select all the
-photographs with cats out of 12 photographs. This type of
-CAPTCHA was the first attempt at an image-based
-CAPTCHA. In contrast, the SEMAGE (SEmantically
-MAtching imaGEs) CAPTCHA [32] asks users to select
-semantically related images from a given image set. This type
-of CAPTCHA exploits the ability of humans to accurately
-understand image content and establish semantic relationships
-between them. Avatar CAPTCHA is proposed in [59]. It asks
-users to identify avatar faces from a set of 12 grayscale
-images. The FR-CAPTCHA [33] and the FaceDCAPTCHA
-[34] are face-based CAPTCHAs relying on human face
-recognition. FR-CAPTCHA asks users to select two face
-images of the same person. FaceDCAPTCHA requires users
-to distinguish the visually distorted real human faces among
-nonhuman face images. The Google CAPTCHA asks users to
-select all images with street signs or some specific object. The
-Facebook CAPTCHA asks users to select the corresponding
-images directly, according to a hint, from twelve images with
-different content. Recently, the work in [75] even construct a
-more sophisticated image CAPTCHA method by using
-semantic correlation to connect question keywords with
-answer choices.
-Golle [28] proposed an SVM (Support Vector Machine)
+$Golle [28] proposed an SVM (Support Vector Machine)
 classifier to distinguish the images of cats and dogs in Asirra
 with an 82.7% success rate. In [36], Gao’s team utilized
 OpenCV functions to detect faces in the FR-CAPTCHA, and
@@ -84,7 +54,7 @@ Facebook CAPTCHA with success rates of 70.78% and
 83.5%, respectively.
 Selection-based CAPTCHAs are simple and convenient
 for users to operate. However, they have gradually become
-vulnerable due to the development of deep learning.
+vulnerable due to the development of deep learning.$
 
 \begin{table}[h!]
     \caption{Beispielhafte Bewertungsmatrix}
@@ -98,7 +68,7 @@ vulnerable due to the development of deep learning.
         \end{tabular}
     \end{center}
 \end{table}
-
+$
 B. Video-based CAPTCHA
 In video-based CAPTCHAs, users are provided a video
 file, and they should choose one option that best matches the
@@ -142,12 +112,12 @@ legitimacy of users only by measuring the speed of their
 operation. Therefore, it can be easily imitated. The later dragbased CAPTCHAs usually incorporate some user background
 data analysis. At present, this seems to be the future
 development trend for CAPTCHAs
-
+$
 \section{Audiobasierte CAPTCHA}
 
 “Buster” ist ein Browser Addon, das reCAPTCHA audio challenges per speech recognition löst.
 
-
+$
 A. Audio-based CAPTCHA
 This CAPTCHA is usually considered an alternative to a
 visual CAPTCHA in the case of visually impaired users [44].
@@ -193,7 +163,7 @@ Authorized licensed use limited to: Fachhochschule FH Darmstadt. Downloaded on J
 researchers have even proposed that most of the digit-based
 audio CAPTCHAs are successfully broken with success rates
 between 50%-90% [44][52][54].
-
+$
 \begin{table}[h!]
     \caption{Beispielhafte Bewertungsmatrix}
     \begin{center}

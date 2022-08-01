@@ -45,8 +45,12 @@ Ein weiterer Punkt, der zu Irritationen führen kann, sind zeitbegrenzte CAPTCHA
 Diese laufen nach einer bestimmten Zeit ab und man muss die Seite neu laden und den Anmeldevorgang neu beginnen.
 Zu beantwortende Fragen können hier sein:
 \begin{enumerate}
+    \item Sind mehrere Schritte nötig, um das CAPTCHA auszufüllen?
+    \item Können Fragen oder Aufgaben eindeutig beantwortet beziehungsweise erfüllt werden?
     \item Gibt es zeitliche Begrenzungen?
 \end{enumerate}
+Zu beachten ist, dass eine niedrige Punktzahl hier bedeutet, dass das CAPTCHA sehr aufwändig ist.
+Ist es hingegen einfach zu lösen, erzielt es eine höhere Punktzahl.
 
 Die Betrachtung des Aufwands bei der Implementierung findet in Kapitel \ref{ch:matrix:tu} statt, da dieser der technischen Umsetzbarkeit zuzuordnen ist. 
 
@@ -102,7 +106,9 @@ Wie bereits in den vorherigen Kapiteln erwähnt, werden CAPTCHAs und ihre Altern
 und somit Spam zu vermeiden.
 Es muss betrachtet werden, ob es schon Methoden zur Umgehung der CAPTCHAs gibt.
 \begin{enumerate}
-    \item Gibt es sogar bereits künstliche Intelligenzen, die bestimmte Tests lösen können?
+    \item Gibt es bereits bereits Algorithmen um den jeweiligen CAPTCHA zu lösen?
+    \item Wie zugänglich ist die Umsetzung dieses Algorithmus? (Kann jedermann ihn nutzen? Ist er ressourcenaufwändig?)
+    \item Welche Erfolgsquote haben Angriffe?
 \end{enumerate}
 
 \section{Berechnung einer Metrik}
