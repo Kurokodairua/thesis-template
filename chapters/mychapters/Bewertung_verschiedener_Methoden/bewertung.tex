@@ -6,57 +6,27 @@ Multi-Faktor-Authentifikation und biometrische Verfahren auf Basis der zuvor ent
 \section{Textbasierte CAPTCHA}
 
 Durch ihren simplen Aufbau sind textbasierte CAPTCHA relativ einfach zu verstehen.
+Es sind wenige Clicks nötig, um einen solchen CAPTCHA auszufüllen. 
+
+Accessability ist ambivalent zu betrachten.
 Insbesondere einfache mathematische Aufgaben lassen sich auch gut audiobasiert umsetzen, 
 um die Accessibility des CAPTCHAs zu gewährleisten.
+Textbasierte CAPTCHA allein sind jedoch für sehbehinderte Menschen nicht nutzbar.
 Bei optisch verzerrten Wörtern besteht jedoch die Möglichkeit, dass es zu Missverständnissen kommen kann.
-So können beispielsweise ein kleines ``d'' und ein ``cl'' unter Umständen verwechselt werden. (Vgl. \cite[p.3]{usabilityofcaptchas})
+So können beispielsweise ein kleines ``d'' und ein ``cl'' unter Umständen auch von Menschen verwechselt werden. (Vgl. \cite[p.3]{usabilityofcaptchas})
 
-Hollow: A main feature of hollow CAPTCHAs is to use
-contour lines to form connected characters with the aim of
-improving security and usability simultaneously, as the
-connected characters are hard to segment, but are easily seen
-by humans. 
-Unfortunately, this mechanism is not as secure as
-people expected, research by Gao [17] used a generic method
-to combine segmentation with recognition to break a series of
-really hollow CAPTCHAs with success rates ranging from
-36% to 89%. 
+\citeauthor{surveyofresearch} schreiben in \cite[p.xx]{surveyofresearch}, 
+dass Hollow CAPTCHA durch eine Kombination von Segmentierung und Recognition %TODO
+mit einer Erfolgsrate von 36 bis 89 Prozent durch Bots gelöst werden konnten. (Vgl. \cite{gao}) %TODO
 
-CCT and overlapping: crowing characters together
-(CCT) and overlapping try to make segmentation more
-difficult by squeezing characters together. However, it may
-reduce user friendliness. For instance, reference [13] broke the
-Google CAPTCHA and reCAPTCHA [14] with success rates
-of 46.75% and 33%, respectively. A novel method was also
-presented in [15] to attack CCT-based CAPTCHAs, achieving
-success rates from 27.1% to 53.2%.
+Ähnlich verhält es sich bei Überlappungen und CCT (``crowing characters together''):
+Hier konnte bei verschiedenen Technologien mithilfe von unterschiedlichen Methoden
+eine Erfolgsquote von 27,1 bis 53,2 Prozent erreicht werden. \cite[p.xx]{surveyofresearch} %Quellen aus Text och mit aufnehmen
 
-Noise background: The noise background mechanism
-hides the position of the characters. Regrettably, Google’s
-reCAPTCHA, which uses Street View images, is broken by a
-method imitating the probability of a sequence proposed in
-[21]. In addition, Gao [19] used some image processing
-techniques iteratively to break PayPal’s CAPTCHA.
+Auch bei ``noise backgrounds'' und ``two-layer structures'' konnten solche Ergebnisse erzielt werden. 
+(Vgl. \cite[p.xx]{surveyofresearch} \cite{gao})
 
-Two-layer structure: A two-layer structure is a vertical
-combination of two single-layers CAPTCHA. The most
-critical issue in breaking this mechanism is segmentation,
-which cannot be solved by common segmentation methods.
-Gao [18] presented a novel two-dimensional segmentation
-approach to separate a CAPTCHA image along both vertical
-and horizontal directions and achieved a success rate of
-44.6%.
-76
-
-Multifonts, Rotation, Waving: These three methods are
-designed to increase the diversity of each character, thereby
-increasing the number of features needed to identify each class
-by machine.
-
-Large character set: A large character set makes the
-solution space much larger than that of traditional text
-CAPTCHAs. It usually chose Chinese, Japanese, etc. 
-\cite{surveyofresearch}
+%Multifonts, Rotation, Waving, Large character set \cite{surveyofresearch}
 
 \begin{table}[h!]
     \caption{Beispielhafte Bewertungsmatrix}
@@ -73,6 +43,49 @@ CAPTCHAs. It usually chose Chinese, Japanese, etc.
 
 \section{Bildbasierte CAPTCHA}
 
+
+A. Selection-based CAPTCHA
+The users are required to select the correct answers
+according to a hint for selection-based CAPTCHAs. It is the
+simplest form of an image-based CAPTCHA. Several
+examples of selection-based CAPTCHA are shown in Fig. 2.
+Fig. 2. Examples of selection-based CAPTCHAs
+The Asirra CAPTCHA [27] asks users to select all the
+photographs with cats out of 12 photographs. This type of
+CAPTCHA was the first attempt at an image-based
+CAPTCHA. In contrast, the SEMAGE (SEmantically
+MAtching imaGEs) CAPTCHA [32] asks users to select
+semantically related images from a given image set. This type
+of CAPTCHA exploits the ability of humans to accurately
+understand image content and establish semantic relationships
+between them. Avatar CAPTCHA is proposed in [59]. It asks
+users to identify avatar faces from a set of 12 grayscale
+images. The FR-CAPTCHA [33] and the FaceDCAPTCHA
+[34] are face-based CAPTCHAs relying on human face
+recognition. FR-CAPTCHA asks users to select two face
+images of the same person. FaceDCAPTCHA requires users
+to distinguish the visually distorted real human faces among
+nonhuman face images. The Google CAPTCHA asks users to
+select all images with street signs or some specific object. The
+Facebook CAPTCHA asks users to select the corresponding
+images directly, according to a hint, from twelve images with
+different content. Recently, the work in [75] even construct a
+more sophisticated image CAPTCHA method by using
+semantic correlation to connect question keywords with
+answer choices.
+Golle [28] proposed an SVM (Support Vector Machine)
+classifier to distinguish the images of cats and dogs in Asirra
+with an 82.7% success rate. In [36], Gao’s team utilized
+OpenCV functions to detect faces in the FR-CAPTCHA, and
+four features were extracted from the faces to find the most
+probable pair. Reference [39] leveraged deep learning
+technologies to break an image reCAPTCHA and the
+Facebook CAPTCHA with success rates of 70.78% and
+83.5%, respectively.
+Selection-based CAPTCHAs are simple and convenient
+for users to operate. However, they have gradually become
+vulnerable due to the development of deep learning.
+
 \begin{table}[h!]
     \caption{Beispielhafte Bewertungsmatrix}
     \begin{center}
@@ -85,6 +98,50 @@ CAPTCHAs. It usually chose Chinese, Japanese, etc.
         \end{tabular}
     \end{center}
 \end{table}
+
+B. Video-based CAPTCHA
+In video-based CAPTCHAs, users are provided a video
+file, and they should choose one option that best matches the
+video. Motion CAPTCHAs (Fig. 7(a)) proposed in [46] asks
+users to select the sentence that describes the motion of the
+person in the video. Rao et al. [55] proposed a video
+CAPTCHA (Fig. 7(b)) based on advertisement recognition.
+Both CAPTCHAs need users to select from the options
+provided. That is, these schemes can be broken by random
+guessing. Contrastly, reference [42] presented a video-based
+CAPTCHA (Fig. 7(c)), which asks users to type three words
+that best describe a video.
+Fig. 7. Examples of video-based CAPTCHAs
+Due to recent advances, bandwidth and video analysis
+technology no longer limit the development of video-based
+CAPTCHAs. In 2015, Sano et al. first used HMM-based
+(hidden Markov model-based) attacks to successfully attack a
+video-based reCAPTCHA from Google with a 31.75%
+success rate [65]. 
+
+The drag-based CAPTCHA judges whether the user is a
+human through the mouse’s track, speed and response time.
+The operation of a drag-based CAPTCHA is simple. Some
+drag-based CAPTCHAs are shown in Fig. 5.
+Fig. 5. Examples of drag-based CAPTCHAs
+The What’s Up CAPTCHA, proposed by Google [37], is
+the first drag-based CAPTCHA. Users need to identify the
+upright orientations of randomly rotated images and adjust
+them to the correct position. Setting an image to an upright
+orientation is easy for humans, whereas it is difficult for bots.
+It is worth noting that images used in CAPTCHA must be
+manually filtered from of samples that do not contain clear
+directional information. After this development, GeeTest
+proposed the first version of a slider CAPTCHA. Users must
+drag a slider along a line to the specified position
+continuously. Inspired by this, the VAPTCHA appeared. It
+asks users to draw a trajectory with a mouse according to an
+arrow trajectory embedded in the background.
+In fact, early drag-based CAPTCHAs judged the
+legitimacy of users only by measuring the speed of their
+operation. Therefore, it can be easily imitated. The later dragbased CAPTCHAs usually incorporate some user background
+data analysis. At present, this seems to be the future
+development trend for CAPTCHAs
 
 \section{Audiobasierte CAPTCHA}
 

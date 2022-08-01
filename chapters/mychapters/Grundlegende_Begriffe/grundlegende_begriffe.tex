@@ -73,51 +73,25 @@ Diese Techniken werden oftmals miteinander kombiniert.
 
 Es gibt verschiedene Arten von bildbasierten CAPTCHAs. 
 Die wohl bekannteste ist ein in Quadrate aufgeteiltes Bild, wobei man jene Quadrate auswählen soll, welche einen bestimmten Gegenstand enthalten.
-Eine Variation dieses CAPTCHAs besteht aus einer Zahl verschiedener Bilder, von denen eine Teilmenge ebenfalls ein gesuchtes Objekt beinhalten.
-%Discord CAPTCHA: PFERDE AUS WOLKEN!!!!!
-Eine Form von bildbasierten sind Gamification captcha
+Eine Variation dieses CAPTCHAs besteht aus einer Zahl verschiedener Bilder, von denen eine Teilmenge ebenfalls ein gesuchtes Objekt beinhalten -
+sogenannte ``Semantically Matching Images''. \cite[p.xx]{surveyofresearch}
+In Abbildung \ref[fig:fortnite] sollen Hunde mit geschlossenen Augen ausgewählt werden,
+was die Notwendigkeit der Zunahme der Komplexität dieser CAPTCHAs gut widerspiegelt. 
+Außerdem kann auch auf das Erkennen von Gesichtern durch Menschen gesetzt werden.
+Nähere Informationen zu genauen Techniken können in \cite[p.xx]{surveyofresearch} nachgelesen werden.
+Die beschriebenen ``selection-based CAPTCHA'' bezeichnen \citeauthor{surveyofresearch} als einfachste Form bildbasierter CAPTCHA.
 
-A. Selection-based CAPTCHA
-The users are required to select the correct answers
-according to a hint for selection-based CAPTCHAs. It is the
-simplest form of an image-based CAPTCHA. Several
-examples of selection-based CAPTCHA are shown in Fig. 2.
-Fig. 2. Examples of selection-based CAPTCHAs
-The Asirra CAPTCHA [27] asks users to select all the
-photographs with cats out of 12 photographs. This type of
-CAPTCHA was the first attempt at an image-based
-CAPTCHA. In contrast, the SEMAGE (SEmantically
-MAtching imaGEs) CAPTCHA [32] asks users to select
-semantically related images from a given image set. This type
-of CAPTCHA exploits the ability of humans to accurately
-understand image content and establish semantic relationships
-between them. Avatar CAPTCHA is proposed in [59]. It asks
-users to identify avatar faces from a set of 12 grayscale
-images. The FR-CAPTCHA [33] and the FaceDCAPTCHA
-[34] are face-based CAPTCHAs relying on human face
-recognition. FR-CAPTCHA asks users to select two face
-images of the same person. FaceDCAPTCHA requires users
-to distinguish the visually distorted real human faces among
-nonhuman face images. The Google CAPTCHA asks users to
-select all images with street signs or some specific object. The
-Facebook CAPTCHA asks users to select the corresponding
-images directly, according to a hint, from twelve images with
-different content. Recently, the work in [75] even construct a
-more sophisticated image CAPTCHA method by using
-semantic correlation to connect question keywords with
-answer choices.
-Golle [28] proposed an SVM (Support Vector Machine)
-classifier to distinguish the images of cats and dogs in Asirra
-with an 82.7% success rate. In [36], Gao’s team utilized
-OpenCV functions to detect faces in the FR-CAPTCHA, and
-four features were extracted from the faces to find the most
-probable pair. Reference [39] leveraged deep learning
-technologies to break an image reCAPTCHA and the
-Facebook CAPTCHA with success rates of 70.78% and
-83.5%, respectively.
-Selection-based CAPTCHAs are simple and convenient
-for users to operate. However, they have gradually become
-vulnerable due to the development of deep learning.
+In Abbildung \ref{fig:genshin} sind zwei weitere Arten bildbasierter CAPTCHA dargestellt.
+Links ist ein ``drag-based CAPTCHA'' dargestellt.
+Hierbei werden Mausbewegungen, die Geschwindigkeit dieser Bewegungen
+und die allgemeine Reaktionszeit überprüft.
+Dies geschieht, wie in Abbildung \ref{fig:genshin} (a) zu sehen,
+beispielsweise über das Verschieben eines Puzzleteils an die richtige Stelle.
+Auch hier kann in \cite[p.xx]{surveyofresearch} genauer nachgelesen werden.
+
+%Discord CAPTCHA: PFERDE AUS WOLKEN!!!!!
+%Eine Form von bildbasierten sind Gamification captcha
+
 B. Click-based CAPTCHA
 In 2008, Richard Chow et al.[23] first proposed the clickbased CAPTCHA. It requires users to click characters in a
 complex background according to a short hint, as shown in
@@ -143,30 +117,6 @@ good design. However, state-of-the-art research on visual
 reasoning, such as [58] and [8], may break this scheme in the
 near future.
 Fig. 4. Examples of VTT CAPTCHAs
-C. Drag-based CAPTCHA
-The drag-based CAPTCHA judges whether the user is a
-human through the mouse’s track, speed and response time.
-The operation of a drag-based CAPTCHA is simple. Some
-drag-based CAPTCHAs are shown in Fig. 5.
-Fig. 5. Examples of drag-based CAPTCHAs
-The What’s Up CAPTCHA, proposed by Google [37], is
-the first drag-based CAPTCHA. Users need to identify the
-upright orientations of randomly rotated images and adjust
-them to the correct position. Setting an image to an upright
-orientation is easy for humans, whereas it is difficult for bots.
-It is worth noting that images used in CAPTCHA must be
-manually filtered from of samples that do not contain clear
-directional information. After this development, GeeTest
-proposed the first version of a slider CAPTCHA. Users must
-drag a slider along a line to the specified position
-continuously. Inspired by this, the VAPTCHA appeared. It
-asks users to draw a trajectory with a mouse according to an
-arrow trajectory embedded in the background.
-In fact, early drag-based CAPTCHAs judged the
-legitimacy of users only by measuring the speed of their
-operation. Therefore, it can be easily imitated. The later dragbased CAPTCHAs usually incorporate some user background
-data analysis. At present, this seems to be the future
-development trend for CAPTCHAs
 
 \begin{figure}
     \centering
@@ -183,30 +133,16 @@ development trend for CAPTCHAs
     \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/genshincaptcha.png}}
     \qquad
     \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/hoyoversecaptcha.png}}
-    \caption{Gamification-CAPTCHA bei Login in Genshin Impact $(a$) und dem Forum Hoyolab $(b$)}   
+    \caption{Bildbasierte CAPTCHA bei Login in Genshin Impact $($a$)$ und dem Forum Hoyolab $($b$)$}   
+    \label{fig:genshin}
 \end{figure}
 
+%Videobasiert
 Eine weitere Form visueller CAPTCHAs sind videobasierte CAPTCHA. 
-B. Video-based CAPTCHA
-In video-based CAPTCHAs, users are provided a video
-file, and they should choose one option that best matches the
-video. Motion CAPTCHAs (Fig. 7(a)) proposed in [46] asks
-users to select the sentence that describes the motion of the
-person in the video. Rao et al. [55] proposed a video
-CAPTCHA (Fig. 7(b)) based on advertisement recognition.
-Both CAPTCHAs need users to select from the options
-provided. That is, these schemes can be broken by random
-guessing. Contrastly, reference [42] presented a video-based
-CAPTCHA (Fig. 7(c)), which asks users to type three words
-that best describe a video.
-Fig. 7. Examples of video-based CAPTCHAs
-Due to recent advances, bandwidth and video analysis
-technology no longer limit the development of video-based
-CAPTCHAs. In 2015, Sano et al. first used HMM-based
-(hidden Markov model-based) attacks to successfully attack a
-video-based reCAPTCHA from Google with a 31.75%
-success rate [65]. 
-
+Nutzer*innen müssen beispielsweise verschiedene Bewegungen erkennen, die im Video ausgeführt werden,
+oder auch angezeigte Werbung.
+Dabei werden verschiedene Antwortmöglichkeiten vorgegeben, welche durch Raten auch durch Bots erfolgreich absolviert werden können.
+Um dies zu umgehen gibt es Alternativen, die über das Beschreiben des gesehenen Videos funktionieren. \cite[p.xx]{surveyofresearch} 
 
 %Audiobasiert
 Als Alternative von visuellen CAPTCHAs können audiobasierte CAPTCHA genutzt werden.
