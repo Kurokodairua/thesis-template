@@ -5,3 +5,25 @@ und mithilfe dieser Empfehlungen hinsichtlich der Wahl des CAPTCHA ausgesprochen
 Dies soll einerseits als Beispiel zur Anwendung dienen, 
 andererseits auch eine erste Orientierung bei der Auswahl der zu prüfenden Techniken geben. 
 \autoref{tab:bsp1}
+
+Als erstes Szenario soll eine Bank dienen, die für ihr Online Banking mit CAPTCHAs arbeitet.
+Sicherheit ist hier besonders wichtig, 
+da eine Störung des Systems fatal für Kund*innen und die Bank selbst sein könnte.
+Außerdem sollte möglichst allen Kund*innen der Zugriff möglich sein, 
+weshalb Accessability ebenfalls eine große Rolle spielt.
+Aus diesem Grund kann in Sachen Aufwand 
+und auch bei der technischen Umsetzbarkeit zu Gunsten der Ausfallsicherheit zurückgesteckt werden.
+
+\begin{table}[h!]
+    \caption{Bewertungsmatrix Bsp. 1 - textbasierte CAPTCHA}
+    \begin{center}
+        \begin{tabular}{l|c|c|c}
+            Kategorie                       & Bewertung & Gewichtung & \begin{tabular}{c}Gewichtete \\ Bewertung \end{tabular} \\\hline
+            Aufwand                         & 7-9         & 15\%       & 1.05-1.35       \\
+            Accessibility                   & 5        & 30\%       & 1.5          \\
+            Technische Umsetzbarkeit        & 10         & 15\%       & 1.5        \\
+            Sicherheit                      & 3-5         & 40\%       & 1.2-2       \\ \hline
+            \multicolumn{2}{l|}{Gesamtnote} & 100\%     & 5.25-6.35
+        \end{tabular}
+    \end{center}
+\end{table}
