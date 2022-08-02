@@ -39,7 +39,8 @@ Dieser Begriff hat sich entwickelt, da manche Tests nicht ''public'' sind. \cite
 
 \subsection{Arten von CAPTCHA}
 \label{ch:basics:captcha:arten}
-%Nachfolgend werden verschiedene Arten von CAPTCHAs grundlegend erläutert.
+Nachfolgend werden verschiedene Arten von CAPTCHAs grundlegend erläutert.
+\subsubsection*{Textbasierte CAPTCHA}
 Textbasierte CAPTCHA waren bereits 2008 die am häufigsten verwendete Art von CAPTCHA.
 Sie zeichnen sich durch eine Verzerrung eines Wortes oder mehreren Wörtern aus, sodass diese für Bilderkennungstools nicht erkennbar sind.
 Eine weitere Variante textbasierter CAPTCHA ist die einer einfachen Rechenaufgabe. 
@@ -71,10 +72,11 @@ Diese Techniken werden oftmals miteinander kombiniert.
     \caption{textbasierte Beispiele die ich unbedingt noch austauschen muss, weil sie aus \cite{surveyofresearch} sind}
 \end{figure}
 
+\subsubsection*{Bildbasierte CAPTCHA}
 Es gibt verschiedene Arten von bildbasierten CAPTCHAs. 
 Die wohl bekannteste ist ein in Quadrate aufgeteiltes Bild, wobei man jene Quadrate auswählen soll, welche einen bestimmten Gegenstand enthalten.
 Eine Variation dieses CAPTCHAs besteht aus einer Zahl verschiedener Bilder, von denen eine Teilmenge ebenfalls ein gesuchtes Objekt beinhalten -
-sogenannte ``Semantically Matching Images''. \cite[p.xx]{surveyofresearch}
+sogenannte ``Semantically Matching Images''. \cite[p.77]{surveyofresearch}
 In Abbildung \ref{fig:fortnite} sollen Hunde mit geschlossenen Augen ausgewählt werden,
 was die Notwendigkeit der Zunahme der Komplexität dieser CAPTCHAs gut widerspiegelt. 
 Außerdem kann auch auf das Erkennen von Gesichtern durch Menschen gesetzt werden.
@@ -87,36 +89,18 @@ Hierbei werden Mausbewegungen, die Geschwindigkeit dieser Bewegungen
 und die allgemeine Reaktionszeit überprüft.
 Dies geschieht, wie in Abbildung \ref{fig:genshin} (a) zu sehen,
 beispielsweise über das Verschieben eines Puzzleteils an die richtige Stelle.
-Auch hier kann in \cite[p.xx]{surveyofresearch} genauer nachgelesen werden.
+Andere Variationen dieser CAPTCHA-Art verlangen, dass ein Bild mithilfe eines Schiebereglers in die richtige Position gebracht werden soll,
+oder eine Kontur oder Bewegung mit der Maus nachverfolgt werden soll.
+Auch hier kann in \cite[p.77]{surveyofresearch} genauer nachgelesen werden.
 
+``Click-based CAPTCHA'' zeichnen sich dadurch aus, dass bestimmte Sym\-bole oder Zeichen auf einem komplexen Hintergrund, 
+teilweise auch in einer bestimmten Reihenfolge, angeklickt werden sollen.
+Hierbei wird auf ``anti-detection'' und ``anti-recognition'' gesetzt. \cite[p.77]{surveyofresearch}
+Ein Beispiel hierfür ist \ref{fig:genshin} (b).
+Eine weitere Form der click-basierten CAPTCHAs sieht vor, dass Objekte ausgewählt werden sollen,
+die beispielsweise die gleiche Textur besitzen oder räumlich nah an einem bestimmten anderen Objekt dargestellt sind. 
+Diese nennt man VTT\footnote[1]{VTT = Visual Turing Test} CAPTCHA. (Vgl. \cite[p.78]{surveyofresearch})
 %Discord CAPTCHA: PFERDE AUS WOLKEN!!!!!
-%Eine Form von bildbasierten sind Gamification captcha
-%B. Click-based CAPTCHA
-%In 2008, Richard Chow et al.[23] first proposed the clickbased CAPTCHA. It requires users to click characters in a
-%complex background according to a short hint, as shown in
-%Fig. 3. This CAPTCHA simplifies the user's operation,
-%shortens the passing time and minimizes users’ frustration.
-%Fig. 3. Examples of click-based CAPTCHAs
-%In general, click-based CAPTCHAs have two defense
-%mechanisms: anti-detection and anti-recognition. It is no
-%longer a difficult task to recognize characters correctly with
-%the development of machine learning. Therefore, almost all
-%security mechanisms focus on preventing attackers from
-%77
-%Authorized licensed use limited to: Fachhochschule FH Darmstadt. Downloaded on July 29,2022 at 08:34:41 UTC from IEEE Xplore. Restrictions apply.
-%correctly detecting characters. As shown in Fig. 3(c), the
-%CAPTCHA uses the style transfer technique [24] to embed
-%characters into the background to achieve the effect of hiding
-%the characters.
-%Recently, a novel click-based CAPTCHA named VTT was
-%proposed by Tencent (see Fig. 4). For a computer, it is
-%difficult to understand the semantic information and analyze
-%the image content as well as humans. In this regard, it seems a
-%good design. However, state-of-the-art research on visual
-%reasoning, such as [58] and [8], may break this scheme in the
-%near future.
-%Fig. 4. Examples of VTT CAPTCHAs
-
 
 \begin{figure}
     \centering
@@ -125,8 +109,13 @@ Auch hier kann in \cite[p.xx]{surveyofresearch} genauer nachgelesen werden.
     \label{fig:fortnite}
 \end{figure}
 
-% Gamification
-\cite{gamified}
+\subsubsection*{Gamification}
+Bei Gamification CAPTCHAs liegt der Fokus darauf, eventuell langwieriges Ausfüllen von CAPTCHAs so zu gestalten, dass Nutzer*innen dabei Spaß haben,
+und es nicht als lästige Aufgabe ansehen.
+\citeauthor{gamified} schreiben in ihrem Paper \citetitle{gamified} darüber, wie spielerisch lösbare CAPTCHAs die Nutzererfahrung verbessern können.
+Hierbei werden Ideen wie das Ordnen von Cartoon-Panelen näher erläutert.
+Nicht nur lesen Nutzer*innen den Cartoon, sie wollen bei Fehlschlägen durch den Quizcharakter des CAPTCHAs die richtige Lösung in einem weiteren Versuch finden,
+ohne über die Notwendigkeit der Wiederholung zur Verifizierung nachzudenken. \cite[p.41ff]{gamified}
 
 \begin{figure}
     \centering
@@ -137,14 +126,14 @@ Auch hier kann in \cite[p.xx]{surveyofresearch} genauer nachgelesen werden.
     \label{fig:genshin}
 \end{figure}
 
-%Videobasiert
+\subsubsection*{Videobasierte CAPTCHA}
 Eine weitere Form visueller CAPTCHAs sind videobasierte CAPTCHA. 
 Nutzer*innen müssen beispielsweise verschiedene Bewegungen erkennen, die im Video ausgeführt werden,
 oder auch angezeigte Werbung.
 Dabei werden verschiedene Antwortmöglichkeiten vorgegeben, welche durch Raten auch durch Bots erfolgreich absolviert werden können.
 Um dies zu umgehen gibt es Alternativen, die über das Beschreiben des gesehenen Videos funktionieren. \cite[p.xx]{surveyofresearch} 
 
-%Audiobasiert
+\subsubsection*{Audiobasierte CAPTCHA}
 Als Alternative von visuellen CAPTCHAs können audiobasierte CAPTCHA genutzt werden.
 Diese bieten sich vor allem für sehbehinderte Nutzer*innen an, welche bild- oder textbasierte CAPTCHA nur schwer oder gar nicht sehen und erkennen können.
 Oft wird hier Text-To-Speech verwendet, wobei die gehörten Wörter durch die Nutzer*innen wiederholt werden sollen.
@@ -155,6 +144,7 @@ Neben Techniken, die hauptsächlich auf das Hören ausgelegt sind, kann der Foku
 Es soll so erkannt werden, ob es sich um eine menschliche Stimme handelt.
 \cite[p.78]{surveyofresearch}
 
+\subsubsection*{CAPTCHA ohne direkten User-Input}
 Eine aktuell viel genutzte Form der Spam-Prävention ist reCAPTCHA v3 von Google. 
 Hier werden keine Turing Tests durchgeführt. 
 Vielmehr wird anhand verschiedener Faktoren bewertet, ob es sich um einen Bot oder einen Menschen handelt.
