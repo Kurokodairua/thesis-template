@@ -144,6 +144,17 @@ Neben Techniken, die hauptsächlich auf das Hören ausgelegt sind, kann der Foku
 Es soll so erkannt werden, ob es sich um eine menschliche Stimme handelt.
 \cite[p.78]{surveyofresearch}
 
+
+\begin{figure}
+    \centering
+    \includegraphics{gfx/mygraphics/unbedingtaustauschen2.png}
+    \caption{bildbasierte Beispiele die ich unbedingt noch austauschen muss, weil sie aus \cite{surveyofresearch} sind}
+    \label{fig:pr0grammcaptcha}
+\end{figure}
+
+\subsection{Alternativen zu klassischen CAPTCHA}
+Neben klassischen Turing Tests, gibt es auch weitere Möglichkeiten, Roboter und Menschen zu unterscheiden.
+
 \subsubsection*{CAPTCHA ohne direkten User-Input}
 Eine aktuell viel genutzte Form der Spam-Prävention ist reCAPTCHA v3 von Google. 
 Hier werden keine Turing Tests durchgeführt. 
@@ -155,17 +166,12 @@ Hier gilt: Je niedriger der Score, desto wahrscheinlicher handelt es sich um ein
 Laut Google selbst soll reCAPTCHA v3 eine sehr gute Nutzererfahrung bieten, da es kaum bis gar keine Zuarbeit durch den Nutzer verlangt. \cite{googleblog:recaptcha}
 ReCAPTCHA kann durch das Fehlen eines klassischen Turing Tests auch als eine CAPTCHA-Alternative interpretiert werden.
 
-\begin{figure}
-    \centering
-    \includegraphics{gfx/mygraphics/unbedingtaustauschen2.png}
-    \caption{bildbasierte Beispiele die ich unbedingt noch austauschen muss, weil sie aus \cite{surveyofresearch} sind}
-    \label{fig:pr0grammcaptcha}
-\end{figure}
-
-\subsection{Alternativen zu klassischen CAPTCHA}
-%anti spam plugins
-%multi faktor authentifikation
-%biometrie
+\subsubsection*{Anti-Spam-Plugins}
+\cite{blog:antispambee}
+\cite{doku:antispambee}
+\subsubsection*{Multi-Faktor-Authentifikation}
+\subsubsection*{Biometrie}
+\subsubsection*{Honeypots}
 Eine weitere Alternative zu klassischen CAPTCHA sind sogenannte Honeypots. 
 Geprägt wurde der Begriff erstmals im Kalten Krieg als Spionagetechnik eingesetzt wurde. \cite[p.2]{joshi:2011} 
 
@@ -178,7 +184,6 @@ So kann man HTML-Inputfelder durch CSS verstecken, sodass diese nur durch Bots, 
 und nicht durch Menschen, da diese das Textfeld nicht sehen. 
 Bei der Prüfung der Inputs kann nun überprüft werden, ob ein Bot in die Falle getappt ist. 
 Nachzulesen sind solche Verfahren in verschiedenen Blogposts, wie \cite{perry:2019}.
-
 
 \section{UX}
 
