@@ -65,14 +65,19 @@ Auf Basis dieser Erkenntnisse werden textbasierte CAPTCHAs wie in Tabelle \ref{t
 Bildbasierte CAPTCHAs benötigen etwas mehr Aufwand als beispielsweise textbasierte CAPTCHAs.
 Je nach verwendeter Technik muss auf eine Reihenfolge geachtet werden. 
 Es ist auch möglich, dass bei einigen Bildern genau darauf geachtet werden muss, ob die gegebenen Antworten wirklich korrekt sind.
-Gerade bei sehr detailreichen Bildern kann es vorkommen, dass auch ein Mensch mehrere Versuche benötigt. 
+In \autoref{fig:fortnite} ist beispielsweise nur schwer zu erkennen, ob manche Hunde wirklich geschlossene Augen haben, 
+oder ob der Kontrast zwischen Fell und Iris lediglich zu gering ist.
+Auch bei sehr detailreichen Bildern kann es vorkommen, dass auch ein Mensch mehrere Versuche benötigt, da eventuell nicht jedes gesuchte Objekt sofort erkannt wird.
+Deshalb werden bei sehr hoher Komplexität oder bei schwer zu erkennenden Bildern zwischen 2 und 4 Punkte abgezogen werden.
 Bei bildbasierten CAPTCHAs kommen zeitliche Begrenzungen eher selten vor. 
 
 Auch hier besteht die Problematik, dass Menschen mit eingeschränker Sicht keine Chance haben, diese Art von CAPTCHAs adäquat auszufüllen.
+Es gibt keine Möglichkeit, eine audiobasierte Alternative anzubieten. Durch diese schwerwiegende Einschränkung werden 5 Punkte abgezogen.
 Doch auch für Menschen ohne Behinderung kann es, wie bereits erwähnt, schwierig sein, sie erfolgreich zu absolvieren.
 Hier verschwimmen die Grenzen bei der Einschätzung des Aufwands und der Accessibility.
 
 Die technische Umsetzbarkeit erfolgt bei bildbasierten CAPTCHAs ebenfalls über APIs. (Vgl. \cite{hcaptcha} \cite{arkoselabs} \cite{geetest})
+Analog zu textbasierten CAPTCHAs kann deshalb volle Punktzahl vergeben werden.
 
 Mithilfe einer Support Vector Machine konnte die CAPTCHA-Methode Asirra von Microsoft (Vgl. \cite{elson2007asirra})
 mit einer Erfolgsrate von 82,7 Prozent absolviert werden. 
@@ -80,17 +85,20 @@ Die Nutzung von OpenCV ermöglicht, bestimmte Merkmale in Bildern algorithmisch 
 Ebenso kann durch Trainieren von künstlichen Intelligenzen (KI) durch große Datenmengen (Deep Learning) eine hohe Erfolgsquote erreicht werden,
 so konnten bereits mehrere CAPTCHAs von hochrangigen Unternehmen durch diese Weise erfolgreich erledigt durchgeführt werden.
 Die Nutzung von KI ist noch nicht allzu weit verbreitet, gewinnt aber immer mehr an Bedeutung.
+Da es bereits vermehrt sehr hohe Erfolgsquoten bei der Absolvierung von CAPTCHAs durch KIs und die Nutzung von OpenCV gab,
+müssen für beide Techniken zur Umgehung dieser CAPTCHAs 2 Punkte abgezogen werden.
 CAPTCHAs, welche über das Verschieben von Reglern funktionieren, sind durch ihr teilweise sehr aufwändiges Tracking von Mausbewegungen,
 Reaktionszeit und anderen Metadaten etwas sicherer als selection-based CAPTCHAs. \cite[p.77f]{surveyofresearch}
+
 
 \begin{table}[h!]
     \caption{Bewertungsmatrix für bildbasierte CAPTCHAs}
     \begin{center}
         \begin{tabular}{l|c}
             Kategorie                       & Bewertung \\\hline
-            Bedienfreundlichkeit            & 4-8         \\
+            Bedienfreundlichkeit            & 6-10         \\
             Accessibility                   & 5        \\
-            Technische Umsetzbarkeit        & 7         \\
+            Technische Umsetzbarkeit        & 10         \\
             Sicherheit                      & 6         
         \end{tabular}
     \end{center}
@@ -192,8 +200,6 @@ Auch hier wirkt sich die Entwicklung besserer Bilderkennungstools und das Traini
         \end{tabular}
     \end{center}
 \end{table}
-
-\section{Logik-CAPTCHA}
 
 \begin{table}[h!]
     \caption{Beispielhafte Bewertungsmatrix}
