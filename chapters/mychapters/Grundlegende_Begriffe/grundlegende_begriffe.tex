@@ -35,8 +35,7 @@ Dies wird durch die im vorherigen Kapitel bereits erläuterten Turing Tests erre
 Hier ist das Ziel, durch für Computer schwer, für Menschen jedoch leicht zu verarbeitende Medien, das Tracken von Mausbewegungen
 oder das Prüfen der Browseraktivität zu prüfen, ob es sich wirklich um eine*n menschliche*n Nutzer*in handelt.
 
-Fast identisch zu CAPTCHA sind sogenannte HIP – ''Human Interactive Proofs''. 
-Dieser Begriff hat sich entwickelt, da manche Tests nicht ''public'' sind. \cite[p.1]{chellapilla} \cite{tutorial} 
+Als Synonym zu CAPTCHA kann HIP verwendet werden - ''Human Interactive Proofs''. 
 
 \subsection{Arten von CAPTCHA}
 \label{ch:basics:captcha:arten}
@@ -45,7 +44,7 @@ Nachfolgend werden verschiedene Arten von CAPTCHAs grundlegend erläutert.
 Textbasierte CAPTCHA waren bereits 2008 die am häufigsten verwendete Art von CAPTCHA.
 Sie zeichnen sich durch eine Verzerrung eines Wortes oder mehreren Wörtern aus, sodass diese für Bilderkennungstools nicht erkennbar sind.
 Eine weitere Variante textbasierter CAPTCHA ist die einer einfachen Rechenaufgabe. 
-Auch hier soll erreicht werden, dass ein Bot die angegebenen Zahlen nicht korrekt erkennen kann und die Gleichung somit nicht lösen kann. \cite{usabilityofcaptchas} \cite[p.75]{surveyofresearch} \cite{shinde2018DIFFERENTTO} %TODO SEITEN!!!!!!!!!
+Auch hier soll erreicht werden, dass ein Bot die angegebenen Zahlen nicht korrekt erkennen kann und die Gleichung somit nicht lösen kann. \cite[p.1]{usabilityofcaptchas} \cite[p.75]{surveyofresearch} \cite{shinde2018DIFFERENTTO} %TODO SEITEN!!!!!!!!!
 
 Bei der Darstellung dieser Zeichen und Symbole können verschiedene Ansätze verfolgt werden.
 \citeauthor{surveyofresearch} beschreiben hierbei ``anti-segmentation techniques'' und ``anti-recognition techniques''. \cite[p.76]{surveyofresearch}
@@ -53,7 +52,7 @@ Bei der Darstellung dieser Zeichen und Symbole können verschiedene Ansätze ver
 Anti-Segmentation Techniques zielen darauf ab, das Separieren der einzelnen Buchstaben durch Algorithmen zu erschweren. 
 Um dies zu erreichen, gibt es verschiedene Herangehensweise.
 Eine von ihnen besteht daraus, dass nur die Konturen der verschiedenen Zeichen angezeigt werden, sodass diese nur von Menschen erkannt werden können,
-Bots hingegen wenig Chancen haben, diese korrekt zu unterscheiden. Diese Art von CAPTCHA nennen \citeauthor[p.76]{surveyofresearch} ``Hollow CAPTCHAs''. %Formulierung
+Bots hingegen wenig Chancen haben, diese korrekt zu unterscheiden. Diese Art von CAPTCHA nennen \citeauthor{surveyofresearch} ``Hollow CAPTCHAs''. %Formulierung
 Eine weitere Methode ist, Zeichen nah beieinander oder sogar überlappend darzustellen, 
 was von \citeauthor{surveyofresearch} als ``crowing characters together $($CCT$)$ and overlapping'' bezeichnet wird.
 Auch unruhige Hintergründe können Segmentierung behindern.
@@ -76,13 +75,13 @@ Diese Techniken werden oftmals miteinander kombiniert.
 \subsubsection*{Bildbasierte CAPTCHA}
 Es gibt verschiedene Arten von bildbasierten CAPTCHAs. 
 Die wohl bekannteste ist ein in Quadrate aufgeteiltes Bild, wobei man jene Quadrate auswählen soll, welche einen bestimmten Gegenstand enthalten.
-Eine Variation dieses CAPTCHAs besteht aus einer Zahl verschiedener Bilder, von denen eine Teilmenge ebenfalls ein gesuchtes Objekt beinhalten -
-sogenannte ``Semantically Matching Images''. \cite[p.77]{surveyofresearch}
+Eine Variation dieses CAPTCHAs besteht aus einer Zahl verschiedener Bilder, von denen eine Teilmenge ebenfalls ein gesuchtes Objekt beinhalten 
+und sich semantisch ähneln. 
 In Abbildung \ref{fig:fortnite} sollen Hunde mit geschlossenen Augen ausgewählt werden,
 was die Notwendigkeit der Zunahme der Komplexität dieser CAPTCHAs gut widerspiegelt. 
 Außerdem kann auch auf das Erkennen von Gesichtern durch Menschen gesetzt werden.
 Nähere Informationen zu genauen Techniken können in \cite[p.xx]{surveyofresearch} nachgelesen werden.
-Die beschriebenen ``selection-based CAPTCHA'' bezeichnen \citeauthor{surveyofresearch} als einfachste Form bildbasierter CAPTCHA.
+Die beschriebenen ``selection-based CAPTCHA'' bezeichnen \citeauthor{surveyofresearch} als einfachste Form bildbasierter CAPTCHA. \cite[p.77]{surveyofresearch}
 
 In Abbildung \ref{fig:genshin} sind zwei weitere Arten bildbasierter CAPTCHA dargestellt.
 Links ist ein ``drag-based CAPTCHA'' dargestellt.
@@ -94,7 +93,7 @@ Andere Variationen dieser CAPTCHA-Art verlangen, dass ein Bild mithilfe eines Sc
 oder eine Kontur oder Bewegung mit der Maus nachverfolgt werden soll.
 Auch hier kann in \cite[p.77]{surveyofresearch} genauer nachgelesen werden.
 
-``Click-based CAPTCHA'' zeichnen sich dadurch aus, dass bestimmte Sym\-bole oder Zeichen auf einem komplexen Hintergrund, 
+``Click-based CAPTCHA'' zeichnen sich dadurch aus, dass bestimmte Symbole oder Zeichen auf einem komplexen Hintergrund, 
 teilweise auch in einer bestimmten Reihenfolge, angeklickt werden sollen.
 Hierbei wird auf ``anti-detection'' und ``anti-recognition'' gesetzt. \cite[p.77]{surveyofresearch}
 Ein Beispiel hierfür ist \ref{fig:genshin} (b).
@@ -140,7 +139,8 @@ Diese bieten sich vor allem für sehbehinderte Nutzer*innen an, welche bild- ode
 Oft wird hier Text-To-Speech verwendet, wobei die gehörten Wörter durch die Nutzer*innen wiederholt werden sollen.
 Eine weitere Möglichkeit ist das Abspielen bestimmter Töne, wie die einer Glocke oder eines Klaviers. 
 Die kann auch in Kombination mit verschiedenen Hintergrundgeräuschen angewandt werden, was das Erkennen eines bestimmten Tons für Roboter zusätzlich erschwert.
-Außerdem gibt es Methoden, bei denen eine bestimmte Frage beantwortet werden muss, für die ``common sense'' $($dt. ``Gesunder Menschenverstand''$)$ notwendig ist.
+Außerdem gibt es Methoden, bei denen eine bestimmte Frage beantwortet werden muss, für die gesunder Menschenverstand notwendig ist. 
+Beispielsweise kann nach einer Aussage wie ``Sally hat einen Nagel in den Boden gehämmert.'' gefragt werden, ob dieser Nagel vertikal oder horizontal war. \cite[p.3]{commonsense}
 Neben Techniken, die hauptsächlich auf das Hören ausgelegt sind, kann der Fokus auch auf das Einsprechen von Phrasen durch die Nutzer*innen gelegt werden.
 Es soll so erkannt werden, ob es sich um eine menschliche Stimme handelt.
 \cite[p.78]{surveyofresearch}
@@ -162,7 +162,7 @@ Vielmehr wird anhand verschiedener Faktoren bewertet, ob es sich um einen Bot od
 Was genau diese Faktoren sind, gibt Google aus Sicherheitsgründen nicht Preis. 
 Denkbar ist jedoch die Betrachtung von Cookies oder der Häufigkeit von Anfragen durch die gegebene IP-Adresse.
 In der Dokumentation wird angegeben, dass ein Score von 0.0 bis 1.0 vergeben werden kann. 
-Hier gilt: Je niedriger der Score, desto wahrscheinlicher handelt es sich um einen Bot statt eines ``echten'' Nutzers. (Vgl. \cite{recaptchadoc})
+Hier gilt: Je niedriger der Score, desto wahrscheinlicher handelt es sich um einen Bot statt einer echten Nutzer*in. (Vgl. \cite{recaptchadoc})
 Laut Google selbst soll reCAPTCHA v3 eine sehr gute Nutzererfahrung bieten, da es kaum bis gar keine Zuarbeit durch den Nutzer verlangt. \cite{googleblog:recaptcha}
 ReCAPTCHA kann durch das Fehlen eines klassischen Turing Tests auch als eine CAPTCHA-Alternative interpretiert werden.
 
@@ -191,18 +191,18 @@ Eine weitere Alternative zu klassischen CAPTCHA sind sogenannte Honeypots.
 Geprägt wurde der Begriff erstmals im Kalten Krieg als Spionagetechnik eingesetzt wurde. \cite[p.2]{joshi:2011} 
 
 Auch heute werden Honeypots eingesetzt, und zwar in der IT-Sicherheit. 
-Oft werden sie mit ``Fallen'' assoziiert, welche Hacker anlocken sollen. 
-Dadurch können Angriffsarten analysiert werden und ''echte'' Systeme werden nicht angegriffen.
+Oft werden sie mit Fallen assoziiert, welche Hacker anlocken sollen. 
+Dadurch können Angriffsarten analysiert werden und echte Systeme werden nicht angegriffen.
 
 Doch auch im Kontext der Unterscheidung von Menschen und Maschine gibt es Honeypots. 
-So kann man HTML-Inputfelder durch CSS verstecken, sodass diese nur durch Bots, welche den Quellcode der Seite scannen, ausgefüllt werden 
+So kann man HTML-Inputfelder durch CSS oder JavaScript verstecken, sodass diese nur durch Bots, welche den Quellcode der Seite scannen, ausgefüllt werden 
 und nicht durch Menschen, da diese das Textfeld nicht sehen. 
 Bei der Prüfung der Inputs kann nun überprüft werden, ob ein Bot in die Falle getappt ist. 
 Nachzulesen sind solche Verfahren in verschiedenen Blogposts, wie \cite{perry:2019}.
 
-\section{UX}
+\section{User Experience}
 
-Die Abkürzung UX steht für \textbf{U}ser E\textbf{x}perience und beschreibt die Erfahrungen eines Users bei der Nutzung eines Systems. 
+User Experience (UX) beschreibt die Erfahrungen eines Users bei der Nutzung eines Systems. 
 Das Ziel ist, diese Nutzererfahrung möglichst positiv zu halten. 
 Im Kontext dieser Ausarbeitung wird die Definition des  ``international standard on ergonomics of human-system interaction'' $($ISO 9241-210$)$
 aus dem Jahre 2010 verwendet. 
