@@ -17,14 +17,14 @@ So können beispielsweise ein kleines ``d'' und ein ``cl'' unter Umständen auch
 
 \citeauthor{surveyofresearch} schreiben in \cite[p.xx]{surveyofresearch}, 
 dass Hollow CAPTCHA durch eine Kombination von Segmentierung und Recognition %TODO
-mit einer Erfolgsrate von 36 bis 89 Prozent durch Bots gelöst werden konnten. (Vgl. \cite{gao}) %TODO
+mit einer Erfolgsrate von 36 bis 89 Prozent durch Bots gelöst werden konnten. (Vgl. \cite[p.76ff]{surveyofresearch}) %TODO
 
 Ähnlich verhält es sich bei Überlappungen und CCT (``crowing characters together''):
 Hier konnte bei verschiedenen Technologien mithilfe von unterschiedlichen Methoden
-eine Erfolgsquote von 27,1 bis 53,2 Prozent erreicht werden. \cite[p.xx]{surveyofresearch} %Quellen aus Text noch mit aufnehmen
+eine Erfolgsquote von 27,1 bis 53,2 Prozent erreicht werden. \cite[p.76]{surveyofresearch} %Quellen aus Text noch mit aufnehmen
 
 Auch bei ``noise backgrounds'' und ``two-layer structures'' konnten solche Ergebnisse erzielt werden. 
-(Vgl. \cite[p.xx]{surveyofresearch} \cite{gao})
+(Vgl. \cite[p.76]{surveyofresearch})
 
 %Multifonts, Rotation, Waving, Large character set \cite{surveyofresearch}
 
@@ -55,39 +55,6 @@ Auch bei ``noise backgrounds'' und ``two-layer structures'' konnten solche Ergeb
 %Selection-based CAPTCHAs are simple and convenient
 %for users to operate. However, they have gradually become
 %vulnerable due to the development of deep learning.
-
-\begin{table}[h!]
-    \caption{Beispielhafte Bewertungsmatrix}
-    \begin{center}
-        \begin{tabular}{l|c}
-            Kategorie                       & Bewertung \\\hline
-            Aufwand                         & 7         \\
-            Accessibility                   & 10        \\
-            Technische Umsetzbarkeit        & 3         \\
-            Sicherheit                      & 9         
-        \end{tabular}
-    \end{center}
-\end{table}
-
-%B. Video-based CAPTCHA
-%In video-based CAPTCHAs, users are provided a video
-%file, and they should choose one option that best matches the
-%video. Motion CAPTCHAs (Fig. 7(a)) proposed in [46] asks
-%users to select the sentence that describes the motion of the
-%person in the video. Rao et al. [55] proposed a video
-%CAPTCHA (Fig. 7(b)) based on advertisement recognition.
-%Both CAPTCHAs need users to select from the options%
-%provided. That is, these schemes can be broken by random
-%guessing. Contrastly, reference [42] presented a video-based
-%CAPTCHA (Fig. 7(c)), which asks users to type three words
-%that best describe a video.
-%Fig. 7. Examples of video-based CAPTCHAs
-%Due to recent advances, bandwidth and video analysis
-%technology no longer limit the development of video-based
-%CAPTCHAs. In 2015, Sano et al. first used HMM-based
-%(hidden Markov model-based) attacks to successfully attack a
-%video-based reCAPTCHA from Google with a 31.75%
-%success rate [65]. 
 
 %In 2008, Richard Chow et al.[23] first proposed the clickbased CAPTCHA. It requires users to click characters in a
 %complex background according to a short hint, as shown in
@@ -134,6 +101,60 @@ Auch bei ``noise backgrounds'' und ``two-layer structures'' konnten solche Ergeb
 %operation. Therefore, it can be easily imitated. The later dragbased CAPTCHAs usually incorporate some user background
 %data analysis. At present, this seems to be the future
 %development trend for CAPTCHAs
+
+\begin{table}[h!]
+    \caption{Beispielhafte Bewertungsmatrix}
+    \begin{center}
+        \begin{tabular}{l|c}
+            Kategorie                       & Bewertung \\\hline
+            Aufwand                         & 4-8         \\
+            Accessibility                   & 5        \\
+            Technische Umsetzbarkeit        & 7         \\
+            Sicherheit                      & 3         
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\section*{Videobasierte CAPTCHA}
+Videobasierte CAPTCHAs brauchen eine gute Internetverbindung, um abgespielt werden zu können.
+Außerdem ist es nicht für jede Nutzer*in möglich zu erkennen, was genau im Video vor sich geht.
+
+Technische Umsetzbarkeit muss ich nachgucken\dots
+
+Bereits im Jahre 2015 gab es Verfahren, mit denen ein videobasiertes reCAPTCHA mit 31,75 prozentiger Erfolgsrate gebrochen werden konnte. \cite[p.xx]{surveyofresearch}
+
+%B. Video-based CAPTCHA
+%In video-based CAPTCHAs, users are provided a video
+%file, and they should choose one option that best matches the
+%video. Motion CAPTCHAs (Fig. 7(a)) proposed in [46] asks
+%users to select the sentence that describes the motion of the
+%person in the video. Rao et al. [55] proposed a video
+%CAPTCHA (Fig. 7(b)) based on advertisement recognition.
+%Both CAPTCHAs need users to select from the options%
+%provided. That is, these schemes can be broken by random
+%guessing. Contrastly, reference [42] presented a video-based
+%CAPTCHA (Fig. 7(c)), which asks users to type three words
+%that best describe a video.
+%Fig. 7. Examples of video-based CAPTCHAs
+%Due to recent advances, bandwidth and video analysis
+%technology no longer limit the development of video-based
+%CAPTCHAs. In 2015, Sano et al. first used HMM-based
+%(hidden Markov model-based) attacks to successfully attack a
+%video-based reCAPTCHA from Google with a 31.75%
+%success rate [65]. 
+
+\begin{table}[h!]
+    \caption{Bewertungsmatrix für videobasierte CAPTCHA}
+    \begin{center}
+        \begin{tabular}{l|c}
+            Kategorie                       & Bewertung \\\hline
+            Aufwand                         & 9         \\
+            Accessibility                   & 3        \\
+            Technische Umsetzbarkeit        & 5         \\
+            Sicherheit                      & 4         
+        \end{tabular}
+    \end{center}
+\end{table}
 
 \section{Audiobasierte CAPTCHA}
 
