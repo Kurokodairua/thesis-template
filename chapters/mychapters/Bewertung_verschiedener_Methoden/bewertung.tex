@@ -5,6 +5,7 @@ Multi-Faktor-Authentifikation und biometrische Verfahren auf Basis der zuvor ent
 Dafür wird sich an den in Kapitel \ref{ch:matrix} aufgestellten Leitfragen soweit möglich orientiert.
 
 \section{Textbasierte CAPTCHA}
+\label{ch:bewertung:text}
 Durch ihren simplen Aufbau sind textbasierte CAPTCHAs relativ einfach zu verstehen.
 Es sind wenige Clicks nötig, um einen solchen CAPTCHA auszufüllen. 
 Bei optisch verzerrten Wörtern besteht jedoch die Möglichkeit, dass es zu Missverständnissen kommen kann.
@@ -54,6 +55,8 @@ eine Erfolgsquote von 27,1 bis 53,2 Prozent erreicht werden. \cite[p.76]{surveyo
 
 Auch bei ``noise backgrounds'' und ``two-layer structures'' konnten solche Ergebnisse erzielt werden. 
 (Vgl. \cite[p.76]{surveyofresearch})
+Da es bereits viele sehr erfolgreiche Methoden gibt, um diese Art der CAPTCHAs durch Bots absolvieren zu lassen,
+werden 5-7 Punkte im Kontext Sicherheit abgezogen. 
 
 Auf Basis dieser Erkenntnisse werden textbasierte CAPTCHAs wie in Tabelle \ref{table:matrix:text} bewertet.
 
@@ -74,6 +77,7 @@ Auf Basis dieser Erkenntnisse werden textbasierte CAPTCHAs wie in Tabelle \ref{t
 \end{table}
 
 \section{Bildbasierte CAPTCHA}
+\label{ch:bewertung:bild}
 Bildbasierte CAPTCHAs benötigen etwas mehr Aufwand als beispielsweise textbasierte CAPTCHAs.
 Je nach verwendeter Technik muss auf eine Reihenfolge geachtet werden. 
 Es ist auch möglich, dass bei einigen Bildern genau darauf geachtet werden muss, ob die gegebenen Antworten wirklich korrekt sind.
@@ -87,16 +91,16 @@ oder ob der Kontrast zwischen Fell und Iris lediglich zu gering ist.
 \end{figure}
 
 Bei sehr detailreichen Bildern kann es vorkommen, dass auch ein Mensch mehrere Versuche benötigt, da eventuell nicht jedes gesuchte Objekt sofort erkannt wird.
-Deshalb werden bei sehr hoher Komplexität oder bei schwer zu erkennenden Bildern zwischen 2 und 4 Punkte abgezogen werden.
+Deshalb werden bei sehr hoher Komplexität oder bei schwer zu erkennenden Bildern zwischen 2 und 4 Punkte bei der Bedienfreundlichkeit abgezogen werden.
 Bei bildbasierten CAPTCHAs kommen zeitliche Begrenzungen eher selten vor. 
 
 Auch hier besteht die Problematik, dass Menschen mit eingeschränker Sicht keine Chance haben, diese Art von CAPTCHAs adäquat auszufüllen.
-Es gibt keine Möglichkeit, eine audiobasierte Alternative anzubieten. Durch diese schwerwiegende Einschränkung werden 5 Punkte abgezogen.
+Es gibt keine Möglichkeit, eine audiobasierte Alternative anzubieten. Durch diese schwerwiegende Einschränkung werden 5 Punkte in der Kategorie Accessibility abgezogen.
 Doch auch für Menschen ohne Behinderung kann es, wie bereits erwähnt, schwierig sein, sie erfolgreich zu absolvieren.
-Hier verschwimmen die Grenzen bei der Einschätzung des Aufwands und der Accessibility.
+Hier verschwimmen die Grenzen bei der Einschätzung der Bedienfreundlichkeit und der Accessibility.
 
 Die technische Umsetzbarkeit erfolgt bei bildbasierten CAPTCHAs ebenfalls über APIs. (Vgl. \cite{hcaptcha} \cite{arkoselabs} \cite{geetest})
-Analog zu textbasierten CAPTCHAs kann deshalb volle Punktzahl vergeben werden.
+Analog zu textbasierten CAPTCHAs kann bei der technischen Umsetzung deshalb volle Punktzahl vergeben werden.
 
 Mithilfe einer Support Vector Machine konnte die CAPTCHA-Methode Asirra von Microsoft (Vgl. \cite{elson2007asirra})
 mit einer Erfolgsrate von 82,7 Prozent absolviert werden. 
@@ -105,10 +109,11 @@ Ebenso kann durch Trainieren von künstlichen Intelligenzen (KI) durch große Da
 so konnten bereits mehrere CAPTCHAs von hochrangigen Unternehmen durch diese Weise erfolgreich erledigt durchgeführt werden.
 Die Nutzung von KI ist noch nicht allzu weit verbreitet, gewinnt aber immer mehr an Bedeutung.
 Da es bereits vermehrt sehr hohe Erfolgsquoten bei der Absolvierung von CAPTCHAs durch KIs und die Nutzung von OpenCV gab,
-müssen für beide Techniken zur Umgehung dieser CAPTCHAs 2 Punkte abgezogen werden.
+müssen für beide Techniken zur Umgehung dieser CAPTCHAs im Kontext Sicherheit 2 Punkte abgezogen werden.
 CAPTCHAs, welche über das Verschieben von Reglern funktionieren, sind durch ihr teilweise sehr aufwändiges Tracking von Mausbewegungen,
 Reaktionszeit und anderen Metadaten etwas sicherer als selection-based CAPTCHAs. \cite[p.77f]{surveyofresearch}
 
+In \autoref{table:matrix:bild} kann die entsprechende Benotung nachvollzogen werden.
 
 \begin{table}[h!]
     \caption{Bewertungsmatrix für bildbasierte CAPTCHAs}
@@ -121,6 +126,7 @@ Reaktionszeit und anderen Metadaten etwas sicherer als selection-based CAPTCHAs.
             Sicherheit                      & 6         
         \end{tabular}
     \end{center}
+    \label{table:matrix:bild}
 \end{table}
 
 \section{Videobasierte CAPTCHA}
@@ -129,7 +135,7 @@ da man eventuell nicht alle Aspekte bei dem ersten Durchlauf mitbekommt.
 Wie ein Video als CAPTCHA auf Nutzer*innen wirken kann ist nicht genau festzulegen.
 Einerseits handelt es sich dabei um etwas aufregenderes als einen simplen Text, andererseits kann dies auch schnell frustrieren.
 
-Videobasierte CAPTCHAs brauchen eine schnelle Internetverbindung, um abgespielt werden zu können. %definiere gut
+Videobasierte CAPTCHAs brauchen eine schnelle Internetverbindung, um abgespielt werden zu können. 
 Desweiteren ist es nicht für jede Nutzer*in möglich zu erkennen, was genau im Video vor sich geht.
 Dies führt dazu, dass videobasierte CAPTCHAs eine geringere Accessibility haben als dies bei anderen CAPTCHAs der Fall ist. 
 
@@ -158,78 +164,38 @@ Da videobasierte CAPTCHAs in der heutigen Zeit kaum noch von Bedeutung sind, wer
 
 \section{Audiobasierte CAPTCHA}
 \label{ch:bewertung:audio}
+Audiobasierte CAPTCHAs werden meist als Alternative für blinde Menschen eingesetzt.
+Doch auch für sehende Nutzer*innen sind sie leicht zu absolvieren.
+Auch zeitliche Begrenzungen treten nicht auf.
+Bei einer sehr komplexen Kombination von Tönen kann ein Punkt bei der Bedienfreundlichkeit abgezogen werden müssen.
 
-“Buster” ist ein Browser Addon, das reCAPTCHA audio challenges per speech recognition löst.
-%
-%A. Audio-based CAPTCHA
-%This CAPTCHA is usually considered an alternative to a
-%visual CAPTCHA in the case of visually impaired users [44].
-%Users in most audio-based CAPTCHAs play the role of
-%listeners, and they are required to complete the specified
-%challenge based on what they have heard. A spoken
-%CAPTCHA system was introduced in [45]. This system
-%converts a selected word into speech using a Text-To-Speech
-%(TTS) system, then plays the sound clip to users and asks them
-%to say the word. In 2012, the SoundsRight audio CAPTCHA
-%(Fig. 6(a)) provided in [48] asks users to identify a specific
-%sound, such as the sound of a bell or a piano. This work has
-%increased the success rates in audio Captchas from less than
-%50% to over 90% for blind users. Meutzner et al. presented a
-%new type of audio CAPTCHA [50] that uses additional
-%nonsense speech sounds that are confusing for speech
-%recognizers, while being less critical for human listeners. In
-%2016, they also proposed a nonspeech audio CAPTCHA [61],
-%which is entirely based on the classification of sound events
-%mixed into an environmental scene. Moreover, the HuMan
-%CAPTCHA designed in [60] asks users to answer the
-%presented questions by combining ambient noise and common
-%sense knowledge. There is another type of audio-based
-%CAPTCHA in which users play the role of speakers and are
-%required to pronounce rather than simply listen. For instance,
-%Gao et al. [47] proposed a new sound-based CAPTCHA (Fig.
-%6(b)) that exploits the differences between a human voice a
-%synthetic voice. A user is required to read out a given sentence
-%rather than listening an audio file.
-%Fig. 6. Examples of audio-based CAPTCHAs
-%Attack and defense always go together. A two-stage attack
-%for the listener model can always obtain a good attack result.
-%In detail, the audio-based CAPTCHA is segmented into
-%several regions regarding the location of each spoken word
-%first. Then, the regions are recognized by automatic speech
-%recognition programs. Tam et al. achieved success rates of up
-%to 71% (Google Audio CAPTCHA, reCAPTCHA Audio
-%CAPTCHA, Digg CAPTCHA)[44]. Bursztein et al. achieved
-%success rates of 45%, 49% and 83% on the CAPTCHAs of
-%Yahoo, Microsoft and eBay, respectively[49]. Some
-%78
-%Authorized licensed use limited to: Fachhochschule FH Darmstadt. Downloaded on July 29,2022 at 08:34:41 UTC from IEEE Xplore. Restrictions apply.
-%researchers have even proposed that most of the digit-based
-%audio CAPTCHAs are successfully broken with success rates
-%between 50%-90% [44][52][54].
+Accessibility ist bei audiobasierten CAPTCHAs relativ gut. 
+Jedoch werden hier gehörlose Menschen ausgeschlossen, sofern es sich um ausschließlich audiobasierte CAPTCHAs handelt.
+Eine Kombination von visuellen und audiobasierten CAPTCHAs wurde bereits in \autoref{ch:bewertung:text} in die Betrachtung mit einbezogen,
+da die textbasierten CAPTCHAs hier eher im Fokus liegen.
+Hier werden ebenfalls durch diese schwere Einschränkung 5 Punkte abgezogen.
+Zusätzlich ist zu beachten, dass abgespielte Töne vor allem in der Öffentlichkeit, beispielsweise auf Mobilgeräten, als störend für andere wahrgenommen werden kann,
+und dies eventuell zu einem Meiden dieser CAPTCHAs führen kann.
+Auch hierfür wird deshalb ein Punkt abgezogen werden. 
 
+technische Umsetzung \dots
+
+Sicherheit ist bei audiobasierten CAPTCHAs ein Problem.
+Es gibt mehrere Berichte über Algorithmen, welche verschiedene audiobasierte CAPTCHAs selbstständig lösen können.
+Hierbei konnten abhängig von der verwendeten Technik Erfolgsraten von 45 bis zu 90 Prozent erreicht werden.
+Beispielsweise ist “Buster” ein Browser Addon, das reCAPTCHA audio challenges per speech recognition löst.
+Da bereits sehr viele audiobasierte CAPTCHAs erfolgreich durch Bots absolivert werden konnten,
+müssen hier ebenfalls 5 Punkte abgezogen werden.
 
 \begin{table}[h!]
     \caption{Beispielhafte Bewertungsmatrix}
     \begin{center}
         \begin{tabular}{l|c}
             Kategorie                       & Bewertung \\\hline
-            Bedienfreundlichkeit                         & 7         \\
-            Accessibility                   & 10        \\
+            Bedienfreundlichkeit            & 9-10         \\
+            Accessibility                   & 4        \\
             Technische Umsetzbarkeit        & 3         \\
-            Sicherheit                      & 9         
-        \end{tabular}
-    \end{center}
-\end{table}
-
-\begin{table}[h!]
-    \caption{Beispielhafte Bewertungsmatrix}
-    \begin{center}
-        \begin{tabular}{l|c}
-            Kategorie                       & Bewertung \\\hline
-            Bedienfreundlichkeit                         & 7         \\
-            Accessibility                   & 10        \\
-            Technische Umsetzbarkeit        & 3         \\
-            Sicherheit                      & 9         
+            Sicherheit                      & 5         
         \end{tabular}
     \end{center}
 \end{table}
