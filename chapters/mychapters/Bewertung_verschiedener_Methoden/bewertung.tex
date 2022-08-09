@@ -9,6 +9,18 @@ Durch ihren simplen Aufbau sind textbasierte CAPTCHAs relativ einfach zu versteh
 Es sind wenige Clicks nötig, um einen solchen CAPTCHA auszufüllen. 
 Bei optisch verzerrten Wörtern besteht jedoch die Möglichkeit, dass es zu Missverständnissen kommen kann.
 So können beispielsweise ein kleines ``d'' und ein ``cl'' unter Umständen auch von Menschen verwechselt werden. 
+In \autoref{fig:schwierig} ist ein ähnlicher Fall dargestellt. 
+Wenn man sich nicht bewusst ist, dass hier nur korrekte Wörter der englischen Sprache erfragt werden,
+kann das zweite Wort (``blotch'') auch als ``bbtch'' interpretiert werden.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics{gfx/mygraphics/schwierig4.png}
+    \caption{Textbasierter CAPTCHA aus der Securimage phpCaptcha Demo, welcher nicht eindeutig zu beantworten ist}
+    \label{fig:schwierig}
+\end{figure}
+
+Damit würde der CAPTCHA nicht korrekt beantwortet werden können.
 Diese Arten der textbasierten CAPTCHAs können gegebenenfalls nicht eindeutig beantwortet werden.
 Aus diesem Grund kann bei der Bedienfreundlichkeit keine volle Punktzahl gegeben werden,
 sondern es müssen je nach Komplexität ein bis zwei Punkte abgezogen werden.
@@ -67,7 +79,14 @@ Je nach verwendeter Technik muss auf eine Reihenfolge geachtet werden.
 Es ist auch möglich, dass bei einigen Bildern genau darauf geachtet werden muss, ob die gegebenen Antworten wirklich korrekt sind.
 In \autoref{fig:fortnite} ist beispielsweise nur schwer zu erkennen, ob manche Hunde wirklich geschlossene Augen haben, 
 oder ob der Kontrast zwischen Fell und Iris lediglich zu gering ist.
-Auch bei sehr detailreichen Bildern kann es vorkommen, dass auch ein Mensch mehrere Versuche benötigt, da eventuell nicht jedes gesuchte Objekt sofort erkannt wird.
+
+\begin{figure}[h!]
+    \centering\includegraphics[width=5cm]{gfx/mygraphics/fuerfortnite.png}
+ \caption{Bildbasierter CAPTCHA von hCaptcha bei Login auf der Epic Games Website}
+      \label{fig:fortnite}
+\end{figure}
+
+Bei sehr detailreichen Bildern kann es vorkommen, dass auch ein Mensch mehrere Versuche benötigt, da eventuell nicht jedes gesuchte Objekt sofort erkannt wird.
 Deshalb werden bei sehr hoher Komplexität oder bei schwer zu erkennenden Bildern zwischen 2 und 4 Punkte abgezogen werden.
 Bei bildbasierten CAPTCHAs kommen zeitliche Begrenzungen eher selten vor. 
 
@@ -110,7 +129,7 @@ da man eventuell nicht alle Aspekte bei dem ersten Durchlauf mitbekommt.
 Wie ein Video als CAPTCHA auf Nutzer*innen wirken kann ist nicht genau festzulegen.
 Einerseits handelt es sich dabei um etwas aufregenderes als einen simplen Text, andererseits kann dies auch schnell frustrieren.
 
-Videobasierte CAPTCHAs brauchen eine ausreichende Internetverbindung, um abgespielt werden zu können. %definiere gut
+Videobasierte CAPTCHAs brauchen eine schnelle Internetverbindung, um abgespielt werden zu können. %definiere gut
 Desweiteren ist es nicht für jede Nutzer*in möglich zu erkennen, was genau im Video vor sich geht.
 Dies führt dazu, dass videobasierte CAPTCHAs eine geringere Accessibility haben als dies bei anderen CAPTCHAs der Fall ist. 
 
@@ -123,18 +142,19 @@ wurden zwar einige Änderungen an NuCaptcha vorgenommen, jedoch existiert zum he
 Im Jahre 2015 gab es Verfahren, mit denen ein videobasiertes reCAPTCHA mit 31,75 prozentiger Erfolgsrate gebrochen werden konnte. 
 Auch hier wirkt sich die Entwicklung besserer Bilderkennungstools und das Trainieren von KI negativ auf die Sicherheit aus.\cite[p.xx]{surveyofresearch}
 
-\begin{table}[h!]
-    \caption{Bewertungsmatrix für videobasierte CAPTCHA}
-    \begin{center}
-        \begin{tabular}{l|c}
-            Kategorie                       & Bewertung \\\hline
-            Bedienfreundlichkeit            & 6         \\
-            Accessibility                   & 3        \\
-            Technische Umsetzbarkeit        & 2         \\
-            Sicherheit                      & 4         
-        \end{tabular}
-    \end{center}
-\end{table}
+Da videobasierte CAPTCHAs in der heutigen Zeit kaum noch von Bedeutung sind, werden diese nicht weiter betrachtet.
+%\begin{table}[h!]
+%    \caption{Bewertungsmatrix für videobasierte CAPTCHA}
+%    \begin{center}
+%        \begin{tabular}{l|c}
+%            Kategorie                       & Bewertung \\\hline
+%            Bedienfreundlichkeit            & 6         \\
+%            Accessibility                   & 3        \\
+%            Technische Umsetzbarkeit        & 2         \\
+%            Sicherheit                      & 4         
+%        \end{tabular}
+%    \end{center}
+%\end{table}
 
 \section{Audiobasierte CAPTCHA}
 \label{ch:bewertung:audio}

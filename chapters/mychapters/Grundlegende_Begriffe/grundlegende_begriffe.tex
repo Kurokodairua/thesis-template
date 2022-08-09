@@ -33,7 +33,7 @@ Sie werden genutzt, um Webseiten vor Angriffen durch Bots zu schützen.
 Bots sind Computerprogramme, welche automatisiert Algorithmen abarbeiten und dabei unter anderem Eingaben tätigt.
 Dies wird durch die im vorherigen Kapitel bereits erläuterten Turing Tests erreicht. 
 Hier ist das Ziel, durch für Computer schwer, für Menschen jedoch leicht zu verarbeitende Medien, das Tracken von Mausbewegungen
-oder das Prüfen der Browseraktivität zu prüfen, ob es sich wirklich um eine*n menschliche*n Nutzer*in handelt.
+oder das Prüfen der Browseraktivität zu prüfen, ob es sich wirklich um eine menschliche Nutzer*in handelt.
 
 Als Synonym zu CAPTCHA kann HIP verwendet werden - ''Human Interactive Proofs''. 
 
@@ -48,6 +48,15 @@ Auch hier soll erreicht werden, dass ein Bot die angegebenen Zahlen nicht korrek
 
 Bei der Darstellung dieser Zeichen und Symbole können verschiedene Ansätze verfolgt werden.
 \citeauthor{surveyofresearch} beschreiben hierbei ``anti-segmentation techniques'' und ``anti-recognition techniques''. \cite[p.76]{surveyofresearch}
+
+\begin{figure}[h!]
+    \centering
+    \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/maths.png}}
+    \qquad
+    \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/textbased.png}}
+    \caption{Textbasierte CAPTCHAs aus der Securimage phpCaptcha Demo}   
+    \label{fig:textbased}
+\end{figure}
 
 Anti-Segmentation Techniques zielen darauf ab, das Separieren der einzelnen Buchstaben durch Algorithmen zu erschweren. 
 Um dies zu erreichen, gibt es verschiedene Herangehensweise.
@@ -66,11 +75,7 @@ wodurch das Finden von eindeutigen Lösungen erschwert werden kann.
 Diese Techniken werden oftmals miteinander kombiniert.
 \cite[p.77]{surveyofresearch}
 
-\begin{figure}
-    \centering
-    \includegraphics{gfx/mygraphics/unbedingtaustauschen1.png}
-    \caption{textbasierte Beispiele die ich unbedingt noch austauschen muss, weil sie aus \cite{surveyofresearch} sind}
-\end{figure}
+Eine Kombination von Anti-Segmentation und Anti-Recognition Techniken ist in \autoref{fig:textbased} zu sehen.
 
 \subsubsection*{Bildbasierte CAPTCHA}
 Es gibt verschiedene Arten von bildbasierten CAPTCHAs. 
@@ -83,6 +88,12 @@ Außerdem kann auch auf das Erkennen von Gesichtern durch Menschen gesetzt werde
 Nähere Informationen zu genauen Techniken können in \cite[p.xx]{surveyofresearch} nachgelesen werden.
 Die beschriebenen ``selection-based CAPTCHA'' bezeichnen \citeauthor{surveyofresearch} als einfachste Form bildbasierter CAPTCHA. \cite[p.77]{surveyofresearch}
 
+\begin{figure}[h!]
+    \centering\includegraphics[width=5cm]{gfx/mygraphics/platzhalter.png}
+     \caption{platzhalter selectionbased captcha}
+      \label{fig:selectionbased}
+\end{figure}
+
 In Abbildung \ref{fig:genshin} sind zwei weitere Arten bildbasierter CAPTCHA dargestellt.
 Links ist ein ``drag-based CAPTCHA'' dargestellt.
 Hierbei werden Mausbewegungen, die Geschwindigkeit dieser Bewegungen
@@ -93,6 +104,15 @@ Andere Variationen dieser CAPTCHA-Art verlangen, dass ein Bild mithilfe eines Sc
 oder eine Kontur oder Bewegung mit der Maus nachverfolgt werden soll.
 Auch hier kann in \cite[p.77]{surveyofresearch} genauer nachgelesen werden.
 
+\begin{figure}[h!]
+    \centering
+    \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/genshincaptcha.png}}
+    \qquad
+    \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/hoyoversecaptcha.png}}
+    \caption{Bildbasierte CAPTCHA von GeeTest bei Login in Genshin Impact $($a$)$ und dem Forum Hoyolab $($b$)$}   
+    \label{fig:genshin}
+\end{figure}
+
 ``Click-based CAPTCHA'' zeichnen sich dadurch aus, dass bestimmte Symbole oder Zeichen auf einem komplexen Hintergrund, 
 teilweise auch in einer bestimmten Reihenfolge, angeklickt werden sollen.
 Hierbei wird auf ``anti-detection'' und ``anti-recognition'' gesetzt. \cite[p.77]{surveyofresearch}
@@ -102,11 +122,11 @@ die beispielsweise die gleiche Textur besitzen oder räumlich nah an einem besti
 Diese nennt man VTT\footnote[1]{VTT = Visual Turing Test} CAPTCHA. (Vgl. \cite[p.78]{surveyofresearch})
 %Discord CAPTCHA: PFERDE AUS WOLKEN!!!!!
 
-\begin{figure}
-    \centering
-    \includegraphics{gfx/mygraphics/fuerfortnite.png}
-    \caption{Bildbasierter CAPTCHA bei Login auf der Epic Games Website}   
-    \label{fig:fortnite}
+\begin{figure}[h!]
+        \centering
+        \includegraphics[width=5cm]{gfx/mygraphics/raeumlich.png} 
+    \caption{Bildbasierter CAPTCHA aus der GeeTest Demo}
+    \label{fig:geetest}
 \end{figure}
 
 \subsubsection*{Gamification}
@@ -117,14 +137,6 @@ Hierbei werden Ideen wie das Ordnen von Cartoon-Panelen näher erläutert.
 Nicht nur lesen Nutzer*innen den Cartoon, sie wollen bei Fehlschlägen durch den Quizcharakter des CAPTCHAs die richtige Lösung in einem weiteren Versuch finden,
 ohne über die Notwendigkeit der Wiederholung zur Verifizierung nachzudenken. \cite[p.41ff]{gamified}
 
-\begin{figure}
-    \centering
-    \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/genshincaptcha.png}}
-    \qquad
-    \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/hoyoversecaptcha.png}}
-    \caption{Bildbasierte CAPTCHA bei Login in Genshin Impact $($a$)$ und dem Forum Hoyolab $($b$)$}   
-    \label{fig:genshin}
-\end{figure}
 
 \subsubsection*{Videobasierte CAPTCHA}
 Eine weitere Form visueller CAPTCHAs sind videobasierte CAPTCHA. 
@@ -144,13 +156,6 @@ Beispielsweise kann nach einer Aussage wie ``Sally hat einen Nagel in den Boden 
 Neben Techniken, die hauptsächlich auf das Hören ausgelegt sind, kann der Fokus auch auf das Einsprechen von Phrasen durch die Nutzer*innen gelegt werden.
 Es soll so erkannt werden, ob es sich um eine menschliche Stimme handelt.
 \cite[p.78]{surveyofresearch}
-
-\begin{figure}
-    \centering
-    \includegraphics{gfx/mygraphics/unbedingtaustauschen2.png}
-    \caption{bildbasierte Beispiele die ich unbedingt noch austauschen muss, weil sie aus \cite{surveyofresearch} sind}
-    \label{fig:pr0grammcaptcha}
-\end{figure}
 
 \subsection{Alternativen zu klassischen CAPTCHA}
 Neben klassischen Turing Tests, gibt es auch weitere Möglichkeiten, Roboter und Menschen zu unterscheiden.
