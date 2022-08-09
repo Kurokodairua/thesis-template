@@ -82,16 +82,20 @@ die das Ausfüllen von CAPTCHAs erschweren oder gar unmöglich machen. Auch hier
 da diese für schwerhörige oder gehörlose Menschen nicht absolvierbar sind.
 Ebenso müssen visuelle CAPTCHA für Screenreader optimiert werden, um sie für blinde Nutzer*innen nutzbar zu machen.
 Auch andere visuelle Beeinträchtigungen, wie beispielsweise Rot-Grün-Schwächen, müssen beachtet werden.
-Diese Aspekte führen jeweils zu Punktabzügen sofern sie auftreten.
+Diese Aspekte führen jeweils zu Punktabzügen, sofern sie auftreten.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=6cm]{gfx/mygraphics/pr0grammcaptcha.png}
+    \caption{textbasiertes Captcha beim Login auf pr$0$gramm.com, das für Menschen mit Rot-Grün-Schwäche nur schwer zu erkennen ist}
+\end{figure}
 
 Jedoch ist auch zu beachten, dass durch eine Kombination von einer visuellen 
 und einer audiobasierten CAPTCHA-Methode auch blinde Menschen diese CAPTCHAs ausfüllen können. 
 Dies wiederum wäre ein Pluspunkt. 
-\begin{figure}
-    \centering
-    \includegraphics{gfx/mygraphics/pr0grammcaptcha.png}
-    \caption{textbasiertes Captcha beim Login auf pr$0$gramm.com, das für Menschen mit Rot-Grün-Schwäche nur schwer zu erkennen ist}
-\end{figure}
+Aus diesem Grund kann es hier, wie auch in allen anderen Kategorien zur Angabe mehrerer Noten kommen,
+um insbesondere bei sehr vielfältigen und heterogenen CAPTCHA-Methoden sowohl eher niedrig zu bewertende, 
+als auch sehr gute Technologien einbeziehen zu können.
 
 \subsection{Technische Umsetzbarkeit}
 \label{ch:matrix:aspekte:tu}
@@ -101,6 +105,7 @@ Unzureichende Dokumentation kann die Implementation und eventuelles Debugging er
 und spielt deshalb eine wichtige Rolle bei der Auswahl.
 Aus diesem Grunde werden je nach Qualität der Dokumentation gegebenenfalls Punkte abgezogen.
 Gleiches geschieht, wenn der Ressourcenverbrauch sich stark erhöht, wenn die entsprechenden Methoden benutzt werden.
+
 Auch bei der Implementierung kann es zu einer schlechteren Bewertung kommen, wenn diese sich kompliziert gestaltet und man viel an vorhandenem Code ändern muss,
 um die jeweilige Technologie zu verwenden.
 

@@ -51,9 +51,9 @@ Bei der Darstellung dieser Zeichen und Symbole können verschiedene Ansätze ver
 
 \begin{figure}[h!]
     \centering
-    \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/maths.png}}
+    \subfloat[\centering]{\includegraphics[width=6cm]{gfx/mygraphics/maths.png}}
     \qquad
-    \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/textbased.png}}
+    \subfloat[\centering]{\includegraphics[width=6cm]{gfx/mygraphics/textbased.png}}
     \caption{Textbasierte CAPTCHAs aus der Securimage phpCaptcha Demo}   
     \label{fig:textbased}
 \end{figure}
@@ -89,7 +89,7 @@ Nähere Informationen zu genauen Techniken können in \cite[p.xx]{surveyofresear
 Die beschriebenen ``selection-based CAPTCHA'' bezeichnen \citeauthor{surveyofresearch} als einfachste Form bildbasierter CAPTCHA. \cite[p.77]{surveyofresearch}
 
 \begin{figure}[h!]
-    \centering\includegraphics[width=5cm]{gfx/mygraphics/platzhalter.png}
+    \centering\includegraphics[width=6cm]{gfx/mygraphics/platzhalter.png}
      \caption{platzhalter selectionbased captcha}
       \label{fig:selectionbased}
 \end{figure}
@@ -106,9 +106,9 @@ Auch hier kann in \cite[p.77]{surveyofresearch} genauer nachgelesen werden.
 
 \begin{figure}[h!]
     \centering
-    \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/genshincaptcha.png}}
+    \subfloat[\centering]{\includegraphics[width=6cm]{gfx/mygraphics/genshincaptcha.png}}
     \qquad
-    \subfloat[\centering]{\includegraphics[width=5cm]{gfx/mygraphics/hoyoversecaptcha.png}}
+    \subfloat[\centering]{\includegraphics[width=6cm]{gfx/mygraphics/hoyoversecaptcha.png}}
     \caption{Bildbasierte CAPTCHA von GeeTest bei Login in Genshin Impact $($a$)$ und dem Forum Hoyolab $($b$)$}   
     \label{fig:genshin}
 \end{figure}
@@ -120,11 +120,13 @@ Ein Beispiel hierfür ist \ref{fig:genshin} (b).
 Eine weitere Form der click-basierten CAPTCHAs sieht vor, dass Objekte ausgewählt werden sollen,
 die beispielsweise die gleiche Textur besitzen oder räumlich nah an einem bestimmten anderen Objekt dargestellt sind. 
 Diese nennt man VTT\footnote[1]{VTT = Visual Turing Test} CAPTCHA. (Vgl. \cite[p.78]{surveyofresearch})
-%Discord CAPTCHA: PFERDE AUS WOLKEN!!!!!
+
+Ein Beispiel hierfür ist in \autoref{fig:geetest} zu sehen.
+Hier wird über die Größe, Farbe und Position angegeben, welches Objekt angeklickt werden muss, um den CAPTCHA zu lösen.
 
 \begin{figure}[h!]
         \centering
-        \includegraphics[width=5cm]{gfx/mygraphics/raeumlich.png} 
+        \includegraphics[width=6cm]{gfx/mygraphics/raeumlich.png} 
     \caption{Bildbasierter CAPTCHA aus der GeeTest Demo}
     \label{fig:geetest}
 \end{figure}
@@ -137,6 +139,11 @@ Hierbei werden Ideen wie das Ordnen von Cartoon-Panelen näher erläutert.
 Nicht nur lesen Nutzer*innen den Cartoon, sie wollen bei Fehlschlägen durch den Quizcharakter des CAPTCHAs die richtige Lösung in einem weiteren Versuch finden,
 ohne über die Notwendigkeit der Wiederholung zur Verifizierung nachzudenken. \cite[p.41ff]{gamified}
 
+\begin{figure}[h!]
+    \centering\includegraphics[width=6cm]{gfx/mygraphics/platzhalter.png}
+     \caption{platzhalter gamification captcha}
+      \label{fig:gamification}
+\end{figure}
 
 \subsubsection*{Videobasierte CAPTCHA}
 Eine weitere Form visueller CAPTCHAs sind videobasierte CAPTCHA. 
@@ -170,6 +177,12 @@ In der Dokumentation wird angegeben, dass ein Score von 0.0 bis 1.0 vergeben wer
 Hier gilt: Je niedriger der Score, desto wahrscheinlicher handelt es sich um einen Bot statt einer echten Nutzer*in. (Vgl. \cite{recaptchadoc})
 Laut Google selbst soll reCAPTCHA v3 eine sehr gute Nutzererfahrung bieten, da es kaum bis gar keine Zuarbeit durch den Nutzer verlangt. \cite{googleblog:recaptcha}
 ReCAPTCHA kann durch das Fehlen eines klassischen Turing Tests auch als eine CAPTCHA-Alternative interpretiert werden.
+
+\begin{figure}[h!]
+    \centering\includegraphics[width=6cm]{gfx/mygraphics/platzhalter.png}
+     \caption{platzhalter recaptcha captcha}
+      \label{fig:recaptcha}
+\end{figure}
 
 \subsubsection*{Anti-Spam-Plugins}
 Anti-Spam-Plugins können anstelle von CAPTCHAs genutzt werden, wenn man beispielsweise Kommentarbereiche moderieren möchte.
