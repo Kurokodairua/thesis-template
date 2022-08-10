@@ -39,7 +39,7 @@ Aus diesem Grund wird auch hier jeweils ein Punkt abgezogen.
 
 Einige textbasierte CAPTCHAs lassen sich gut audiobasiert umsetzen, 
 um die Accessibility des CAPTCHAs zu gewährleisten. 
-Dies würde somit nicht zu einem Punktabzug führen, wie es gegebenenfalls bei reinen audiobasierten CAPTCHAs (\autoref{ch:bewertung:audio}) der Fall wäre.
+Dies führt somit nicht zu einem Punktabzug.
 
 Die technische Umsetzbarkeit ist bei verschiedenen betrachteten Techniken zur Erstellung und Nutzung textbasierter CAPTCHAs sehr simpel gehalten.
 Die Dokumentation ist gut und kann über Programmierschnittstellen (APIs) leicht eingebunden werden. (Vgl. \cite{hcaptcha} \cite{phpcaptcha} \cite{reallysimplecaptcha})
@@ -178,9 +178,11 @@ Zusätzlich ist zu beachten, dass abgespielte Töne vor allem in der Öffentlich
 und dies eventuell zu einem Meiden dieser CAPTCHAs führen kann.
 Auch hierfür wird deshalb ein Punkt abgezogen werden. 
 
-technische Umsetzung \dots
+In der Praxis sind Audio-CAPTCHAs fast ausschließlich als direkte Alternative zu textbasierten CAPTCHAs anzutreffen.
+Aus diesem Grund ist die technische Umsetzbarkeit fast äquivalent zu der in \autoref{ch:bewertung:text}.
+Jedoch müssen in Anbetracht fehlender Dokumentationen für reine audiobasierte Techniken 2 Punkte abgezogen werden.
 
-Sicherheit ist bei audiobasierten CAPTCHAs ein Problem.
+Sicherheit ist insbesondere bei simplen audiobasierten CAPTCHAs ein Problem.
 Es gibt mehrere Berichte über Algorithmen, welche verschiedene audiobasierte CAPTCHAs selbstständig lösen können.
 Hierbei konnten abhängig von der verwendeten Technik Erfolgsraten von 45 bis zu 90 Prozent erreicht werden.
 Beispielsweise ist “Buster” ein Browser Addon, das reCAPTCHA audio challenges per speech recognition löst.
@@ -188,26 +190,51 @@ Da bereits sehr viele audiobasierte CAPTCHAs erfolgreich durch Bots absolivert w
 müssen hier ebenfalls 5 Punkte abgezogen werden.
 
 \begin{table}[h!]
-    \caption{Beispielhafte Bewertungsmatrix}
+    \caption{Bewertungsmatrix für audiobasierte CAPTCHAs}
     \begin{center}
         \begin{tabular}{l|c}
             Kategorie                       & Bewertung \\\hline
             Bedienfreundlichkeit            & 9-10         \\
-            Accessibility                   & 4        \\
-            Technische Umsetzbarkeit        & 3         \\
+            Accessibility                   & 7        \\
+            Technische Umsetzbarkeit        & 8         \\
             Sicherheit                      & 5         
         \end{tabular}
     \end{center}
 \end{table}
 
 \section{Gamification}
+Zwar ist im Bereich der Bedienfreundlichkeit bei Gamification-CAPTCHAs anzumerken, 
+dass eventuell mehr Schritte nötig sind, als dies bei anderen CAPTCHAs der Fall wäre,
+jedoch werden diese so gestaltet, dass Nutzer*innen Spaß an der Ausführung haben sollen. 
+Es gibt keine zeitlichen Begrenzungen, jedoch auch keine Fehletoleranz.
+Außerdem ist es nicht garantiert, dass alle Nutzer*innen Freude am Ausfüllen dieser CAPTCHAs haben.
+Aus diesem Grund wird ein Punkt abgezogen.
+
+In \cite{gamified} wird nicht erwähnt, wie sich die beschriebene Methode barrierefreier gestalten lässt.
+Durch Alternativtexte könnten jedoch die Cartoon-Panele beschrieben werden.
+Dadurch kann auch, wenn der Inhalt visuell nicht erkannt werden kann, entsprechend geordnet werden.
+
+
+
+%Bei Gamification CAPTCHAs liegt der Fokus darauf, eventuell langwieriges
+%Ausfüllen von CAPTCHAs so zu gestalten, dass Nutzer*innen dabei Spaß
+%haben, und es nicht als lästige Aufgabe ansehen. Kani und Nishigaki schrei-
+%ben in ihrem Paper “Gamified CAPTCHA” darüber, wie spielerisch lösbare
+%CAPTCHAs die Nutzererfahrung verbessern können. Hierbei werden Ideen
+%wie das Ordnen von Cartoon-Panelen näher erläutert. Nicht nur lesen Nut-
+%zer*innen den Cartoon, sie wollen bei Fehlschlägen durch den Quizcharakter
+%des CAPTCHAs die richtige Lösung in einem weiteren Versuch finden, ohne
+%über die Notwendigkeit der Wiederholung zur Verifizierung nachzudenken.
+%[KN13, p.41ff]
+%1 VTT = Visual Turing Test
+
 
 \begin{table}[h!]
     \caption{Beispielhafte Bewertungsmatrix}
     \begin{center}
         \begin{tabular}{l|c}
             Kategorie                       & Bewertung \\\hline
-            Bedienfreundlichkeit                         & 7         \\
+            Bedienfreundlichkeit            & 9         \\
             Accessibility                   & 10        \\
             Technische Umsetzbarkeit        & 3         \\
             Sicherheit                      & 9         
