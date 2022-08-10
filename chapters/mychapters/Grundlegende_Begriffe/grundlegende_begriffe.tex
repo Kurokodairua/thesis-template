@@ -30,18 +30,28 @@ Dieses Verfahren wird heute oftmals als Turing Test bezeichnet.
 \label{ch:basics:captcha}
 Bei der Abkürzung CAPTCHA handelt es sich um ''completely automated public turing tests to tell computers and humans apart''. 
 Sie werden genutzt, um Webseiten vor Angriffen durch Bots zu schützen. 
-Bots sind Computerprogramme, welche automatisiert Algorithmen abarbeiten und dabei unter anderem Eingaben tätigt.
+Bots sind Computerprogramme, welche automatisiert Algorithmen abarbeiten und dabei unter anderem Eingaben tätigen.
 Dies wird durch die im vorherigen Kapitel bereits erläuterten Turing Tests erreicht. 
 Hier ist das Ziel, durch für Computer schwer, für Menschen jedoch leicht zu verarbeitende Medien, das Tracken von Mausbewegungen
-oder das Prüfen der Browseraktivität zu prüfen, ob es sich wirklich um eine menschliche Nutzer*in handelt.
+oder auch das Prüfen der Browseraktivität zu testen, ob es sich wirklich um eine menschliche Nutzer*in handelt.
+Genutzt werden diese CAPTCHAs beispielsweise in Kommentarbereichen, bei der Registrierung auf Webseiten,
+bei Umfragen oder vor der Einsicht kritischer Daten, wie öffentlich geposteten E-Mail-Adressen. (Vgl. \cite{moradi})
+Durch diese Methodik sollen Spam und 
+DDoS-Attacken\footnote[1]{Distributed Denial of Service (DDoS): Ausfälle von Systemen durch eine sehr hohe Menge von Anfragen, 
+welche aufgrund ihrer Fülle nicht zeitnah abgearbeitet werden können.} 
+verhindert werden.
 
 Als Synonym zu CAPTCHA kann HIP verwendet werden - ''Human Interactive Proofs''. 
 
 \subsection{Arten von CAPTCHA}
 \label{ch:basics:captcha:arten}
 Nachfolgend werden verschiedene Arten von CAPTCHAs grundlegend erläutert.
+Dabei werden verschiedene Methoden und Techniken kurz erklärt. 
+Eine genaue Vorstellung spezifischer Produkte des freien Markts findet nicht statt.
+Eventuelle Sicherheitslücken in spezifischen Systemen werden in \autoref{ch:bewertung} erläutert.
+
 \subsubsection*{Textbasierte CAPTCHA}
-Textbasierte CAPTCHA waren bereits 2008 die am häufigsten verwendete Art von CAPTCHA.
+Textbasierte CAPTCHA waren 2008 die am häufigsten verwendete Art von CAPTCHA.
 Sie zeichnen sich durch eine Verzerrung eines Wortes oder mehreren Wörtern aus, sodass diese für Bilderkennungstools nicht erkennbar sind.
 Eine weitere Variante textbasierter CAPTCHA ist die einer einfachen Rechenaufgabe. 
 Auch hier soll erreicht werden, dass ein Bot die angegebenen Zahlen nicht korrekt erkennen kann und die Gleichung somit nicht lösen kann. \cite[p.1]{usabilityofcaptchas} \cite[p.75]{surveyofresearch} \cite{shinde2018DIFFERENTTO} %TODO SEITEN!!!!!!!!!
@@ -59,7 +69,7 @@ Bei der Darstellung dieser Zeichen und Symbole können verschiedene Ansätze ver
 \end{figure}
 
 Anti-Segmentation Techniques zielen darauf ab, das Separieren der einzelnen Buchstaben durch Algorithmen zu erschweren. 
-Um dies zu erreichen, gibt es verschiedene Herangehensweise.
+Um dies zu erreichen, gibt es verschiedene Herangehensweisen.
 Eine von ihnen besteht daraus, dass nur die Konturen der verschiedenen Zeichen angezeigt werden, sodass diese nur von Menschen erkannt werden können,
 Bots hingegen wenig Chancen haben, diese korrekt zu unterscheiden. Diese Art von CAPTCHA nennen \citeauthor{surveyofresearch} ``Hollow CAPTCHAs''. %Formulierung
 Eine weitere Methode ist, Zeichen nah beieinander oder sogar überlappend darzustellen, 
@@ -82,6 +92,7 @@ Es gibt verschiedene Arten von bildbasierten CAPTCHAs.
 Die wohl bekannteste ist ein in Quadrate aufgeteiltes Bild, wobei man jene Quadrate auswählen soll, welche einen bestimmten Gegenstand enthalten.
 Eine Variation dieses CAPTCHAs besteht aus einer Zahl verschiedener Bilder, von denen eine Teilmenge ebenfalls ein gesuchtes Objekt beinhalten 
 und sich semantisch ähneln. 
+\autoref{fig:selectionbased} stellt diese Variationen dar.
 In Abbildung \ref{fig:fortnite} sollen Hunde mit geschlossenen Augen ausgewählt werden,
 was die Notwendigkeit der Zunahme der Komplexität dieser CAPTCHAs gut widerspiegelt. 
 Außerdem kann auch auf das Erkennen von Gesichtern durch Menschen gesetzt werden.
@@ -95,7 +106,7 @@ Die beschriebenen ``selection-based CAPTCHA'' bezeichnen \citeauthor{surveyofres
 \end{figure}
 
 In Abbildung \ref{fig:genshin} sind zwei weitere Arten bildbasierter CAPTCHA dargestellt.
-Links ist ein ``drag-based CAPTCHA'' dargestellt.
+Links ist ein ``drag-based CAPTCHA'' zu sehen.
 Hierbei werden Mausbewegungen, die Geschwindigkeit dieser Bewegungen
 und die allgemeine Reaktionszeit überprüft.
 Dies geschieht, wie in Abbildung \ref{fig:genshin} (a) zu sehen,
@@ -119,7 +130,7 @@ Hierbei wird auf ``anti-detection'' und ``anti-recognition'' gesetzt. \cite[p.77
 Ein Beispiel hierfür ist \ref{fig:genshin} (b).
 Eine weitere Form der click-basierten CAPTCHAs sieht vor, dass Objekte ausgewählt werden sollen,
 die beispielsweise die gleiche Textur besitzen oder räumlich nah an einem bestimmten anderen Objekt dargestellt sind. 
-Diese nennt man VTT\footnote[1]{VTT = Visual Turing Test} CAPTCHA. (Vgl. \cite[p.78]{surveyofresearch})
+Diese sind zum Beispiel VTT\footnote[2]{VTT = Visual Turing Test} CAPTCHA. (Vgl. \cite[p.78]{surveyofresearch})
 
 Ein Beispiel hierfür ist in \autoref{fig:geetest} zu sehen.
 Hier wird über die Größe, Farbe und Position angegeben, welches Objekt angeklickt werden muss, um den CAPTCHA zu lösen.
@@ -165,7 +176,8 @@ Es soll so erkannt werden, ob es sich um eine menschliche Stimme handelt.
 \cite[p.78]{surveyofresearch}
 
 \subsection{Alternativen zu klassischen CAPTCHA}
-Neben klassischen Turing Tests, gibt es auch weitere Möglichkeiten, Roboter und Menschen zu unterscheiden.
+Neben klassischen Turing Tests, gibt es weitere Möglichkeiten, Roboter und Menschen zu unterscheiden.
+Aus diesem Grund werden nachfolgend Alternativen zu klassischen CAPTCHAs vorgestellt.
 
 \subsubsection*{CAPTCHA ohne direkten User-Input}
 Eine aktuell viel genutzte Form der Spam-Prävention ist reCAPTCHA v3 von Google. 
@@ -176,6 +188,7 @@ In der Dokumentation wird angegeben, dass ein Score von 0.0 bis 1.0 vergeben wer
 Hier gilt: Je niedriger der Score, desto wahrscheinlicher handelt es sich um einen Bot statt einer echten Nutzer*in. (Vgl. \cite{recaptchadoc})
 Laut Google selbst soll reCAPTCHA v3 eine sehr gute Nutzererfahrung bieten, da es kaum bis gar keine Zuarbeit durch den Nutzer verlangt. \cite{googleblog:recaptcha}
 ReCAPTCHA kann durch das Fehlen eines klassischen Turing Tests auch als eine CAPTCHA-Alternative interpretiert werden.
+Ähnliche Techniken werden auch von GeeTest (\cite{geetest}) und hCaptcha (\cite{hcaptcha}) angeboten.
 
 \begin{figure}[h!]
     \centering\includegraphics[width=6cm]{gfx/mygraphics/platzhalter.png}
@@ -183,26 +196,10 @@ ReCAPTCHA kann durch das Fehlen eines klassischen Turing Tests auch als eine CAP
       \label{fig:recaptcha}
 \end{figure}
 
-\subsubsection*{Anti-Spam-Plugins}
-Anti-Spam-Plugins können anstelle von CAPTCHAs genutzt werden, wenn man beispielsweise Kommentarbereiche moderieren möchte.
-Das WordPress-Plugin ``Antispam-Bee'' arbeitet auf Basis verschiedener Anhaltspunkte, 
-welche Auskunft darüber geben können, ob es sich bei Nutzer*innen wirklich um einen Menschen handelt.
-Es kann beispielsweise überprüft werden, ob Kommentator*innen Gravatar
-\footnote[2]{Gravatar steht für "Globally Recognized Avatar". 
-Es kann ein Profilbild hochgeladen werden, welches mit einer oder mehreren E-Mail-Adressen verknüpft ist 
-und neben Kommentaren angezeigt wird, wenn dort die entsprechende E-Mail-Adresse angegeben wurde. (Vgl. \cite{doku:antispambee})} nutzen.
-Außerdem können IP-Adressen betrachtet werden und diese kann neben anderen Daten der Kommentator*innen gegebenenfalls in ``Spamdatenbanken'' gefunden werden.
-Auch das Blockieren von Kommentaren aus bestimmten Ländern oder das Akzeptieren von Kommentaren in ausschließlich einer Sprache ist möglich.
-Dieses Plugin und die beschriebenen Maßnahmen zur Spam-Präventionen sind nur eine von vielen Optionen, die hier zur Verfügung stehen.
-\cite{blog:antispambee}
-\cite{doku:antispambee}
-\subsubsection*{Multi-Faktor-Authentifikation}
-Die Authentifikation von Nutzer*innen über mehrere Schritte kann genutzt werden, um die unbefugte Nutzung von Accounts und Ähnlichem zu verhindern.
-Dadurch kann beispielsweise verhindert werden, dass gestohlene Accountdaten für Spamangriffe genutzt werden können.
-\subsubsection*{Biometrie}
-Eine relativ neue Art der Überprüfung von Nutzer*innen ist die Verifizierung durch Biometrie.
-Hierbei wird über das Scannen des Gesichts oder die Erkennung einer Stimme entschieden, ob es sich wirklich um einen (bestimmten) Menschen handelt.
-\cite{rtcaptcha}
+- hier fehlen noch 1-2 sätze zu den captchas, bei denen man nur abhaken muss, dass man kein roboter ist / perimeterX "press and hold"\dots
+ (vielleicht umbenennen in "mit minimalen user-input")
+
+
 \subsubsection*{Honeypots}
 Eine weitere Alternative zu klassischen CAPTCHA sind sogenannte Honeypots. 
 Geprägt wurde der Begriff erstmals im Kalten Krieg als Spionagetechnik eingesetzt wurde. \cite[p.2]{joshi:2011} 
@@ -216,6 +213,39 @@ So kann man HTML-Inputfelder durch CSS oder JavaScript verstecken, sodass diese 
 und nicht durch Menschen, da diese das Textfeld nicht sehen. 
 Bei der Prüfung der Inputs kann nun überprüft werden, ob ein Bot in die Falle getappt ist. 
 Nachzulesen sind solche Verfahren in verschiedenen Blogposts, wie \cite{perry:2019}.
+
+\subsubsection*{Anti-Spam-Plugins}
+Anti-Spam-Plugins können anstelle von CAPTCHAs genutzt werden, wenn man beispielsweise Kommentarbereiche moderieren möchte.
+Das WordPress-Plugin ``Antispam-Bee'' arbeitet auf Basis verschiedener Anhaltspunkte, 
+welche Auskunft darüber geben können, ob es sich bei Nutzer*innen wirklich um einen Menschen handelt.
+Es kann beispielsweise überprüft werden, ob Kommentator*innen Gravatar
+\footnote[3]{Gravatar steht für "Globally Recognized Avatar". 
+Es kann ein Profilbild hochgeladen werden, welches mit einer oder mehreren E-Mail-Adressen verknüpft ist 
+und neben Kommentaren angezeigt wird, wenn dort die entsprechende E-Mail-Adresse angegeben wurde. (Vgl. \cite{doku:antispambee})} nutzen.
+Außerdem können IP-Adressen betrachtet werden und diese kann neben anderen Daten der Kommentator*innen gegebenenfalls in ``Spamdatenbanken'' gefunden werden.
+Auch das Blockieren von Kommentaren aus bestimmten Ländern oder das Akzeptieren von Kommentaren in ausschließlich einer Sprache ist möglich.
+Dieses Plugin und die beschriebenen Maßnahmen zur Spam-Präventionen sind nur eine von vielen Optionen, die hier zur Verfügung stehen.
+\cite{blog:antispambee}
+\cite{doku:antispambee}
+
+\subsubsection*{Multi-Faktor-Authentifikation}
+Die Authentifikation von Nutzer*innen über mehrere Schritte kann genutzt werden, um die unbefugte Nutzung von Accounts und Ähnlichem zu verhindern.
+Dadurch kann beispielsweise verhindert werden, dass gestohlene Accountdaten für Spamangriffe genutzt werden können.
+Dieser zweite Schritt, der vor dem Login durchgeführt werden muss ist beispielweise das Anklicken eines Links oder das Eingeben eines Codes,
+welcher über eine App oder SMS zugeschickt wurde.
+Jedoch ersetzt dies nicht das Ausfüllen von CAPTCHAs.
+Auch ein Algorithmus kann diese Aktionen mit Leichtigkeit ausführen. 
+Aus diesem Grund ist die Nutzung von Multi-Faktor-Authentifikation zwar nicht schlecht,
+bietet aber keine adäquate Alternative zu der Nutzung von CAPTCHAs. 
+Aus diesem Grund wird die Multi-Faktor-Authentifikation in Folgendem nicht weiter betrachtet.
+
+\subsubsection*{Biometrie}
+Eine relativ neue Art der Überprüfung von Nutzer*innen ist die Verifizierung durch Biometrie.
+Hierbei wird über das Scannen des Gesichts oder die Erkennung einer Stimme entschieden, ob es sich wirklich um einen (bestimmten) Menschen handelt.
+In \cite{rtcaptcha} wird diese Technik näher erläutert. 
+
+Biometrische Verfahren werden hauptsächlich als eine Variation der Multi-Faktor-Authentifikation genutzt,
+weshalb sie folgend nicht berücksichtigt werden. 
 
 \section{User Experience}
 

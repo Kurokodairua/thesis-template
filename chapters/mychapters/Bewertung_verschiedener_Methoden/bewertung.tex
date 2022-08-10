@@ -1,7 +1,7 @@
 \chapter{Bewertung verschiedener Methoden}
+\label{ch:bewertung}
 
-Nachfolgend werden die verschiedenen Arten von CAPTCHA sowie einige Alternativen, wie Honeypots, Anti-Spam-Plugins, 
-Multi-Faktor-Authentifikation und biometrische Verfahren auf Basis der zuvor entwickelten Matrix bewertet. 
+Nachfolgend werden die verschiedenen Arten von CAPTCHA sowie einige Alternativen auf Basis der zuvor entwickelten Matrix bewertet. 
 Dafür wird sich an den in Kapitel \ref{ch:matrix} aufgestellten Leitfragen soweit möglich orientiert.
 
 \section{Textbasierte CAPTCHA}
@@ -22,8 +22,7 @@ kann das zweite Wort (``blotch'') auch als ``bbtch'' interpretiert werden.
 \end{figure}
 
 Damit würde der CAPTCHA nicht korrekt beantwortet werden können.
-Diese Arten der textbasierten CAPTCHAs können gegebenenfalls nicht eindeutig beantwortet werden.
-Aus diesem Grund kann bei der Bedienfreundlichkeit keine volle Punktzahl gegeben werden,
+Da dies oft bei dieser CAPTCHA-Art vorkommt, kann bei der Bedienfreundlichkeit keine volle Punktzahl gegeben werden,
 sondern es müssen je nach Komplexität ein bis zwei Punkte abgezogen werden.
 
 Zeitliche Begrenzungen können vorkommen, sind aber nicht bei jeder Technik anzutreffen.
@@ -91,7 +90,7 @@ oder ob der Kontrast zwischen Fell und Iris lediglich zu gering ist.
 \end{figure}
 
 Bei sehr detailreichen Bildern kann es vorkommen, dass auch ein Mensch mehrere Versuche benötigt, da eventuell nicht jedes gesuchte Objekt sofort erkannt wird.
-Deshalb werden bei sehr hoher Komplexität oder bei schwer zu erkennenden Bildern zwischen 2 und 4 Punkte bei der Bedienfreundlichkeit abgezogen werden.
+Deshalb werden bei sehr hoher Komplexität oder bei schwer zu erkennenden Bildern zwischen 2 und 4 Punkte bei der Bedienfreundlichkeit abgezogen.
 Bei bildbasierten CAPTCHAs kommen zeitliche Begrenzungen eher selten vor. 
 
 Auch hier besteht die Problematik, dass Menschen mit eingeschränker Sicht keine Chance haben, diese Art von CAPTCHAs adäquat auszufüllen.
@@ -195,7 +194,7 @@ müssen hier ebenfalls 5 Punkte abgezogen werden.
         \begin{tabular}{l|c}
             Kategorie                       & Bewertung \\\hline
             Bedienfreundlichkeit            & 9-10         \\
-            Accessibility                   & 7        \\
+            Accessibility                   & 4        \\
             Technische Umsetzbarkeit        & 8         \\
             Sicherheit                      & 5         
         \end{tabular}
@@ -214,7 +213,9 @@ In \cite{gamified} wird nicht erwähnt, wie sich die beschriebene Methode barrie
 Durch Alternativtexte könnten jedoch die Cartoon-Panele beschrieben werden.
 Dadurch kann auch, wenn der Inhalt visuell nicht erkannt werden kann, entsprechend geordnet werden.
 
+- technisch identisch zu bildbasiert
 
+- sehr sicher, weil cartoons sehr schwer von ki verstanden werden können
 
 %Bei Gamification CAPTCHAs liegt der Fokus darauf, eventuell langwieriges
 %Ausfüllen von CAPTCHAs so zu gestalten, dass Nutzer*innen dabei Spaß
@@ -230,13 +231,13 @@ Dadurch kann auch, wenn der Inhalt visuell nicht erkannt werden kann, entspreche
 
 
 \begin{table}[h!]
-    \caption{Beispielhafte Bewertungsmatrix}
+    \caption{Gamification}
     \begin{center}
         \begin{tabular}{l|c}
             Kategorie                       & Bewertung \\\hline
             Bedienfreundlichkeit            & 9         \\
             Accessibility                   & 10        \\
-            Technische Umsetzbarkeit        & 3         \\
+            Technische Umsetzbarkeit        & ?         \\
             Sicherheit                      & 9         
         \end{tabular}
     \end{center}
@@ -246,60 +247,75 @@ Dadurch kann auch, wenn der Inhalt visuell nicht erkannt werden kann, entspreche
 
 \subsection{Honeypot}
 
+- minimal intrusiv
+
+- kann screenreadern probleme bereiten
+
+- technisch gewisses knowhow nötig
+
+- bots können css auch scannen und erkennen, dass feld ausgeblendet ist, wodurch honeypot nutzlos wird
+
 \begin{table}[h!]
     \caption{Beispielhafte Bewertungsmatrix}
     \begin{center}
         \begin{tabular}{l|c}
             Kategorie                       & Bewertung \\\hline
-            Bedienfreundlichkeit                         & 7         \\
-            Accessibility                   & 10        \\
-            Technische Umsetzbarkeit        & 3         \\
-            Sicherheit                      & 9         
+            Bedienfreundlichkeit            & 10         \\
+            Accessibility                   & 9        \\
+            Technische Umsetzbarkeit        & 8         \\
+            Sicherheit                      & 7         
         \end{tabular}
     \end{center}
 \end{table}
 
-\subsection{Anti Spam Plugins}
+\subsection{Anti-Spam-Plugins}
+
+- minimal intrusiv, dadurch dass im hintergrund agiert wird, kann jeder es nutzen
+
+- filtern aufgrund von sprache oder land kann auch unschuldige nutzer*innen ausschließen
+
+- ausschluss durch land / ip kann durch vpns (fußnote...) umgangen werden
+
+- das ist ein minuspunkt bei der sicherheit
+
+- technische umsetzbarkeit ist sehr einfach, da plugin installation bei wordpress relativ einfach ist
+
+Da diese Plugins für sehr spezielle Anwendungsfälle entwickelt werden,
+kann für sie keine allgemeine Bewertung abgegeben werden.
+Deshalb werden sie in \autoref{ch:empfehlung} nicht berücksichtigt.
 
 \begin{table}[h!]
-    \caption{Beispielhafte Bewertungsmatrix}
+    \caption{Bewertungsmarix Anti-Spam-Plugins}
     \begin{center}
         \begin{tabular}{l|c}
             Kategorie                       & Bewertung \\\hline
-            Bedienfreundlichkeit                         & 7         \\
-            Accessibility                   & 10        \\
-            Technische Umsetzbarkeit        & 3         \\
+            Bedienfreundlichkeit            & 10         \\
+            Accessibility                   & 9        \\
+            Technische Umsetzbarkeit        & 10         \\
             Sicherheit                      & 9         
         \end{tabular}
     \end{center}
-\end{table}
+\end{table} 
 
-\subsection{Multi-Faktor Authentifikation}
+\subsection{CAPTCHAs ohne direkten User-Input}
+
+- momentan beste art des CAPTCHAs
+
+- andere captcha arten müssen noch als backup genutzt werden 
+
+- es gibt eine methode, die recaptcha v3 mit einer erfolgsrate von 96.7\% bis 97.4\% löst,
+durch diese schwerwiegende sicherheitseinschränkung müssen 5 punkte abgezogen werden\dots
+\cite{DBLP:journals/corr/abs-1903-01003}
 
 \begin{table}[h!]
-    \caption{Beispielhafte Bewertungsmatrix}
+    \caption{Bewertungsmatrix CAPTCHAs ohne direkten User-Input}
     \begin{center}
         \begin{tabular}{l|c}
             Kategorie                       & Bewertung \\\hline
-            Bedienfreundlichkeit                         & 7         \\
+            Bedienfreundlichkeit            & 9         \\
             Accessibility                   & 10        \\
-            Technische Umsetzbarkeit        & 3         \\
-            Sicherheit                      & 9         
-        \end{tabular}
-    \end{center}
-\end{table}
-
-\subsection{Biometrie}
-
-\begin{table}[h!]
-    \caption{Beispielhafte Bewertungsmatrix}
-    \begin{center}
-        \begin{tabular}{l|c}
-            Kategorie                       & Bewertung \\\hline
-            Bedienfreundlichkeit                         & 7         \\
-            Accessibility                   & 10        \\
-            Technische Umsetzbarkeit        & 3         \\
-            Sicherheit                      & 9         
+            Technische Umsetzbarkeit        & 10         \\
+            Sicherheit                      & 5         
         \end{tabular}
     \end{center}
 \end{table}
