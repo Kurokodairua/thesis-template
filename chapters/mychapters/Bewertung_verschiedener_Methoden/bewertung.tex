@@ -80,23 +80,42 @@ Auf Basis dieser Erkenntnisse werden textbasierte CAPTCHAs wie in Tabelle \ref{t
 Bildbasierte CAPTCHAs benötigen etwas mehr Aufwand als beispielsweise textbasierte CAPTCHAs.
 Je nach verwendeter Technik muss auf eine Reihenfolge geachtet werden. 
 Es ist auch möglich, dass bei einigen Bildern genau darauf geachtet werden muss, ob die gegebenen Antworten wirklich korrekt sind.
-In \autoref{fig:fortnite} ist beispielsweise nur schwer zu erkennen, ob manche Hunde wirklich geschlossene Augen haben, 
+In \autoref{fig:fortnite} (a) ist beispielsweise nur schwer zu erkennen, ob manche Hunde wirklich geschlossene Augen haben, 
 oder ob der Kontrast zwischen Fell und Iris lediglich zu gering ist.
 
 \begin{figure}[h!]
-    \centering\includegraphics[width=6cm]{gfx/mygraphics/fuerfortnite.png}
- \caption{Bildbasierter CAPTCHA von hCaptcha bei Login auf der Epic Games Website}
+    \centering
+    \subfloat[\centering]{\includegraphics[width=6cm]{gfx/mygraphics/fuerfortnite.png}}
+    \subfloat[\centering]{\includegraphics[width=6cm]{gfx/mygraphics/barrierefreiheit.png}}
+ \caption{Bildbasierter CAPTCHA von hCaptcha bei Login auf der Epic Games Website (a) und barrierefreie Alternative von hCaptcha (b)}
       \label{fig:fortnite}
 \end{figure}
 
 Bei sehr detailreichen Bildern kann es vorkommen, dass auch ein Mensch mehrere Versuche benötigt, da eventuell nicht jedes gesuchte Objekt sofort erkannt wird.
 Deshalb werden bei sehr hoher Komplexität oder bei schwer zu erkennenden Bildern zwischen 2 und 4 Punkte bei der Bedienfreundlichkeit abgezogen.
-Bei bildbasierten CAPTCHAs kommen zeitliche Begrenzungen eher selten vor. 
+Bei bildbasierten CAPTCHAs kommen bemerkbare zeitliche Begrenzungen eher selten vor. 
 
 Auch hier besteht die Problematik, dass Menschen mit eingeschränker Sicht keine Chance haben, diese Art von CAPTCHAs adäquat auszufüllen.
-Es gibt keine Möglichkeit, eine audiobasierte Alternative anzubieten. Durch diese schwerwiegende Einschränkung werden 5 Punkte in der Kategorie Accessibility abgezogen.
+Es gibt teilweise die Möglichkeit, eine audiobasierte Alternative anzubieten. 
+So wird es beispielsweise bei den bildbasierten CAPTCHAs von reCAPTCHA v2 angeboten. 
+Dies ist in \autoref{fig:selectionbased} zu erkennen.
+Ebenso existieren Produkte, die Nutzer*innen ``Accessibility-Cookies'' setzen lassen, 
+sodass bildbasierte CAPTCHAs nicht mehr ausgefüllt werden müssen, wie in \autoref{fig:fortnite} (b) dargestellt.
+Ist dies nicht gegeben, müssen für diese Einschränkung 5 Punkte in der Kategorie Accessibility abgezogen werden.
+
 Doch auch für Menschen ohne Behinderung kann es, wie bereits erwähnt, schwierig sein, sie erfolgreich zu absolvieren.
+In \autoref{fig:keineloesung} soll der CAPTCHA übersprungen werden, sollte man keine Fahrräder erkennen.
+Dies ist der Fall. 
+Jedoch ist die Anweisung hierfür im Vergleich zum Schlüsselwort "Fahrrädern" so klein dargestellt, dass sie nicht sofort erkannt wird,
+und die Anweisung bei Nutzer*innen zu Verwirrung führen kann.
 Hier verschwimmen die Grenzen bei der Einschätzung der Bedienfreundlichkeit und der Accessibility.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=6cm]{gfx/mygraphics/recaptchaohnelösung.png}
+    \caption{Bildbasierter CAPTCHA ohne Lösung von reCAPTCHA v2}   
+    \label{fig:keineloesung}
+\end{figure}
 
 Die technische Umsetzbarkeit erfolgt bei bildbasierten CAPTCHAs ebenfalls über APIs. (Vgl. \cite{hcaptcha} \cite{arkoselabs} \cite{geetest})
 Analog zu textbasierten CAPTCHAs kann bei der technischen Umsetzung deshalb volle Punktzahl vergeben werden.
@@ -120,7 +139,7 @@ In \autoref{table:matrix:bild} kann die entsprechende Benotung nachvollzogen wer
         \begin{tabular}{l|c}
             Kategorie                       & Bewertung \\\hline
             Bedienfreundlichkeit            & 6-10         \\
-            Accessibility                   & 5        \\
+            Accessibility                   & 5-10        \\
             Technische Umsetzbarkeit        & 10         \\
             Sicherheit                      & 6         
         \end{tabular}
@@ -213,45 +232,42 @@ In \cite{gamified} wird nicht erwähnt, wie sich die beschriebene Methode barrie
 Durch Alternativtexte könnten jedoch die Cartoon-Panele beschrieben werden.
 Dadurch kann auch, wenn der Inhalt visuell nicht erkannt werden kann, entsprechend geordnet werden.
 
-- technisch identisch zu bildbasiert
+Technisch sind Gamification-CAPTCHAs identisch zu bildbasierten CAPTCHAs.
+Diese Art des CAPTCHAs heute kaum noch verwendet.
+Ehemals verbreitete Techniken, wie PlayThru von AreYouAHuman, sind nicht mehr nutzbar. (Vgl. \cite{ivan})
 
-- sehr sicher, weil cartoons sehr schwer von ki verstanden werden können
+Aus diesem Grund werden auch Gamification CAPTCHAs in \autoref{ch:empfehlung} nicht berücksichtigt.
 
-%Bei Gamification CAPTCHAs liegt der Fokus darauf, eventuell langwieriges
-%Ausfüllen von CAPTCHAs so zu gestalten, dass Nutzer*innen dabei Spaß
-%haben, und es nicht als lästige Aufgabe ansehen. Kani und Nishigaki schrei-
-%ben in ihrem Paper “Gamified CAPTCHA” darüber, wie spielerisch lösbare
-%CAPTCHAs die Nutzererfahrung verbessern können. Hierbei werden Ideen
-%wie das Ordnen von Cartoon-Panelen näher erläutert. Nicht nur lesen Nut-
-%zer*innen den Cartoon, sie wollen bei Fehlschlägen durch den Quizcharakter
-%des CAPTCHAs die richtige Lösung in einem weiteren Versuch finden, ohne
-%über die Notwendigkeit der Wiederholung zur Verifizierung nachzudenken.
-%[KN13, p.41ff]
-%1 VTT = Visual Turing Test
-
-
-\begin{table}[h!]
-    \caption{Gamification}
-    \begin{center}
-        \begin{tabular}{l|c}
-            Kategorie                       & Bewertung \\\hline
-            Bedienfreundlichkeit            & 9         \\
-            Accessibility                   & 10        \\
-            Technische Umsetzbarkeit        & ?         \\
-            Sicherheit                      & 9         
-        \end{tabular}
-    \end{center}
-\end{table}
+%\begin{table}[h!]
+%    \caption{Gamification}
+%    \begin{center}
+%        \begin{tabular}{l|c}
+%            Kategorie                       & Bewertung \\\hline
+%            Bedienfreundlichkeit            & 9         \\
+%            Accessibility                   & 10        \\
+%            Technische Umsetzbarkeit        & ?         \\
+%            Sicherheit                      & 9         
+%        \end{tabular}
+%    \end{center}
+%\end{table}
 
 \section{Alternativen zu CAPTCHA}
+Neben den klassischen CAPTCHA-Arten gibt es einige Alternativen, die in Betracht gezogen werden können und sollten.
+Zwar wurden die Ansätze Biometrie und Multi-Faktor-Authentifikation bereits in \autoref{ch:basics:captcha:alternativen}
+ausgeschlossen, jedoch sind Honeypots, Anti-Spam-Plugins und insbesondere CAPTCHAs mit wenig Interaktion valide Alternativen 
+zu visuellen und audiobasierten CAPTCHAs. 
 
 \subsection{Honeypot}
+Honeypots sind dadurch, dass lediglich geprüft wird, ob ein Textfeld ausgefüllt wurde, sehr bedienfreundlich.
+Nutzer*innen haben keinen Mehraufwand bei Besuch der Webseite. 
+Im Kontext Bedienfreundlichkeit kann volle Punktzahl vergeben werden.
 
-- minimal intrusiv
+Dadurch kann auch eine hohe Accessibility gewährleistet werden. 
+Zu bedenken ist jedoch, dass diese zusätzlichen Textfelder Screenreadern eventuell Probleme bereiten können.
+Deshalb wird hier ein Punkt abgezogen.
 
-- kann screenreadern probleme bereiten
-
-- technisch gewisses knowhow nötig
+Da Honeypots händisch implementiert werden müssen, ist ein gewisses technisches Know-How nötig.
+\dots
 
 - bots können css auch scannen und erkennen, dass feld ausgeblendet ist, wodurch honeypot nutzlos wird
 
@@ -297,7 +313,7 @@ Deshalb werden sie in \autoref{ch:empfehlung} nicht berücksichtigt.
     \end{center}
 \end{table} 
 
-\subsection{CAPTCHAs ohne direkten User-Input}
+\subsection{CAPTCHAs mit minimalem User-Input}
 
 - momentan beste art des CAPTCHAs
 
@@ -306,6 +322,12 @@ Deshalb werden sie in \autoref{ch:empfehlung} nicht berücksichtigt.
 - es gibt eine methode, die recaptcha v3 mit einer erfolgsrate von 96.7\% bis 97.4\% löst,
 durch diese schwerwiegende sicherheitseinschränkung müssen 5 punkte abgezogen werden\dots
 \cite{DBLP:journals/corr/abs-1903-01003}
+
+\begin{figure}[h!]
+    \centering\includegraphics[width=6cm]{gfx/mygraphics/recaptchaabgelaufen.png}
+     \caption{Zeitliche Begrenzung bei reCAPTCHA v2}
+      \label{fig:recaptchaabgelaufen}
+\end{figure}
 
 \begin{table}[h!]
     \caption{Bewertungsmatrix CAPTCHAs ohne direkten User-Input}
