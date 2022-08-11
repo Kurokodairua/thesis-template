@@ -87,6 +87,15 @@ Diese Techniken werden oftmals miteinander kombiniert.
 
 Eine Kombination von Anti-Segmentation und Anti-Recognition Techniken ist in \autoref{fig:textbased} zu sehen.
 
+\begin{figure}[h!]
+    \centering
+    \subfloat[\centering]{\includegraphics[width=6cm]{gfx/mygraphics/selectionbasedrecaptcha.png}}
+    \qquad
+    \subfloat[\centering]{\includegraphics[width=6cm]{gfx/mygraphics/selectionbasedrecaptcha2.png}}
+    \caption{Bildbasierte CAPTCHAs nach unzureichendem Score bei der Bewertung durch reCAPTCHA v2}   
+    \label{fig:selectionbased}
+\end{figure}
+
 \subsubsection*{Bildbasierte CAPTCHA}
 Es gibt verschiedene Arten von bildbasierten CAPTCHAs. 
 Die wohl bekannteste ist ein in Quadrate aufgeteiltes Bild, wobei man jene Quadrate auswählen soll, welche einen bestimmten Gegenstand enthalten.
@@ -98,15 +107,6 @@ was die Notwendigkeit der Zunahme der Komplexität dieser CAPTCHAs gut widerspie
 Außerdem kann auch auf das Erkennen von Gesichtern durch Menschen gesetzt werden.
 Nähere Informationen zu genauen Techniken können in \cite[p.xx]{surveyofresearch} nachgelesen werden.
 Die beschriebenen ``selection-based CAPTCHA'' bezeichnen \citeauthor{surveyofresearch} als einfachste Form bildbasierter CAPTCHA. \cite[p.77]{surveyofresearch}
-
-\begin{figure}[h!]
-    \centering
-    \subfloat[\centering]{\includegraphics[width=6cm]{gfx/mygraphics/selectionbasedrecaptcha.png}}
-    \qquad
-    \subfloat[\centering]{\includegraphics[width=6cm]{gfx/mygraphics/selectionbasedrecaptcha2.png}}
-    \caption{Bildbasierte CAPTCHAs bei unzureichendem Score - reCAPTCHA v2}   
-    \label{fig:selectionbased}
-\end{figure}
 
 In Abbildung \ref{fig:genshin} sind zwei weitere Arten bildbasierter CAPTCHA dargestellt.
 Links ist ein ``drag-based CAPTCHA'' zu sehen.
@@ -137,6 +137,8 @@ Diese sind zum Beispiel VTT\footnote[2]{VTT = Visual Turing Test} CAPTCHA. (Vgl.
 
 Ein Beispiel hierfür ist in \autoref{fig:geetest} zu sehen.
 Hier wird über die Größe, Farbe und Position angegeben, welches Objekt angeklickt werden muss, um den CAPTCHA zu lösen.
+Die Formulierung ``in front of'' ist hierbei auch auf Objekte bezogen, die nicht genau, sondern auch versetzt, vor dem gelben Zylinder stehen.
+Zum Lösen des CAPTCHAs muss deshalb auf die grüne Kugel geklickt werden.
 
 \begin{figure}[h!]
         \centering
@@ -153,11 +155,6 @@ Hierbei werden Ideen wie das Ordnen von Cartoon-Panelen näher erläutert.
 Nicht nur lesen Nutzer*innen den Cartoon, sie wollen bei Fehlschlägen durch den Quizcharakter des CAPTCHAs die richtige Lösung in einem weiteren Versuch finden,
 ohne über die Notwendigkeit der Wiederholung zur Verifizierung nachzudenken. \cite[p.41ff]{gamified}
 
-\begin{figure}[h!]
-    \centering\includegraphics[width=6cm]{gfx/mygraphics/platzhalter.png}
-     \caption{platzhalter gamification captcha}
-      \label{fig:gamification}
-\end{figure}
 
 \subsubsection*{Videobasierte CAPTCHA}
 Eine weitere Form visueller CAPTCHAs sind videobasierte CAPTCHA. 
@@ -178,6 +175,13 @@ Neben Techniken, die hauptsächlich auf das Hören ausgelegt sind, kann der Foku
 Es soll so erkannt werden, ob es sich um eine menschliche Stimme handelt.
 \cite[p.78]{surveyofresearch}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=6cm]{gfx/mygraphics/audio.png}
+     \caption{Audiobasierte Alternative zu bildbasiertem CAPTCHA von reCAPTCHA v2}
+      \label{fig:audio}
+\end{figure}
+
 \subsection{Alternativen zu klassischen CAPTCHA}
 \label{ch:basics:captcha:alternativen}
 Neben klassischen Turing Tests, gibt es weitere Möglichkeiten, Roboter und Menschen zu unterscheiden.
@@ -192,7 +196,7 @@ In der Dokumentation wird angegeben, dass ein Score von 0.0 bis 1.0 vergeben wer
 Hier gilt: Je niedriger der Score, desto wahrscheinlicher handelt es sich um einen Bot statt einer echten Nutzer*in. (Vgl. \cite{recaptchadoc})
 Laut Google selbst soll reCAPTCHA v3 eine sehr gute Nutzererfahrung bieten, da es kaum bis gar keine Zuarbeit durch den Nutzer verlangt. \cite{googleblog:recaptcha}
 ReCAPTCHA kann durch das Fehlen eines klassischen Turing Tests auch als eine CAPTCHA-Alternative interpretiert werden.
-Ähnliche Techniken werden auch von GeeTest (\cite{geetest}) und hCaptcha (\cite{hcaptcha}) angeboten.
+Ähnliche ``Invisible CAPTCHA''-Techniken werden auch von GeeTest (\cite{geetest}) und hCaptcha (\cite{hcaptcha}) angeboten.
 
 \begin{figure}[h!]
     \centering\includegraphics[width=6cm]{gfx/mygraphics/recaptcha.png}

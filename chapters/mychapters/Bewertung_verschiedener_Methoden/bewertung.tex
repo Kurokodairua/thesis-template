@@ -207,6 +207,8 @@ Beispielsweise ist “Buster” ein Browser Addon, das reCAPTCHA audio challenge
 Da bereits sehr viele audiobasierte CAPTCHAs erfolgreich durch Bots absolivert werden konnten,
 müssen hier ebenfalls 5 Punkte abgezogen werden.
 
+Es ergibt sich die in \autoref{table:matrix:audio} angegebene Bewertung.
+
 \begin{table}[h!]
     \caption{Bewertungsmatrix für audiobasierte CAPTCHAs}
     \begin{center}
@@ -218,6 +220,7 @@ müssen hier ebenfalls 5 Punkte abgezogen werden.
             Sicherheit                      & 5         
         \end{tabular}
     \end{center}
+    \label{table:matrix:audio}
 \end{table}
 
 \section{Gamification}
@@ -267,9 +270,13 @@ Zu bedenken ist jedoch, dass diese zusätzlichen Textfelder Screenreadern eventu
 Deshalb wird hier ein Punkt abgezogen.
 
 Da Honeypots händisch implementiert werden müssen, ist ein gewisses technisches Know-How nötig.
-\dots
+Jedoch lassen sich ausreichend Tutorials finden, um die Implementation schnell durchführen zu können.
+Aus diesem Grund wird nur ein Punkt abgezogen.
 
-- bots können css auch scannen und erkennen, dass feld ausgeblendet ist, wodurch honeypot nutzlos wird
+Die Sicherheit von Honeypots kann eingeschränkt werden, wenn beispielsweise die CSS ebenfalls untersucht wird. 
+Dabei kann erkannt werden, dass ein Feld ausgeblendet ist, was den Honeypot gänzlich nutzlos macht.
+Im Gegensatz zu CAPTCHAs gibt es hier keine Abstufungen - wurde der Honeypot erkannt, gibt es keinen Schutz mehr vor Spam.
+Aus diesem relativ schwerwiegenden Grund werden 3 Punkte abgezogen.
 
 \begin{table}[h!]
     \caption{Beispielhafte Bewertungsmatrix}
@@ -278,27 +285,21 @@ Da Honeypots händisch implementiert werden müssen, ist ein gewisses technische
             Kategorie                       & Bewertung \\\hline
             Bedienfreundlichkeit            & 10         \\
             Accessibility                   & 9        \\
-            Technische Umsetzbarkeit        & 8         \\
+            Technische Umsetzbarkeit        & 9         \\
             Sicherheit                      & 7         
         \end{tabular}
     \end{center}
 \end{table}
 
 \subsection{Anti-Spam-Plugins}
-
-- minimal intrusiv, dadurch dass im hintergrund agiert wird, kann jeder es nutzen
-
-- filtern aufgrund von sprache oder land kann auch unschuldige nutzer*innen ausschließen
-
-- ausschluss durch land / ip kann durch vpns (fußnote...) umgangen werden
-
-- das ist ein minuspunkt bei der sicherheit
-
-- technische umsetzbarkeit ist sehr einfach, da plugin installation bei wordpress relativ einfach ist
-
-Da diese Plugins für sehr spezielle Anwendungsfälle entwickelt werden,
-kann für sie keine allgemeine Bewertung abgegeben werden.
-Deshalb werden sie in \autoref{ch:empfehlung} nicht berücksichtigt.
+Anti-Spam-Plugins sind, ähnlich wie andere CAPTCHA-Alternativen, kaum zu bemerken, da sie hauptsächlich mit Metadaten arbeiten.
+Dies macht sie sehr bedienfreundlich, sodass auch hier volle Punktzahl vergeben werden kann.
+Bei der Accessibility gibt es die Einschränkung, dass durch das Filtern aufgrund von Sprache oder Land auch Nutzer*innen ausgeschlossen werden,
+die keine bösen Absichten haben. Aus diesem Grund wird ein Punkt abgezogen.
+Dieser Ausschluss kann jedoch durch VPNs umgangen werden,
+was wiederum eine schwere Sicherheitseinschränkung ist, weshalb 2 Punkte hier abgezogen werden.
+Auch die technische Umsetzbarkeit ist sehr einfach, da Plugins insbesondere bei Wordpress einfach installiert werden können.
+Deshalb kann hier die volle Punktzahl vergeben werden.
 
 \begin{table}[h!]
     \caption{Bewertungsmarix Anti-Spam-Plugins}
@@ -308,20 +309,40 @@ Deshalb werden sie in \autoref{ch:empfehlung} nicht berücksichtigt.
             Bedienfreundlichkeit            & 10         \\
             Accessibility                   & 9        \\
             Technische Umsetzbarkeit        & 10         \\
-            Sicherheit                      & 9         
+            Sicherheit                      & 8         
         \end{tabular}
     \end{center}
 \end{table} 
 
+Da diese Plugins für sehr spezielle Anwendungsfälle entwickelt werden,
+kann für sie keine allgemeine Bewertung abgegeben werden.
+Deshalb werden sie in \autoref{ch:empfehlung} nicht berücksichtigt.
+
 \subsection{CAPTCHAs mit minimalem User-Input}
+Invisible CAPTCHAs sind die mit Abstand meistgenutzte Art von CAPTCHAs. (Vgl. \cite{stats})
+Trotz ihrer unauffälligen Natur ist es möglich, dass Menschen fälschlicherweise als Maschinen eingestuft werden,
+da ihr Score zu niedrig ist. 
+Dann müssen als Backup weitere CAPTCHAs ausgefüllt werden.
+Deshalb wird bei der Bedienfreundlichkeit ein Punkt abgezogen.
 
-- momentan beste art des CAPTCHAs
+In Sachen Accessibility kann die volle Punktzahl vergeben werden,
+da diese CAPTCHA-Art von Hause aus kaum Interaktion benötigt und auch bei Notwendigkeit eines zweiten, anderen CAPTCHAs
+können mehrere Alternativen angeboten werden, damit jede Nutzer*in diese ausfüllen kann.
 
-- andere captcha arten müssen noch als backup genutzt werden 
+Technisch können Invisible CAPTCHAs leicht über APIs implementiert werden, weshalb hier auch die volle Punktzahl vergeben werden kann.
 
-- es gibt eine methode, die recaptcha v3 mit einer erfolgsrate von 96.7\% bis 97.4\% löst,
-durch diese schwerwiegende sicherheitseinschränkung müssen 5 punkte abgezogen werden\dots
+Im Bereich der Sicherheit müssen mehrere Punkte angemerkt werden.
+Es ist eine Methode bekannt, mithilfe welcher reCAPTCHA v3 mit einer Erfolgsrate von 96.7\% bis 97.4\% durch Algorithmen gelöst werden konnten.
 \cite{DBLP:journals/corr/abs-1903-01003}
+
+Außerdem gibt es immer wieder Bedenken über die Nutzung der gesammelten Metadaten durch große Firmen wie Google.
+Trotzdem kann in verschiedensten Medien (\cite{sueddt} \cite{hackernoon} \cite{towardsdatascience}) regelmäßig davon gelesen werden,
+die Option zum Training von KI durch die Nutzung dieser Daten wäre denkbar.
+Diese Behauptungen sind nicht zu beweisen, da Google keinerlei Informationen zu diesem Thema preisgibt.
+
+Aufgrund der hohen Erfolgsquote bei dem Lösen von reCAPTCHA v3 durch Bots 
+und dem allgemeinen Misstrauen, das gegenüber dem größten Anbieter von Invisble CAPTCHAs herrscht, 
+werden im Bereich Sicherheit 5 Punkte abgezogen.
 
 \begin{figure}[h!]
     \centering\includegraphics[width=6cm]{gfx/mygraphics/recaptchaabgelaufen.png}
@@ -330,7 +351,7 @@ durch diese schwerwiegende sicherheitseinschränkung müssen 5 punkte abgezogen 
 \end{figure}
 
 \begin{table}[h!]
-    \caption{Bewertungsmatrix CAPTCHAs ohne direkten User-Input}
+    \caption{Bewertungsmatrix CAPTCHAs mit minimalem User-Input}
     \begin{center}
         \begin{tabular}{l|c}
             Kategorie                       & Bewertung \\\hline
