@@ -37,15 +37,41 @@ Aus diesen Tabellen lassen sich folgende Bewertungen entnehmen:
     \begin{center}
         \begin{tabular}{l|c}
             CAPTCHA-Art                       & Gesamtnote \\\hline
-            textbasiert            & xx        \\
-            videobasiert                   & xx       \\
-            audiobasiert        & xx         \\
-            invisible                      & xx         \\
-            Honeypots & xx
-
+            textbasiert            &  5.55-7.85       \\
+            bildbasiert                   &  6.3-8.4      \\
+            audiobasiert        & 5.75-5.9         \\
+            invisible*                      & 9.05         \\
+            Honeypots       & 8.35\\
+            \multicolumn{2}{l}{\footnotesize * Invisible steht hier für jegliche CAPTCHAs} \\
+            \multicolumn{2}{l}{\footnotesize \space \space mit minimalem User-Input}
         \end{tabular}
     \end{center}
 \end{table}
+
+Aus den vorliegenden Ergebnissen lässt sich erkennen, dass Invisible CAPTCHAs die höchste Gesamtnote erreichen konnten.
+Insbesondere bei der Accessibility können sie überzeugen, 
+da sie durch ihr Arbeiten im Hintergrund keine Interaktion verlangen und somit von allen Nutzer*innen problemlos benutzt werden können.
+Außerdem sind CAPTCHAs mit wenig User-Input relativ sicher, da fast ausschließlich Metadaten betrachtet werden und das genaue Verfahren unbekannt ist.
+Dadurch ist es schwerer, diese Daten für Bots nachzustellen.
+
+Ähnlich verhält es sich im Best Case bei bildbasierten CAPTCHAs, insbesondere wenn hier Mausbewegungen und Ähnliches mit in Betracht gezogen werden.
+
+
+
+- Honeypots
+
+- wieso audio nicht so gut ist
+
+Textbasierte CAPTCHAs erzielen im Worst Case den niedrigen Score.
+Dies liegt unter anderem an der niedrigen Bewertung im Bereich der Sicherheit, 
+da es hier viele Methoden gibt, textbasierte CAPTCHAs durch Algorithmen erkennen und lösen zu lassen.
+Auch im Bereich der Accessibility muss darauf geachtet werden, dass es ausreichend Alternativen für Menschen gibt,
+die Probleme mit visuellen CAPTCHAs haben könnten.
+
+\dots
+
+Eine Kombination verschiedener CAPTCHA-Arten, wie es beispielsweise bei reCAPTCHA oder hCaptcha der Fall ist, 
+kann eventuelle Mängel bei einzelnen Techniken beheben.
 
 \subsubsection*{Beispiel 2}
 Das zweite Szenario soll ein kleines Forum sein, in dem ein CAPTCHA ausgefüllt wird, bevor ein Beitrag veröffentlicht wird.
@@ -67,17 +93,21 @@ Die Sicherheit ist aufgrund der geringen Anzahl an abgegebenen Beiträgen vergle
     \end{center}
 \end{table}
 
+Analog zu Beispiel 1 sind die genauen Bewertungsmatrizen in \autoref{tabellen2} hinterlegt.
+Es ergeben sich folgende Gesamtnoten:
+
 \begin{table}[h!]
-    \caption{Bewertungen für Beispiel 1}
+    \caption{Bewertungen für Beispiel 2}
     \begin{center}
         \begin{tabular}{l|c}
             CAPTCHA-Art                       & Gesamtnote \\\hline
-            textbasiert            & xx        \\
-            videobasiert                   & xx       \\
-            audiobasiert        & xx         \\
-            invisible                      & xx         \\
-            Honeypots & xx
-
+            textbasiert            & 7.45-9.15        \\
+            bildbasiert                   & 7.2-9.6       \\
+            audiobasiert        & 7.25-7.4         \\
+            invisible*                      & 9.45         \\
+            Honeypots & 9.15 \\
+           \multicolumn{2}{l}{\footnotesize * Invisible steht hier für jegliche CAPTCHAs} \\
+           \multicolumn{2}{l}{\footnotesize   \enspace mit minimalem User-Input}
         \end{tabular}
     \end{center}
 \end{table}
