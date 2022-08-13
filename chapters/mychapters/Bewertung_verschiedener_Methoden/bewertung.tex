@@ -67,7 +67,7 @@ Auf Basis dieser Erkenntnisse werden textbasierte CAPTCHAs wie in Tabelle \ref{t
         \begin{tabular}{l|c}
             Kategorie                       & Bewertung \\\hline
             Bedienfreundlichkeit            & 7-9         \\
-            Accessibility                   & 6        \\
+            Accessibility                   & 6-10        \\
             Technische Umsetzbarkeit        & 10         \\
             Sicherheit                      & 3-5         
         \end{tabular}
@@ -279,7 +279,7 @@ Im Gegensatz zu CAPTCHAs gibt es hier keine Abstufungen - wurde der Honeypot erk
 Aus diesem relativ schwerwiegenden Grund werden 3 Punkte abgezogen.
 
 \begin{table}[h!]
-    \caption{Beispielhafte Bewertungsmatrix}
+    \caption{Bewertungsmatrix Honeypots}
     \begin{center}
         \begin{tabular}{l|c}
             Kategorie                       & Bewertung \\\hline
@@ -319,7 +319,8 @@ kann für sie keine allgemeine Bewertung abgegeben werden.
 Deshalb werden sie in \autoref{ch:empfehlung} nicht berücksichtigt.
 
 \subsection{CAPTCHAs mit minimalem User-Input}
-Invisible CAPTCHAs sind die mit Abstand meistgenutzte Art von CAPTCHAs. (Vgl. \cite{stats})
+CAPTCHAs mit minimalem User-Input sind die mit Abstand meistgenutzte Art von CAPTCHAs. (Vgl. \cite{stats})
+
 Trotz ihrer unauffälligen Natur ist es möglich, dass Menschen fälschlicherweise als Maschinen eingestuft werden,
 da ihr Score zu niedrig ist. 
 Dann müssen als Backup weitere CAPTCHAs ausgefüllt werden.
@@ -342,7 +343,7 @@ Diese Behauptungen sind nicht zu beweisen, da Google keinerlei Informationen zu 
 
 Aufgrund der hohen Erfolgsquote bei dem Lösen von reCAPTCHA v3 durch Bots 
 und dem allgemeinen Misstrauen, das gegenüber dem größten Anbieter von Invisble CAPTCHAs herrscht, 
-werden im Bereich Sicherheit 5 Punkte abgezogen.
+werden im Bereich Sicherheit 2 Punkte abgezogen.
 
 \begin{figure}[h!]
     \centering\includegraphics[width=6cm]{gfx/mygraphics/recaptchaabgelaufen.png}
@@ -358,7 +359,7 @@ werden im Bereich Sicherheit 5 Punkte abgezogen.
             Bedienfreundlichkeit            & 9         \\
             Accessibility                   & 10        \\
             Technische Umsetzbarkeit        & 10         \\
-            Sicherheit                      & 5         
+            Sicherheit                      & 8         
         \end{tabular}
     \end{center}
 \end{table}

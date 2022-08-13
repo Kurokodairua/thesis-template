@@ -20,26 +20,26 @@ und ''[\dots] beschreibt [\dots] das, was man heute als [\dots] künstliche Inte
 Durch seine Überzeugung, dass eines Tages maschinelle Intelligenzen entwickelt werden (können), 
 entwickelte Turing in seinem Paper ''Computing Machinery and Intelligence'' \cite[p.23ff]{turing2009computing} 
 eine Methode des Testens der Intelligenz einer Maschine. 
-Um die Notwendigkeit von genauen Definitionen zu vermeiden, nutzt er deshalb ein Abwandlung eines Verfahren - des ``imitation games''. 
+Um die Notwendigkeit von genauen Definitionen zu vermeiden, nutzt er deshalb eine Abwandlung eines Verfahren - das ``imitation game''. 
 ''Hierbei kommuniziert ein Juror maschinen-schriftlich mit einem Menschen und einer Maschine.'' \cite[p.12]{pallay2020turing}
 Sollte der Juror nicht feststellen können, welcher Gesprächspartner der Mensch ist, gilt der Test als bestanden. \cite[p.11ff]{pallay2020turing}
 
-Dieses Verfahren wird heute oftmals als Turing Test bezeichnet. 
+Die Idee dieses Verfahrens wird heute in sogenannten Turing Tests verwendet.
+Bei dem Juror kann es sich auch um einen anderen Computer handeln.
 
 \section{CAPTCHA}
 \label{ch:basics:captcha}
 Bei der Abkürzung CAPTCHA handelt es sich um ''completely automated public turing tests to tell computers and humans apart''. 
-Sie werden genutzt, um Webseiten vor Angriffen durch Bots zu schützen. 
+Sie werden genutzt, um Webseiten vor unerwünschten, eventuell böswilligen Aktionen durch Bots zu schützen. 
 Bots sind Computerprogramme, welche automatisiert Algorithmen abarbeiten und dabei unter anderem Eingaben tätigen.
+Solche Aktionen können beispielsweise Spam- oder 
+DDoS-Attacken\footnote[1]{Distributed Denial of Service (DDoS): Ausfälle von Systemen durch eine sehr hohe Menge von Anfragen, 
+welche aufgrund ihrer Fülle nicht zeitnah abgearbeitet werden können.} sein.
 Dies wird durch die im vorherigen Kapitel bereits erläuterten Turing Tests erreicht. 
 Hier ist das Ziel, durch für Computer schwer, für Menschen jedoch leicht zu verarbeitende Medien, das Tracken von Mausbewegungen
 oder auch das Prüfen der Browseraktivität zu testen, ob es sich wirklich um eine menschliche Nutzer*in handelt.
 Genutzt werden diese CAPTCHAs beispielsweise in Kommentarbereichen, bei der Registrierung auf Webseiten,
 bei Umfragen oder vor der Einsicht kritischer Daten, wie öffentlich geposteten E-Mail-Adressen. (Vgl. \cite{moradi})
-Durch diese Methodik sollen Spam und 
-DDoS-Attacken\footnote[1]{Distributed Denial of Service (DDoS): Ausfälle von Systemen durch eine sehr hohe Menge von Anfragen, 
-welche aufgrund ihrer Fülle nicht zeitnah abgearbeitet werden können.} 
-verhindert werden.
 
 Als Synonym zu CAPTCHA kann HIP verwendet werden - ''Human Interactive Proofs''. 
 
@@ -114,7 +114,7 @@ Hierbei werden Mausbewegungen, die Geschwindigkeit dieser Bewegungen
 und die allgemeine Reaktionszeit überprüft.
 Dies geschieht, wie in Abbildung \ref{fig:genshin} (a) zu sehen,
 beispielsweise über das Verschieben eines Puzzleteils an die richtige Stelle.
-Andere Variationen dieser CAPTCHA-Art verlangen, dass ein Bild mithilfe eines Schiebereglers in die richtige Position gebracht werden soll,
+Andere Variationen dieser CAPTCHA-Art verlangen, dass ein Bild mithilfe eines Schiebereglers in die richtige Position gebracht,
 oder eine Kontur oder Bewegung mit der Maus nachverfolgt werden soll.
 Auch hier kann in \cite[p.77]{surveyofresearch} genauer nachgelesen werden.
 
@@ -127,7 +127,7 @@ Auch hier kann in \cite[p.77]{surveyofresearch} genauer nachgelesen werden.
     \label{fig:genshin}
 \end{figure}
 
-``Click-based CAPTCHA'' zeichnen sich dadurch aus, dass bestimmte Symbole oder Zeichen auf einem komplexen Hintergrund, 
+``Click-based CAPTCHA'' zeichnen sich dadurch aus, dass bestimmte Symbole oder Zeichen auf einem komplexen Hinter\-grund, 
 teilweise auch in einer bestimmten Reihenfolge, angeklickt werden sollen.
 Hierbei wird auf ``anti-detection'' und ``anti-recognition'' gesetzt. \cite[p.77]{surveyofresearch}
 Ein Beispiel hierfür ist \ref{fig:genshin} (b).
@@ -184,12 +184,12 @@ Es soll so erkannt werden, ob es sich um eine menschliche Stimme handelt.
 
 \subsection{Alternativen zu klassischen CAPTCHA}
 \label{ch:basics:captcha:alternativen}
-Neben klassischen Turing Tests, gibt es weitere Möglichkeiten, Roboter und Menschen zu unterscheiden.
+Neben klassischen Turing Tests gibt es weitere Möglichkeiten, Roboter und Menschen zu unterscheiden.
 Aus diesem Grund werden nachfolgend Alternativen zu klassischen CAPTCHAs vorgestellt.
 
 \subsubsection*{CAPTCHA mit minimalem User-Input}
 Eine aktuell viel genutzte Form der Spam-Prävention ist reCAPTCHA v3 von Google. 
-Hier werden keine Turing Tests durchgeführt. 
+Hier werden keine klassischen Turing Tests durchgeführt. 
 Vielmehr wird anhand verschiedener Faktoren bewertet, ob es sich um einen Bot oder einen Menschen handelt.
 Die Betrachtung von Cookies oder der Häufigkeit von Anfragen durch die gegebene IP-Adresse werden hierbei unter anderem betrachtet.
 In der Dokumentation wird angegeben, dass ein Score von 0.0 bis 1.0 vergeben werden kann. 
@@ -200,17 +200,17 @@ ReCAPTCHA kann durch das Fehlen eines klassischen Turing Tests auch als eine CAP
 
 \begin{figure}[h!]
     \centering\includegraphics[width=6cm]{gfx/mygraphics/recaptcha.png}
-     \caption{reCAPTCHA v2}
+     \caption{CAPTCHA mit wenig benötigtem User-Input - reCAPTCHA v2}
       \label{fig:recaptcha}
 \end{figure}
 
-- hier fehlen noch 1-2 sätze zu den captchas, bei denen man nur abhaken muss, dass man kein roboter ist / perimeterX "press and hold"\dots
- (vielleicht umbenennen in "mit minimalen user-input")
-
+Neben CAPTCHAs ohne jegliche Interaktion gibt es auch solche, 
+die über das einfache Abhaken einer Checkbox verifizieren, ob es sich um einen Roboter handelt.
+Eine andere Variation verlangt von den Nutzer*innen, dass ein Button angeklickt und gehalten werden soll. 
 
 \subsubsection*{Honeypots}
 Eine weitere Alternative zu klassischen CAPTCHA sind sogenannte Honeypots. 
-Geprägt wurde der Begriff erstmals im Kalten Krieg als Spionagetechnik eingesetzt wurde. \cite[p.2]{joshi:2011} 
+Geprägt wurde der Begriff erstmals im Kalten Krieg, wo diese als Spionagetechnik eingesetzt wurde. \cite[p.2]{joshi:2011} 
 
 Auch heute werden Honeypots eingesetzt, und zwar in der IT-Sicherheit. 
 Oft werden sie mit Fallen assoziiert, welche Hacker anlocken sollen. 
@@ -223,7 +223,7 @@ Bei der Prüfung der Inputs kann nun überprüft werden, ob ein Bot in die Falle
 Nachzulesen sind solche Verfahren in verschiedenen Blogposts, wie \cite{perry:2019}.
 
 \subsubsection*{Anti-Spam-Plugins}
-Anti-Spam-Plugins können anstelle von CAPTCHAs genutzt werden, wenn man beispielsweise Kommentarbereiche moderieren möchte.
+Anti-Spam-Plugins können anstelle von CAPTCHAs genutzt werden, wenn man beispielsweise Kommentar\-bereiche moderieren möchte.
 Das WordPress-Plugin ``Antispam-Bee'' arbeitet auf Basis verschiedener Anhaltspunkte, 
 welche Auskunft darüber geben können, ob es sich bei Nutzer*innen wirklich um einen Menschen handelt.
 Es kann beispielsweise überprüft werden, ob Kommentator*innen Gravatar
@@ -239,11 +239,11 @@ Dieses Plugin und die beschriebenen Maßnahmen zur Spam-Präventionen sind nur e
 \subsubsection*{Multi-Faktor-Authentifikation}
 Die Authentifikation von Nutzer*innen über mehrere Schritte kann genutzt werden, um die unbefugte Nutzung von Accounts und Ähnlichem zu verhindern.
 Dadurch kann beispielsweise verhindert werden, dass gestohlene Accountdaten für Spamangriffe genutzt werden können.
-Dieser zweite Schritt, der vor dem Login durchgeführt werden muss ist beispielweise das Anklicken eines Links oder das Eingeben eines Codes,
+Dieser zweite Schritt, der vor dem Login durchgeführt werden muss, ist beispielweise das Anklicken eines Links oder das Eingeben eines Codes,
 welcher über eine App oder SMS zugeschickt wurde.
 Jedoch ersetzt dies nicht das Ausfüllen von CAPTCHAs.
 Auch ein Algorithmus kann diese Aktionen mit Leichtigkeit ausführen. 
-Aus diesem Grund ist die Nutzung von Multi-Faktor-Authentifikation zwar nicht schlecht,
+Die Nutzung von Multi-Faktor-Authentifikation ist zwar nicht schlecht,
 bietet aber keine adäquate Alternative zu der Nutzung von CAPTCHAs. 
 Aus diesem Grund wird die Multi-Faktor-Authentifikation in Folgendem nicht weiter betrachtet.
 
