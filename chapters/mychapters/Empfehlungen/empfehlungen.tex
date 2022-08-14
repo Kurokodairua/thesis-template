@@ -74,7 +74,7 @@ da sie zwar als Alternative zu visuellen CAPTCHAs sehr gut funktionieren, jedoch
 So schließen sie nicht nur gehörlose Menschen gänzlich aus, sondern können auch hörende Menschen den CAPTCHA eventuell nicht absolvieren,
 da sie sich in Situationen befinden, in denen sie keine Töne abspielen wollen oder (technisch) können.
 
-Textbasierte CAPTCHAs erzielen im Worst Case den niedrigsten Score.
+Textbasierte CAPTCHAs erzielen im Worst Case den niedrigsten Score, doch auch im Best Case sind sie auf dem vorletzten Platz.
 Dies liegt unter anderem an der niedrigen Bewertung im Bereich der Sicherheit, 
 da es hier viele Methoden gibt, textbasierte CAPTCHAs durch Algorithmen erkennen und lösen zu lassen.
 Auch im Bereich der Accessibility muss darauf geachtet werden, dass es ausreichend Alternativen für Menschen gibt,
@@ -127,3 +127,37 @@ Es ergeben sich folgende Gesamtnoten:
         \end{tabular}
     \end{center}
 \end{table}
+
+Auch hier erreichen CAPTCHAs mit geringem User-Input eine sehr gute Bewertung.
+Die höchste Gesamtnote erreichen im Best Case jedoch bildbasierte CAPTCHAs.
+
+Es ist zu beachten, dass es sich hier nur um eine Diskrepanz von 0.3 Notenpunkten handelt. 
+Sie entsteht dadurch, dass bei bildbasierten CAPTCHAs weniger Interaktion nötig sein kann als bei einem invisible CAPTCHA,
+welcher aufgrund eines zu niedrigen Scores zusätzliche Verifikation, 
+wie das Lösen eines bild- oder audiobasierten CAPTCHAs, benötigt.
+Im Bereich der technischen Umsetzbarkeit können beide Methoden voll überzeugen. 
+Die Nutzung von APIs ermöglicht eine schnelle Implementation.
+
+Textbasierte CAPTCHAs erzielen im Best Case ebenfalls eine hohe Punktzahl. 
+Dies liegt daran, dass besonders der Punkt Sicherheit keine große Rolle spielt
+und die niedrige Bewertung die Gesamtnote deshalb nicht so stark beeinflusst wie es bei Beispiel 1 der Fall ist. 
+
+Durch die große Spannweite in den Kategorien Bedienfreundlichkeit und Accessibility, 
+liegen die Bewertungen des Worst Case und Best Case bei textbasierten CAPTCHAs weit auseinander.
+Hier ist es also stark von der Einzellösung abhängig, ob diese wirklich eine gute Wahl für diesen Anwendungsfall darstellen würde.
+
+Ähnlich verhält es sich auch bei bildbasierten CAPTCHAs. 
+
+Auch Honeypots bilden eine gute Alternative. 
+Da die Sicherheit in diesem Beispiel nur gering gewertet wird, ist die Problematik, dass sobald ein Honeypot erkannt wurde,
+kein Schutz mehr besteht, nicht allzu relevant. 
+In Sachen Bedienfreundlichkeit und Accessability verhalten sich Honeypots analog zu invisible CAPTCHAs,
+jedoch ohne eventuell benötigte zusätzliche Verifikation.
+
+Audiobasierte CAPTCHAs können trotz ihrer relativ hohen Bedienfreundlichkeit und technischer Umsetzbarkeit keinen hohen Score erzielen.
+Das liegt daran, dass sie eine sehr niedrige Bewertung in den Kategorien Accessability und Sicherheit haben,
+was sich trotz ihrer vergleichsweise niedrigen Bewertung stark auf die Gesamtnote auswirkt.
+
+Gewählt werden sollte hier ein CAPTCHA, das möglichst einfach auszufüllen ist, wie insivible CAPTCHAs oder bildbasierte CAPTCHAs. 
+Honeypots können aufgrund ihrer hohen Bedienfreundlichkeit ebenfalls genutzt werden, 
+sind technisch jedoch etwas schwieriger umzusetzen als andere Methoden.

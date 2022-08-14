@@ -16,7 +16,7 @@ Basierend auf diesen Kategorien können Punkte von 0 bis 10 vergeben werden.
 
 Es gibt bereits Methoden zur Bewertung von CAPTCHA.
 
-In ihrem Paper ``A survey of research on CAPTCHA designing and breaking techniques'' beschreiben Zhang et al. das Design
+In ihrem Paper \citetitle{surveyofresearch} beschreiben \citeauthor{surveyofresearch} das Design
 und mögliche Angriffe verschiedener CAPTCHA-Technologien – textbasiert, bildbasiert und audio-/videobasiert.
 Diese werden basierend auf Benutzerfreundlichkeit, Stabilität, ihren Stärken und Schwächen bewertet.  
 Dabei wird festgelegt, dass CAPTCHAs als gut bezeichnet werden können, wenn diese von Menschen in über 90\% der Fälle gelöst werden können,
@@ -28,13 +28,21 @@ So kann es ziemlich schnell vorkommen, dass ein Algorithmus entwickelt wird, mit
 Wegen der Fülle verschiedenster Tools und Techniken werden in dieser Arbeit deshalb allgemeine Bewertungen getroffen.
 Somit kann, bevor sich im Detail mit einzelnen Lösungen beschäftigt wird, eine Orientierung gegeben werden, welche Art von CAPTCHA genauer betrachtet werden sollte.
 Aus diesen Gründen können zuvor genannte Metriken aus der Literatur nicht übernommen werden.
-%sagen die wirklich gut?
+
+Auch in \citetitle{Beheshti} (\cite{Beheshti}) wird die Nutzererfahrung und Leistung von reCAPTCHA untersucht.
+Hier wird, statt auf eine Metrik, auf die Durchführung von Umfragen gesetzt.
+Es wurden 100 Nutzer*innen befragt, unter anderem zur Leichtigkeit der CAPTCHAs und wie leicht diese zu erkennen sind.
+Die Ergebnisse werden zwar ausführlich dargestellt, jedoch kaum interpretiert.
 \cite{Beheshti}
+Ähnliche Umfragen sind auch in \cite{madathil2010investigation} und \cite{wismer} zu finden.
 
-\dots
+Um eine Umfrage durchführen zu können, bedarf es einer großen Menge an Vorbereitung.
+Außerdem muss auf eine ausreichend große und diverse Gruppe von Befragten geachtet werden, damit die Ergebnisse repräsentativ sind.
+Diese Methode gibt zwar einen genauen Einblick in die Usability der CAPTCHAs, 
+jedoch ist diese Methode nicht praktikabel bei der Auswahl von CAPTCHAs während des Entwicklungsprozesses einer Webseite.
+Punkte wie Sicherheit oder technische Umsetzbarkeit werden außer Acht gelassen.
 
-\dots
-
+Deshalb wird in Folgendem eine Bewertungsmatrix entwickelt, welche die zuvor genannten Mängel löst.
 
 \section{Bewertungsaspekte}
 \label{ch:matrix:aspekte}
