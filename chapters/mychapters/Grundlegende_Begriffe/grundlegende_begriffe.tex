@@ -28,6 +28,8 @@ Sollte der Juror nicht feststellen können, welcher Gesprächspartner der Mensch
 Die Idee dieses Verfahrens wird heute in sogenannten Turing Tests verwendet.
 Bei dem Juror kann es sich auch um einen anderen Computer handeln.
 
+\pagebreak
+
 \section{CAPTCHA}
 \label{ch:basics:captcha}
 Bei der Abkürzung CAPTCHA handelt es sich um ''completely automated public turing tests to tell computers and humans apart''. 
@@ -154,6 +156,8 @@ Bei Gamification CAPTCHAs liegt der Fokus darauf, eventuell langwieriges Ausfül
 und es nicht als lästige Aufgabe ansehen.
 \citeauthor{gamified} schreiben in ihrem Paper \citetitle{gamified} darüber, wie spielerisch lösbare CAPTCHAs die Nutzererfahrung verbessern können.
 Hierbei werden Ideen wie das Ordnen von Cartoon-Panelen näher erläutert.
+\pagebreak
+
 Nicht nur lesen Nutzer*innen den Cartoon, sie wollen bei Fehlschlägen durch den Quizcharakter des CAPTCHAs die richtige Lösung in einem weiteren Versuch finden,
 ohne über die Notwendigkeit der Wiederholung zur Verifizierung nachzudenken. \cite[p.41ff]{gamified}
 
@@ -168,11 +172,13 @@ Um dies zu umgehen gibt es Alternativen, die über das Beschreiben des gesehenen
 \subsubsection*{Audiobasierte CAPTCHA}
 Als Alternative von visuellen CAPTCHAs können audiobasierte CAPTCHA genutzt werden.
 Diese bieten sich vor allem für sehbehinderte Nutzer*innen an, welche bild- oder textbasierte CAPTCHA nur schwer oder gar nicht sehen und erkennen können.
+
 Oft wird hier Text-To-Speech verwendet, wobei die gehörten Wörter durch die Nutzer*innen wiederholt werden sollen.
 Eine weitere Möglichkeit ist das Abspielen bestimmter Töne, wie die einer Glocke oder eines Klaviers. 
-Die kann auch in Kombination mit verschiedenen Hintergrundgeräuschen angewandt werden, was das Erkennen eines bestimmten Tons für Roboter zusätzlich erschwert.
+Dies kann auch in Kombination mit verschiedenen Hintergrundgeräuschen angewandt werden, was das Erkennen eines bestimmten Tons für Roboter zusätzlich erschwert.
 Außerdem gibt es Methoden, bei denen eine bestimmte Frage beantwortet werden muss, für die gesunder Menschenverstand notwendig ist. 
 Beispielsweise kann nach einer Aussage wie ``Sally hat einen Nagel in den Boden gehämmert.'' gefragt werden, ob dieser Nagel vertikal oder horizontal war. \cite[p.3]{commonsense}
+
 Neben Techniken, die hauptsächlich auf das Hören ausgelegt sind, kann der Fokus auch auf das Einsprechen von Phrasen durch die Nutzer*innen gelegt werden.
 Es soll so erkannt werden, ob es sich um eine menschliche Stimme handelt.
 \cite[p.78]{surveyofresearch}
@@ -183,6 +189,8 @@ Es soll so erkannt werden, ob es sich um eine menschliche Stimme handelt.
      \caption{Audiobasierte Alternative zu bildbasiertem CAPTCHA von reCAPTCHA v2}
       \label{fig:audio}
 \end{figure}
+
+\pagebreak
 
 \subsection{Alternativen zu klassischen CAPTCHA}
 \label{ch:basics:captcha:alternativen}
@@ -199,13 +207,16 @@ Hier gilt: Je niedriger der Score, desto wahrscheinlicher handelt es sich um ein
 Laut Google selbst soll reCAPTCHA v3 eine sehr gute Nutzererfahrung bieten, da es kaum bis gar keine Zuarbeit durch den Nutzer verlangt. \cite{googleblog:recaptcha}
 
 ReCAPTCHA kann durch das Fehlen eines klassischen Turing Tests auch als eine CAPTCHA-Alternative interpretiert werden.
-Ähnliche ``Invisible CAPTCHA''-Techniken werden auch von GeeTest (\cite{geetest}) und hCaptcha (\cite{hcaptcha}) angeboten.
+
+Ähnliche ``Invisible CAPTCHA''-Techniken werden auch von GeeTest \linebreak(\cite{geetest}) und hCaptcha (\cite{hcaptcha}) angeboten.
 
 \begin{figure}[h!]
     \centering\includegraphics[width=6cm]{gfx/mygraphics/recaptcha.png}
      \caption{CAPTCHA mit wenig benötigtem User-Input - reCAPTCHA v2}
       \label{fig:recaptcha}
 \end{figure}
+
+\pagebreak
 
 Neben CAPTCHAs ohne jegliche Interaktion gibt es auch solche, 
 die über das einfache Abhaken einer Checkbox verifizieren, ob es sich um einen Roboter handelt.
@@ -242,13 +253,14 @@ Dieses Plugin und die beschriebenen Maßnahmen zur Spam-Präventionen sind nur e
 \subsubsection*{Multi-Faktor-Authentifikation}
 Die Authentifikation von Nutzer*innen über mehrere Schritte kann genutzt werden, um die unbefugte Nutzung von Accounts und Ähnlichem zu verhindern.
 Dadurch kann beispielsweise verhindert werden, dass gestohlene Accountdaten für Spamangriffe genutzt werden können.
+
 Dieser zweite Schritt, der vor dem Login durchgeführt werden muss, ist beispielweise das Anklicken eines Links oder das Eingeben eines Codes,
 welcher über eine App oder SMS zugeschickt wurde.
 Jedoch ersetzt dies nicht das Ausfüllen von CAPTCHAs.
 Auch ein Algorithmus kann diese Aktionen mit Leichtigkeit ausführen. 
 Die Nutzung von Multi-Faktor-Authentifikation ist zwar nicht schlecht,
 bietet aber keine adäquate Alternative zu der Nutzung von CAPTCHAs. 
-Aus diesem Grund wird die Multi-Faktor-Authentifikation in Folgendem nicht weiter betrachtet.
+Aus diesem Grund wird die Multi-Faktor-Authentifi\-kation in Folgendem nicht weiter betrachtet.
 
 \subsubsection*{Biometrie}
 Eine relativ neue Art der Überprüfung von Nutzer*innen ist die Verifizierung durch Biometrie.

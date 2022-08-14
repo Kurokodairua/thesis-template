@@ -19,6 +19,7 @@ Es gibt bereits Methoden zur Bewertung von CAPTCHA.
 In ihrem Paper \citetitle{surveyofresearch} beschreiben \citeauthor{surveyofresearch} das Design
 und mögliche Angriffe verschiedener CAPTCHA-Technologien – textbasiert, bildbasiert und audio-/videobasiert.
 Diese werden basierend auf Benutzerfreundlichkeit, Stabilität, ihren Stärken und Schwächen bewertet.  
+
 Dabei wird festgelegt, dass CAPTCHAs als gut bezeichnet werden können, wenn diese von Menschen in über 90\% der Fälle gelöst werden können,
 von Maschinen hingegen in weniger als 1\% der Fälle.
 Quellen für diese Metrik sind Paper aus dem Jahre 2005 und 2008. \cite[p.75]{surveyofresearch}
@@ -98,14 +99,19 @@ Nicht zu vergessen sind verschiedene körperliche Einschränkungen von Nutzer*in
 die das Ausfüllen von CAPTCHAs erschweren oder gar unmöglich machen. Auch hier sind audiobasierte CAPTCHA zu erwähnen,
 da diese für schwerhörige oder gehörlose Menschen nicht absolvierbar sind.
 Ebenso müssen visuelle CAPTCHA für Screenreader optimiert werden, um sie für blinde Nutzer*innen nutzbar zu machen.
-Auch andere visuelle Beeinträchtigungen, wie beispielsweise Rot-Grün-Schwächen, müssen beachtet werden.
-Diese Aspekte führen jeweils zu Punktabzügen, sofern sie auftreten.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=6cm]{gfx/mygraphics/pr0grammcaptcha.png}
+    \includegraphics[width=5cm]{gfx/mygraphics/pr0grammcaptcha.png}
     \caption{textbasiertes Captcha beim Login auf pr$0$gramm.com, das für Menschen mit Rot-Grün-Schwäche nur schwer zu erkennen ist}
+    \label{rotgruen}
 \end{figure}
+
+\pagebreak
+
+Auch andere visuelle Beeinträchtigungen, wie beispielsweise Rot-Grün-Schwächen, müssen beachtet werden,
+wie beispielsweise in \autoref{rotgruen} dargestellt.
+Diese Aspekte führen jeweils zu Punkt\-abzügen, sofern sie auftreten.
 
 Jedoch ist auch zu beachten, dass durch eine Kombination von einer visuellen 
 und einer audiobasierten CAPTCHA-Methode auch blinde Menschen diese CAPTCHAs ausfüllen können. 
@@ -125,6 +131,7 @@ auch wenn es sich dabei gegebenenfalls um eine Minderheit handelt.
 Bei der technischen Umsetzbarkeit wird das Augenmerk auf die Implementation und Instandhaltung der Techniken gelegt.
 Unzureichende Dokumentation kann die Implementation und eventuelles Debugging erheblich erschweren
 und spielt deshalb eine wichtige Rolle bei der Auswahl.
+
 Aus diesem Grunde werden je nach Qualität der Dokumentation gegebenenfalls Punkte abgezogen.
 Gleiches geschieht, wenn der Ressourcenverbrauch sich stark erhöht, wenn die entsprechenden Methoden benutzt werden.
 
@@ -142,7 +149,7 @@ Im Kontext dieser Arbeit werden die aufgestellten Leitfragen zur technischen Ums
 Technologien beantwortet - gibt es mehrere Produkte mit guter Dokumentation und leichter Implementierung,
 wirkt sich dies positiv auf die Bewertung aus.
 Sind kaum oder keine aktuellen Produkte zu einer CAPTCHA-Art zu finden, ist dies negativ zu bewerten.
- 
+
 \subsection{Sicherheit}
 \label{ch:matrix:aspekte:sicherheit}
 Sicherheit ist der Hauptgrund für die Verwendung von Spam-Präventions\-techniken.
