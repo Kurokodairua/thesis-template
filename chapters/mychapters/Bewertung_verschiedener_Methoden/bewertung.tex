@@ -122,10 +122,11 @@ Analog zu textbasierten CAPTCHAs kann bei der technischen Umsetzung deshalb voll
 
 Mithilfe einer Support Vector Machine konnte die CAPTCHA-Methode Asirra von Microsoft (Vgl. \cite{elson2007asirra})
 mit einer Erfolgsrate von 82,7 Prozent absolviert werden. 
-Die Nutzung von OpenCV ermöglicht, bestimmte Merkmale in Bildern algorithmisch zu analysieren.
+Die Nutzung von OpenCV\footnote[4]{Bibliothek für C, C++, Python und Java, welche verschiedene Algorithmen zur Bildverarbeitung und Computer Vision (CV) anbietet.}
+ermöglicht, bestimmte Merkmale in Bildern algorithmisch zu analysieren.
 Ebenso kann durch Trainieren von künstlichen Intelligenzen (KI) durch große Datenmengen (Deep Learning) eine hohe Erfolgsquote erreicht werden,
 so konnten bereits mehrere CAPTCHAs von hochrangigen Unternehmen durch diese Weise erfolgreich erledigt durchgeführt werden.
-Die Nutzung von KI ist noch nicht allzu weit verbreitet, gewinnt aber immer mehr an Bedeutung.
+Mit der zunehmenden Komplexität dieser CAPTCHAs steigt auch der Bedarf an künstlichen Intelligenzen, um die verschiedenen Technologien brechen zu können.
 Da es bereits vermehrt sehr hohe Erfolgsquoten bei der Absolvierung von CAPTCHAs durch KIs und die Nutzung von OpenCV gab,
 müssen für beide Techniken zur Umgehung dieser CAPTCHAs im Kontext Sicherheit 2 Punkte abgezogen werden.
 CAPTCHAs, welche über das Verschieben von Reglern funktionieren, sind durch ihr teilweise sehr aufwändiges Tracking von Mausbewegungen,
@@ -182,8 +183,8 @@ Da videobasierte CAPTCHAs in der heutigen Zeit kaum noch von Bedeutung sind, wer
 
 \section{Audiobasierte CAPTCHA}
 \label{ch:bewertung:audio}
-Audiobasierte CAPTCHAs werden meist als Alternative für blinde Menschen eingesetzt.
-Doch auch für sehende Nutzer*innen sind sie leicht zu absolvieren.
+Audiobasierte CAPTCHAs werden meist als Alternative für blinde Menschen eingesetzt, 
+doch auch für sehende Nutzer*innen sind sie leicht zu absolvieren.
 Auch zeitliche Begrenzungen treten nicht auf.
 Bei einer sehr komplexen Kombination von Tönen kann ein Punkt bei der Bedienfreundlichkeit abgezogen werden müssen.
 
@@ -231,7 +232,7 @@ Es gibt keine zeitlichen Begrenzungen, jedoch auch keine Fehletoleranz.
 Außerdem ist es nicht garantiert, dass alle Nutzer*innen Freude am Ausfüllen dieser CAPTCHAs haben.
 Aus diesem Grund wird ein Punkt abgezogen.
 
-In \cite{gamified} wird nicht erwähnt, wie sich die beschriebene Methode barrierefreier gestalten lässt.
+In \citetitle{gamified} (\cite{gamified}) wird nicht erwähnt, wie sich die beschriebene Methode barrierefreier gestalten lässt.
 Durch Alternativtexte könnten jedoch die Cartoon-Panele beschrieben werden.
 Dadurch kann auch, wenn der Inhalt visuell nicht erkannt werden kann, entsprechend geordnet werden.
 
@@ -269,7 +270,7 @@ Dadurch kann auch eine hohe Accessibility gewährleistet werden.
 Zu bedenken ist jedoch, dass diese zusätzlichen Textfelder Screenreadern eventuell Probleme bereiten können.
 Deshalb wird hier ein Punkt abgezogen.
 
-Da Honeypots händisch implementiert werden müssen, ist ein gewisses technisches Know-How nötig.
+Da Honeypots händisch, also ohne Hilfe von APIs oder Ähnlichem, implementiert werden müssen, ist ein gewisses technisches Know-How nötig.
 Jedoch lassen sich ausreichend Tutorials finden, um die Implementation schnell durchführen zu können.
 Aus diesem Grund wird nur ein Punkt abgezogen.
 
