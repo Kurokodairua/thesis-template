@@ -5,7 +5,7 @@ Es wird kurz auf die Historie von Turing Tests eingegangen, um die grundlegende 
 Anschließend werden die verschiedenen CAPTCHA-Methoden und Alternativen grundlegend erläutert. 
 
 Hierbei werden bereits einige Techniken aussortiert, da diese aus verschiedenen Gründen nicht relevant für die spätere Betrachtung sind.
-Zuletzt wird ein grundlegendes Verständnis für UX geschaffen.
+Zuletzt wird ein grundlegendes Verständnis für User Experience (UX) geschaffen.
 
 \section{Turing Tests}
 \label{ch:basics:turing}
@@ -24,7 +24,7 @@ Durch seine Überzeugung, dass eines Tages maschinelle Intelligenzen entwickelt 
 entwickelte Turing in seinem Paper ''Computing Machinery and Intelligence'' \cite[p.23ff]{turing2009computing} 
 eine Methode des Testens der Intelligenz einer Maschine. 
 
-Um die Notwendigkeit von genauen Definitionen zu vermeiden, nutzt er deshalb eine Abwandlung eines Verfahren - das ``imitation game''. 
+Um die Notwendigkeit von genauen Definitionen zu vermeiden, nutzte er deshalb eine Abwandlung eines Verfahren - das ``imitation game''. 
 \citeauthor{pallay2020turing} beschreibt dieses Verfahren in \cite[p.11ff]{pallay2020turing} folgendermaßen:
 Ein Juror kommuniziert ``maschinen-schriftlich'' mit zwei Gesprächspartnern. Einer dieser Gesprächspartner ist ein Mensch, der zweite Gesprächspartner ist eine Maschine.
 Sollte der Juror nicht feststellen können, welcher Gesprächspartner der Mensch ist, gilt der Test als bestanden.
@@ -42,11 +42,11 @@ Bots sind Computerprogramme, welche automatisiert Algorithmen abarbeiten und dab
 Solche Aktionen können beispielsweise Spam- oder 
 DDoS-Attacken\footnote[1]{Distributed Denial of Service (DDoS): Ausfälle von Systemen durch eine sehr hohe Menge von Anfragen, 
 welche aufgrund ihrer Fülle nicht zeitnah abgearbeitet werden können.} sein.
-Dies wird durch die im vorherigen Kapitel bereits erläuterten Turing Tests erreicht. 
+Erkannt werden können Bots durch die im vorherigen Kapitel bereits erläuterten Turing Tests. 
 Hier ist das Ziel, durch für Computer schwer, für Menschen jedoch leicht zu verarbeitende Medien, das Tracken von Mausbewegungen
 oder auch das Prüfen der Browseraktivität zu testen, ob es sich wirklich um eine menschliche Nutzer*in handelt.
-Genutzt werden diese CAPTCHAs beispielsweise in Kommentarbereichen, bei der Registrierung auf Webseiten,
-bei Umfragen oder vor der Einsicht kritischer Daten, wie öffentlich geposteten E-Mail-Adressen. (Vgl. \cite{moradi})
+Genutzt werden diese CAPTCHAs beispielsweise vor dem Versenden eines Kommentars, bei der Bewertung eines Produkts, bei der Registrierung auf Webseiten,
+bei Umfragen oder vor der Einsicht kritischer Daten, wie öffentlich geposteten E-Mail-Adressen (Vgl. \cite{moradi}).
 
 Als Synonym zu CAPTCHA kann HIP verwendet werden - ''Human Interactive Proofs''. 
 
@@ -58,10 +58,11 @@ Eine genaue Vorstellung spezifischer Produkte des freien Markts findet nicht sta
 Eventuelle Sicherheitslücken in spezifischen Systemen werden in \autoref{ch:bewertung} erläutert.
 
 \subsubsection*{Textbasierte CAPTCHA}
-Textbasierte CAPTCHA waren 2008 die am häufigsten verwendete Art von CAPTCHA.
+Textbasierte CAPTCHA waren 2008 die am häufigsten verwendete Art von CAPTCHA \cite[p.1]{usabilityofcaptchas}.
+Es werden mehrere Zeichen oder Wörter in einer Grafik ausgegeben und müssen erkannt werden.
 Sie zeichnen sich durch eine Verzerrung eines Wortes oder mehreren Wörtern aus, sodass diese für Bilderkennungstools nicht erkennbar sind.
 Eine weitere Variante textbasierter CAPTCHA ist die einer einfachen Rechenaufgabe. 
-Auch hier soll erreicht werden, dass ein Bot die angegebenen Zahlen nicht korrekt erkennen kann und die Gleichung somit nicht lösen kann. \cite[p.1]{usabilityofcaptchas} \cite[p.75]{surveyofresearch} \cite{shinde2018DIFFERENTTO} %TODO SEITEN!!!!!!!!!
+Auch hier soll erreicht werden, dass ein Bot die angegebenen Zahlen nicht korrekt erkennen kann und die Gleichung somit nicht lösen kann. (Vgl. \cite[p.1]{usabilityofcaptchas} \cite[p.75]{surveyofresearch} \cite{shinde2018DIFFERENTTO}) %TODO SEITEN!!!!!!!!!
 
 Bei der Darstellung dieser Zeichen und Symbole können verschiedene Ansätze verfolgt werden.
 \citeauthor{surveyofresearch} beschreiben hierbei ``anti-segmentation techniques'' und ``anti-recognition techniques'' \cite[p.76]{surveyofresearch}.
@@ -77,7 +78,7 @@ Bei der Darstellung dieser Zeichen und Symbole können verschiedene Ansätze ver
 
 Anti-Segmentation Techniques zielen darauf ab, das Separieren der einzelnen Buchstaben durch Algorithmen zu erschweren. 
 Um dies zu erreichen, gibt es verschiedene Herangehensweisen.
-Eine von ihnen besteht daraus, dass nur die Konturen der verschiedenen Zeichen angezeigt werden, sodass diese nur von Menschen erkannt werden können,
+Eine von ihnen besteht daraus, dass nur die Konturen der verschiedenen Zeichen angezeigt werden, sodass diese nur von Menschen leicht erkannt werden können,
 Bots hingegen wenig Chancen haben, diese korrekt zu unterscheiden. Diese Art von CAPTCHA nennen \citeauthor{surveyofresearch} ``Hollow CAPTCHAs''. %Formulierung
 Eine weitere Methode ist, Zeichen nah beieinander oder sogar überlappend darzustellen, 
 was von \citeauthor{surveyofresearch} als ``crowing characters together $($CCT$)$ and overlapping'' bezeichnet wird.
@@ -107,8 +108,8 @@ Eine Kombination von Anti-Segmentation und Anti-Recognition Techniken ist in \au
 \subsubsection*{Bildbasierte CAPTCHA}
 Es gibt verschiedene Arten von bildbasierten CAPTCHAs. 
 Die wohl bekannteste ist ein in Quadrate aufgeteiltes Bild, wobei man jene Quadrate auswählen soll, welche einen bestimmten Gegenstand enthalten.
-Eine Variation dieses CAPTCHAs besteht aus einer Zahl verschiedener Bilder, von denen eine Teilmenge ebenfalls ein gesuchtes Objekt beinhalten 
-und sich semantisch ähneln. 
+Eine Variation dieses CAPTCHAs besteht aus einer Menge verschiedener Bilder, von denen eine Teilmenge ebenfalls ein gesuchtes Objekt beinhalten. 
+Die Bilder in der Teilmenge sollen ausgewählt werden. 
 \autoref{fig:selectionbased} stellt diese Variationen dar.
 In Abbildung \ref{fig:fortnite} sollen Hunde mit geschlossenen Augen ausgewählt werden,
 was die Notwendigkeit der Zunahme der Komplexität dieser CAPTCHAs gut widerspiegelt. 
@@ -124,7 +125,7 @@ Dies geschieht, wie in Abbildung \ref{fig:genshin} (a) zu sehen,
 beispielsweise über das Verschieben eines Puzzleteils an die richtige Stelle.
 Andere Variationen dieser CAPTCHA-Art verlangen, dass ein Bild mithilfe eines Schiebereglers in die richtige Position gebracht,
 oder eine Kontur oder Bewegung mit der Maus nachverfolgt werden soll.
-Auch hier kann in \cite[p.77]{surveyofresearch} genauer nachgelesen werden.
+Details können in \cite[p.77]{surveyofresearch} genauer nachgelesen werden.
 
 \begin{figure}[h!]
     \centering
@@ -138,13 +139,13 @@ Auch hier kann in \cite[p.77]{surveyofresearch} genauer nachgelesen werden.
 ``Click-based CAPTCHA'' zeichnen sich laut \citeauthor{surveyofresearch} dadurch aus, dass bestimmte Symbole oder Zeichen auf einem komplexen Hinter\-grund, 
 teilweise auch in einer bestimmten Reihenfolge, angeklickt werden sollen.
 Hierbei wird auf ``anti-detection'' und ``anti-recognition'' gesetzt \cite[p.77]{surveyofresearch}. 
-
 Ein Beispiel hierfür ist \ref{fig:genshin} (b).
+
 Eine weitere Form der click-basierten CAPTCHAs sieht vor, dass Objekte ausgewählt werden sollen,
 die beispielsweise die gleiche Textur besitzen oder räumlich nah an einem bestimmten anderen Objekt dargestellt sind. 
 Diese sind zum Beispiel VTT\footnote[2]{VTT = Visual Turing Test} CAPTCHA. (Vgl. \cite[p.78]{surveyofresearch})
 
-Ein Beispiel hierfür ist in \autoref{fig:geetest} zu sehen.
+Ein Beispiel für click-basierte CAPTCHAs ist in \autoref{fig:geetest} zu sehen.
 Hier wird über die Größe, Farbe und Position angegeben, welches Objekt angeklickt werden muss, um den CAPTCHA zu lösen.
 Die Formulierung ``in front of'' ist hierbei auch auf Objekte bezogen, die nicht genau, sondern auch versetzt, vor dem gelben Zylinder stehen.
 Zum Lösen des CAPTCHAs muss deshalb auf die grüne Kugel geklickt werden.
@@ -163,15 +164,16 @@ und es nicht als lästige Aufgabe ansehen.
 Hierbei werden Ideen wie das Ordnen von Cartoon-Panelen näher erläutert.
 \pagebreak
 
-Nicht nur lesen Nutzer*innen den Cartoon, sie wollen bei Fehlschlägen durch den Quizcharakter des CAPTCHAs die richtige Lösung in einem weiteren Versuch finden,
+Nicht nur lesen Nutzer*innen den Cartoon, sie sollen bei Fehlschlägen durch den Quizcharakter des CAPTCHAs die richtige Lösung in einem weiteren Versuch finden wollen,
 ohne über die Notwendigkeit der Wiederholung zur Verifizierung nachzudenken \cite[p.41ff]{gamified}. 
 
 
 \subsubsection*{Videobasierte CAPTCHA}
 Eine weitere von \citeauthor{surveyofresearch} (\cite[p.79]{surveyofresearch}) beschriebene Form visueller CAPTCHAs sind videobasierte CAPTCHA. 
-Nutzer*innen müssen beispielsweise verschiedene Bewegungen erkennen, die im Video ausgeführt werden,
+Nutzer*innen müssen ein Video ansehen und dann Fragen zum Inhalt beantworten.
+Beispielsweise sollen verschiedene Bewegungen erkannt werden, die im Video ausgeführt werden,
 oder auch angezeigte Werbung.
-Dabei werden verschiedene Antwortmöglichkeiten vorgegeben, welche durch Raten auch durch Bots erfolgreich absolviert werden können.
+Dabei werden verschiedene Antwortmöglichkeiten vorgegeben, welche daher durch Raten auch durch Bots erfolgreich absolviert werden können.
 Um dies zu umgehen gibt es Alternativen, die über das Beschreiben des gesehenen Videos funktionieren. 
 
 \subsubsection*{Audiobasierte CAPTCHA}
@@ -208,7 +210,7 @@ Eine aktuell viel genutzte Form der Spam-Prävention ist reCAPTCHA v3 von Google
 Hier werden keine klassischen Turing Tests durchgeführt. 
 Vielmehr wird anhand verschiedener Faktoren bewertet, ob es sich um einen Bot oder einen Menschen handelt.
 Die Betrachtung von Cookies oder der Häufigkeit von Anfragen durch die gegebene IP-Adresse werden hierbei unter anderem betrachtet.
-In der Dokumentation wird angegeben, dass ein Score von 0.0 bis 1.0 vergeben werden kann. 
+In der Dokumentation wird angegeben, dass ein System einen Score von 0.0 bis 1.0 vergibt. 
 Hier gilt: Je niedriger der Score, desto wahrscheinlicher handelt es sich um einen Bot statt einer echten Nutzer*in. (Vgl. \cite{recaptchadoc})
 Laut Google selbst soll reCAPTCHA v3 (\cite{googleblog:recaptcha}) eine sehr gute Nutzererfahrung bieten, da es kaum bis gar keine Zuarbeit durch den Nutzer verlangt. 
 
@@ -232,7 +234,7 @@ Eine andere Variation verlangt von den Nutzer*innen, dass ein Button angeklickt 
 Eine weitere Alternative zu klassischen CAPTCHA sind sogenannte Honeypots. 
 Geprägt wurde der Begriff erstmals im Kalten Krieg, wo diese als Spionagetechnik eingesetzt wurde \cite[p.2]{joshi:2011}.  
 
-Auch heute werden Honeypots eingesetzt, und zwar in der IT-Sicherheit. 
+Auch heute wird der Begriff Honeypots verwendet, und zwar in der IT-Sicherheit. 
 Oft werden sie mit Fallen assoziiert, welche Hacker anlocken sollen. 
 Dadurch können Angriffsarten analysiert werden und echte Systeme werden nicht angegriffen.
 
@@ -250,7 +252,7 @@ Es kann beispielsweise überprüft werden, ob Kommentator*innen Gravatar
 \footnote[3]{Gravatar steht für "Globally Recognized Avatar". 
 Es kann ein Profilbild hochgeladen werden, welches mit einer oder mehreren E-Mail-Adressen verknüpft ist 
 und neben Kommentaren angezeigt wird, wenn dort die entsprechende E-Mail-Adresse angegeben wurde. (Vgl. \cite{doku:antispambee})} nutzen.
-Außerdem können IP-Adressen betrachtet werden und diese kann neben anderen Daten der Kommentator*innen gegebenenfalls in ``Spamdatenbanken'' gefunden werden.
+Außerdem können IP-Adressen betrachtet werden und diese können neben anderen Daten der Kommentator*innen gegebenenfalls in ``Spamdatenbanken'' gefunden werden.
 Auch das Blockieren von Kommentaren aus bestimmten Ländern oder das Akzeptieren von Kommentaren in ausschließlich einer Sprache ist möglich.
 Dieses Plugin und die beschriebenen Maßnahmen zur Spam-Präventionen sind nur eine von vielen Optionen, die hier zur Verfügung stehen.
 \cite{blog:antispambee}
@@ -264,6 +266,7 @@ Dieser zweite Schritt, der vor dem Login durchgeführt werden muss, ist beispiel
 welcher über eine App oder SMS zugeschickt wurde.
 Jedoch ersetzt dies nicht das Ausfüllen von CAPTCHAs.
 Auch ein Algorithmus kann diese Aktionen mit Leichtigkeit ausführen. 
+Multi-Faktor-Authentifikation kann nur bestimmte Nutzer*innen erkennen, jedoch nicht, ob es sich um Mensch oder Maschine handelt.
 Die Nutzung von Multi-Faktor-Authentifikation ist zwar nicht schlecht,
 bietet aber keine adäquate Alternative zu der Nutzung von CAPTCHAs. 
 Aus diesem Grund wird die Multi-Faktor-Authentifi\-kation in Folgendem nicht weiter betrachtet.

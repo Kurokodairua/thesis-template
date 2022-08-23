@@ -7,7 +7,7 @@ und wie diese auf den vorliegenden Anwendungsfall anzuwenden sind.
 
 Anschließend werden die Kategorien Bedienfreundlichkeit, also wie einfach die Tests auszufüllen sind, Accessibility, technische Umsetzbarkeit
 und Sicherheit näher erläutert.
-Es werden Fragen festgelegt, anhand derer man die Bewertung vornehmen kann.
+Es werden Fragen festgelegt, anhand derer man die Bewertung der CAPTCHAs vornehmen kann.
 
 Basierend auf diesen Kategorien können Punkte von 0 bis 10 vergeben werden.
 
@@ -25,7 +25,7 @@ von Maschinen hingegen in weniger als 1\% der Fälle.
 Quellen für diese Metrik sind Paper aus dem Jahre 2005 und 2008. \cite[p.75]{surveyofresearch}
 
 Seitdem gab es weitreichende Entwicklungen im Bereich der künstlichen Intelligenz.
-So kann es ziemlich schnell vorkommen, dass ein Algorithmus entwickelt wird, mithilfe dessen eine spezifische Technik gelöst werden kann.
+So kann es ziemlich schnell vorkommen, dass ein Algorithmus entwickelt wird, mithilfe dessen eine spezifische Aufgabestellung eines CAPTCHAs gelöst werden kann.
 Wegen der Fülle verschiedenster Tools und Techniken werden in dieser Arbeit deshalb allgemeine Bewertungen getroffen.
 Somit kann, bevor sich im Detail mit einzelnen Lösungen beschäftigt wird, eine Orientierung gegeben werden, welche Art von CAPTCHA genauer betrachtet werden sollte.
 Aus diesen Gründen können zuvor genannte Metriken aus der Literatur nicht übernommen werden.
@@ -48,8 +48,8 @@ Deshalb wird in Folgendem eine Bewertungsmatrix entwickelt, welche die zuvor gen
 
 \section{Bewertungsaspekte}
 \label{ch:matrix:aspekte}
-Die gegebenen Kategorien wurden gewählt, um einerseits Fokus auf die verschiedenen Aspekte der Nutzererfahrung legen zu können,
-andererseits jedoch auch nicht die Sicherheit als initialen Grund für die Verwendung von CAPTCHAs außer Acht zu lassen.
+Die nachfolgend geschriebenen Kategorien wurden gewählt, um einerseits Fokus auf die verschiedenen Aspekte der Nutzererfahrung legen zu können,
+andererseits jedoch auch die Sicherheit als initialen Grund für die Verwendung von CAPTCHAs nicht außer Acht zu lassen.
 
 Um die Bewertung zu erleichtern, werden je Kategorien einige beispielhafte Leitfragen angegeben, welche bei Bedarf auch angepasst werden können.
 In diesem Fall sollte dies jedoch für alle zu betrachtenden Techniken getan werden, um die Vergleichbarkeit zu gewährleisten.
@@ -60,11 +60,11 @@ Dazu zählt insbesondere, wenn Leitfragen nicht klar positiv beantwortet werden 
 
 \subsection{Bedienfreundlichkeit}
 \label{ch:matrix:aspekte:Bedienfreundlichkeit}
-Bedienfreundlichkeit beschreibt, wie einfach es für Nutzer*innen ist, einen CAPTCHA auszufüllen.
+Bedienfreundlichkeit beschreibt, wie leicht es für Nutzer*innen ist, einen CAPTCHA auszufüllen.
 Dies bedeutet, dass dies nicht zu lang dauern und auch nicht zu schwierig sein darf. 
-Ist dies der Fall, werden bei der Bewertung abhängig vom Schweregrad Punkte abgezogen. %(diese seite mit der schlechten ux sehr gutes beispiel) 
+Ist dies nicht der Fall, werden bei der Bewertung abhängig vom Schweregrad Punkte abgezogen. %(diese seite mit der schlechten ux sehr gutes beispiel) 
 Ein weiterer Aspekt, der zu Irritationen führen kann, sind zeitbegrenzte CAPTCHA. 
-Diese laufen nach einer bestimmten Zeit ab und man muss die Seite neu laden und den Anmeldevorgang neu beginnen.
+Diese laufen nach einer bestimmten Zeit ab und man muss die Seite neu laden und beispielsweise den Anmeldevorgang neu beginnen.
 Auch hier ist ein Punktabzug nötig.
 
 Zu beantwortende Fragen können im diesem Kontext sein:
@@ -75,7 +75,6 @@ Zu beantwortende Fragen können im diesem Kontext sein:
 \end{enumerate}
 
 Eine hohe Bewertung bedeutet eine hohe Bedienfreundlichkeit. 
-
 Die Betrachtung des Aufwands bei der Implementierung findet in Kapitel \ref{ch:matrix:aspekte:tu} statt, da dieser der technischen Umsetzbarkeit zuzuordnen ist.
 
 \subsection{Accessibility}
@@ -94,7 +93,7 @@ Hierbei ist unter anderem zu beachten, dass CAPTCHA nicht nur an klassischen PC-
 sondern auf verschiedensten Geräten und mit unterschiedlichen Gegebenheiten.
 Audiobasierte CAPTCHA können beispielsweise als störend wahrgenommen und deshalb nicht ausgefüllt werden,
 wenn das Abspielen von Tönen andere stören könnte $($in öffentlichen Verkehrsmitteln, in Büros, usw.$)$,
-oder das benutzte Gerät kann keinen Ton abspielen.
+oder das benutzte Gerät keinen Ton abspielen kann.
 
 Nicht zu vergessen sind verschiedene körperliche Einschränkungen von Nutzer*innen,
 die das Ausfüllen von CAPTCHAs erschweren oder gar unmöglich machen. Auch hier sind audiobasierte CAPTCHA zu erwähnen,
@@ -104,7 +103,7 @@ Ebenso müssen visuelle CAPTCHA für Screenreader optimiert werden, um sie für 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=5cm]{gfx/mygraphics/pr0grammcaptcha.png}
-    \caption{textbasiertes Captcha beim Login auf pr$0$gramm.com, das für Menschen mit Rot-Grün-Schwäche nur schwer zu erkennen ist}
+    \caption{Textbasierter CAPTCHA beim Login auf pr$0$gramm.com, das für Menschen mit Rot-Grün-Schwäche nur schwer zu erkennen ist}
     \label{rotgruen}
 \end{figure}
 
@@ -117,13 +116,11 @@ Diese Aspekte führen jeweils zu Punkt\-abzügen, sofern sie auftreten.
 Jedoch ist auch zu beachten, dass durch eine Kombination von einer visuellen 
 und einer audiobasierten CAPTCHA-Methode auch blinde Menschen diese CAPTCHAs ausfüllen können. 
 Dies wiederum wäre ein Pluspunkt. 
-Aus diesem Grund kann es hier, wie auch in allen anderen Kategorien zur Angabe mehrerer Noten kommen,
+Aus diesem Grund kann es hier, wie auch in allen anderen Kategorien, zur Angabe mehrerer Bewertungen kommen,
 um insbesondere bei sehr vielfältigen und heterogenen CAPTCHA-Methoden sowohl eher niedrig zu bewertende, 
 als auch sehr gute Technologien einbeziehen zu können.
 
-Je nach vorgesehender Nutzergruppe und Anwendungsgebiet kann diese Kategorie, so wie auch jede andere, 
-sehr stark oder sehr schwach bewertet und gewichtet werden.
-Für folgende Beispiele werden Einschränkungen, welche ganze Personengruppen betreffen, entsprechend schwerwiegend bewertet,
+Für folgende CAPTCHA-Arten werden Einschränkungen, welche ganze Personengruppen betreffen, entsprechend schwerwiegend bewertet,
 auch wenn es sich dabei gegebenenfalls um eine Minderheit handelt.
 
 \subsection{Technische Umsetzbarkeit}
@@ -136,14 +133,14 @@ und spielt deshalb eine wichtige Rolle bei der Auswahl.
 Aus diesem Grunde werden je nach Qualität der Dokumentation gegebenenfalls Punkte abgezogen.
 Gleiches geschieht, wenn der Ressourcenverbrauch sich stark erhöht, wenn die entsprechenden Methoden benutzt werden.
 
-Auch bei der Implementierung der CAPTCHAs kann es zu einer schlechteren Bewertung kommen, wenn diese sich kompliziert gestaltet und man viel an vorhandenem Code ändern muss,
+Auch bei der Implementierung der CAPTCHAs kann es zu einer schlechteren Bewertung kommen, wenn diese sich kompliziert gestaltet und viel an vorhandenem Code abgeändern werden muss,
 um die jeweilige Technologie zu verwenden.
 
 Es ergeben sich folgende Leitfragen:
 \begin{enumerate}
     \item Ist die Dokumentation ausreichend? 
     \item Werden viele Ressourcen benötigt?
-    \item Muss man vorhandenen Quellcode stark abändern?
+    \item Muss vorhandenen Quellcode stark abgeändert werden?
 \end{enumerate}
 
 Im Kontext dieser Arbeit werden die aufgestellten Leitfragen zur technischen Umsetzbarkeit anhand einer stichprobenartigen Betrachtung verschiedener 
@@ -154,12 +151,12 @@ Sind kaum oder keine aktuellen Produkte zu einer CAPTCHA-Art zu finden, ist dies
 \subsection{Sicherheit}
 \label{ch:matrix:aspekte:sicherheit}
 Sicherheit ist der Hauptgrund für die Verwendung von Spam-Präventions\-techniken.
-Sicherheit wird hier dadurch definiert, wie gut Webseiten vor Ausfällen durch Spam- beziehungsweise DDoS-Angriffen geschützt sind.
-CAPTCHAs und ihre Alternativen werden genutzt um bei dem Ausfüllen von Formularen Bots auszusortieren und somit Spam zu vermeiden.
+Sicherheit wird hier dadurch definiert, wie gut Webseiten durch CAPTCHAs vor Ausfällen durch Spam- beziehungsweise DDoS-Angriffen geschützt sind.
+CAPTCHAs und ihre Alternativen werden genutzt, um bei dem Ausfüllen von Formularen Bots auszusortieren und somit Spam zu vermeiden.
 Es muss betrachtet werden, ob es schon Methoden zur Umgehung der CAPTCHAs gibt.
 \begin{enumerate}
-    \item Gibt es bereits bereits Algorithmen um den jeweiligen CAPTCHA zu lösen?
-    \item Wie zugänglich ist die Umsetzung dieses Algorithmus? $($Kann jedermann ihn nutzen? Ist er ressourcenaufwändig?$)$
+    \item Gibt es bereits Algorithmen, um den jeweiligen CAPTCHA zu lösen?
+    \item Wie zugänglich ist die Umsetzung dieses Algorithmus? Kann jedermann ihn nutzen? Ist er ressourcenaufwändig?
     \item Welche Erfolgsquote haben Angriffe?
 \end{enumerate}
 
@@ -170,6 +167,8 @@ sondern dieser zusätzlich noch leicht zu betreiben ist und eine hohe Erfolgsquo
 \section{Berechnung einer Metrik}
 \label{ch:matrix:berechnung}
 Bei der Berechnung einer Metrik auf Basis der entworfenen Matrix muss eine korrekte Gewichtung gewählt werden.
+Je nach vorgesehener Nutzergruppe und Anwendungsgebiet kann diese Kategorie, so wie auch jede andere, 
+sehr stark oder sehr schwach bewertet und gewichtet werden.
 Diese ist nötig, um individuelle Entscheidungen für unterschiedliche Einsatzgebiete treffen zu können,
 da die Bedürfnisse dieser stark unterscheiden können.
 

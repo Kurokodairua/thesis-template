@@ -3,6 +3,7 @@
 
 Nachfolgend werden die verschiedenen Arten von CAPTCHA sowie einige Alternativen auf Basis der zuvor entwickelten Matrix bewertet. 
 Dafür wird sich an den in Kapitel \ref{ch:matrix} aufgestellten Leitfragen soweit möglich orientiert.
+Der Gesamtscore eines CAPTCHAs ergibt sich erst nach individueller Gewichtung bei der Anwendung auf ein spezielles Einsatzgebiet.
 
 \section{Textbasierte CAPTCHA}
 \label{ch:bewertung:text}
@@ -11,7 +12,7 @@ Es sind wenige Clicks nötig, um einen solchen CAPTCHA auszufüllen.
 Bei optisch verzerrten Wörtern besteht jedoch die Möglichkeit, dass es zu Missverständnissen kommen kann.
 So können beispielsweise ein kleines ``d'' und ein ``cl'' unter Umständen auch von Menschen verwechselt werden. 
 In \autoref{fig:schwierig} ist ein ähnlicher Fall dargestellt. 
-Wenn man sich nicht bewusst ist, dass hier nur korrekte Wörter der englischen Sprache erfragt werden,
+Wenn Nutzer*innen sich nicht bewusst sind, dass hier nur korrekte Wörter der englischen Sprache erfragt werden,
 kann das zweite Wort (``blotch'') auch als ``bbtch'' interpretiert werden. (Vgl. \cite[p.132]{Beheshti})
 
 \begin{figure}[h!]
@@ -37,22 +38,23 @@ Auch Menschen mit Farbfehlsichtigkeiten können durch eine Kombination von ungü
 Aus diesem Grund wird auch hier jeweils ein Punkt abgezogen.
 
 Einige textbasierte CAPTCHAs lassen sich gut audiobasiert umsetzen, 
-um die Accessibility des CAPTCHAs zu gewährleisten. 
+um die Accessibility des CAPTCHAs für Sehbehinderte zu gewährleisten. 
 Dies führt somit nicht zu einem Punktabzug.
 
 Die technische Umsetzbarkeit ist bei verschiedenen betrachteten Techniken zur Erstellung und Nutzung textbasierter CAPTCHAs sehr simpel gehalten.
-Die Dokumentation ist gut und kann über Programmierschnittstellen (APIs) leicht eingebunden werden. (Vgl. \cite{hcaptcha} \cite{phpcaptcha} \cite{reallysimplecaptcha})
+Die Dokumentation ist gut und der CAPTCHA kann über Programmierschnittstellen (APIs) leicht eingebunden werden. (Vgl. \cite{hcaptcha} \cite{phpcaptcha} \cite{reallysimplecaptcha})
 Aus diesem Grund kann hier die volle Punktzahl vergeben werden.
 
+In der Kategorie Sicherheit gibt es einige Aspekte, die betrachtet werden müssen.
 \citeauthor{surveyofresearch} schreiben in \citetitle{surveyofresearch}, 
 dass Hollow CAPTCHA durch eine Kombination von Segmentierung und Recognition %TODO
 mit einer Erfolgsrate von 36 bis 89 Prozent durch Bots gelöst werden konnten. (Vgl. \cite[p.76ff]{surveyofresearch}) %TODO
 
 Ähnlich verhält es sich bei Überlappungen und CCT (``crowing characters together''):
 Hier konnte bei verschiedenen Technologien mithilfe von unterschiedlichen Methoden
-eine Erfolgsquote von 27,1 bis 53,2 Prozent erreicht werden. \cite[p.76]{surveyofresearch} %Quellen aus Text noch mit aufnehmen
+eine Erfolgsquote von 27,1\% bis 53,2\% der Bots erreicht werden. \cite[p.76]{surveyofresearch} %Quellen aus Text noch mit aufnehmen
 
-Auch bei ``noise backgrounds'' und ``two-layer structures'' konnten solche Ergebnisse erzielt werden. 
+Auch bei der Verwendung von CAPTCHAs mit ``noise backgrounds'' und ``two-layer structures'' konnten solche Ergebnisse erzielt werden. 
 (Vgl. \cite[p.76]{surveyofresearch})
 Da es bereits viele sehr erfolgreiche Methoden gibt, um diese Art der CAPTCHAs durch Bots absolvieren zu lassen,
 werden 5-7 Punkte im Kontext Sicherheit abgezogen. 
@@ -77,7 +79,7 @@ Auf Basis dieser Erkenntnisse werden textbasierte CAPTCHAs wie in Tabelle \ref{t
 
 \section{Bildbasierte CAPTCHA}
 \label{ch:bewertung:bild}
-Bildbasierte CAPTCHAs benötigen etwas mehr Aufwand als beispielsweise textbasierte CAPTCHAs.
+Bildbasierte CAPTCHAs benötigen etwas mehr Aufwand beim Ausfüllen als beispielsweise textbasierte CAPTCHAs.
 Je nach verwendeter Technik muss auf eine Reihenfolge geachtet werden. 
 Es ist auch möglich, dass bei einigen Bildern genau darauf geachtet werden muss, ob die gegebenen Antworten wirklich korrekt sind.
 In \autoref{fig:fortnite} (a) ist beispielsweise nur schwer zu erkennen, ob manche Hunde wirklich geschlossene Augen haben, 
@@ -96,9 +98,9 @@ Bei sehr detailreichen Bildern kann es vorkommen, dass auch ein Mensch mehrere V
 Deshalb werden bei sehr hoher Komplexität oder bei schwer zu erkennenden Bildern zwischen 2 und 4 Punkte bei der Bedienfreundlichkeit abgezogen.
 Bei bildbasierten CAPTCHAs kommen bemerkbare zeitliche Begrenzungen eher selten vor. 
 
-Auch hier besteht die Problematik, dass Menschen mit eingeschränker Sicht keine Chance haben, diese Art von CAPTCHAs adäquat auszufüllen.
+Auch hier besteht die Problematik, dass Sehbehinderte keine Chance haben, diese Art von CAPTCHAs adäquat auszufüllen.
 Es gibt teilweise die Möglichkeit, eine audiobasierte Alternative anzubieten. 
-So wird es beispielsweise bei den bildbasierten CAPTCHAs von reCAPTCHA v2 angeboten. 
+Einige Implementierungen, wie beispielsweise bei bildbasierten CAPTCHAs von reCAPTCHA v2, bieten dies an. 
 Dies ist in \autoref{fig:selectionbased} zu erkennen.
 Ebenso existieren Produkte, die Nutzer*innen ``Accessibility-Cookies'' setzen lassen, 
 sodass bildbasierte CAPTCHAs nicht mehr ausgefüllt werden müssen, wie in \autoref{fig:fortnite} (b) dargestellt.
@@ -107,7 +109,7 @@ Ist dies nicht gegeben, müssen für diese Einschränkung 5 Punkte in der Katego
 Doch auch für Menschen ohne Behinderung kann es, wie bereits erwähnt, schwierig sein, sie erfolgreich zu absolvieren.
 In \autoref{fig:keineloesung} soll der CAPTCHA übersprungen werden, sollte man keine Fahrräder erkennen.
 Dies ist der Fall. 
-Jedoch ist die Anweisung hierfür im Vergleich zum Schlüsselwort "Fahrrädern" so klein dargestellt, dass sie nicht sofort erkannt wird,
+Jedoch ist die Anweisung hierfür im Vergleich zum Schlüsselwort ``Fahrrädern'' so klein dargestellt, sodass sie nicht sofort erkannt wird,
 und die Anweisung bei Nutzer*innen zu Verwirrung führen kann.
 Hier verschwimmen die Grenzen bei der Einschätzung der Bedienfreundlichkeit und der Accessibility.
 
@@ -123,19 +125,20 @@ Hier verschwimmen die Grenzen bei der Einschätzung der Bedienfreundlichkeit und
 Die technische Umsetzbarkeit erfolgt bei bildbasierten CAPTCHAs ebenfalls über APIs. (Vgl. \cite{hcaptcha} \cite{arkoselabs} \cite{geetest})
 Analog zu textbasierten CAPTCHAs kann bei der technischen Umsetzung deshalb volle Punktzahl vergeben werden.
 
-Mithilfe einer Support Vector Machine konnte die CAPTCHA-Methode Asirra von Microsoft (Vgl. \cite{elson2007asirra})
+Mithilfe einer Support Vector Machine\footnote[4]{Support Vector Machines (SVM) sind Deep Learning Algorithmen, welche Daten über mehrere Dimensionen in Klassen unterteilen} 
+konnte die CAPTCHA-Methode Asirra von Microsoft (Vgl. \cite{elson2007asirra})
 mit einer Erfolgsrate von 82,7 Prozent absolviert werden. 
-Die Nutzung von OpenCV\footnote[4]{Bibliothek für C, C++, Python und Java, welche verschiedene Algorithmen zur Bildverarbeitung und Computer Vision (CV) anbietet.}
+Die Nutzung von OpenCV\footnote[5]{Bibliothek für C, C++, Python und Java, welche verschiedene Algorithmen zur Bildverarbeitung und Computer Vision (CV) anbietet.}
 ermöglicht, bestimmte Merkmale in Bildern algorithmisch zu analysieren.
-Ebenso kann durch Trainieren von künstlichen Intelligenzen (KI) durch große Datenmengen (Deep Learning) eine hohe Erfolgsquote erreicht werden,
-so konnten bereits mehrere CAPTCHAs von hochrangigen Unternehmen durch diese Weise erfolgreich erledigt durchgeführt werden.
+Ebenso kann durch Trainieren von künstlichen Intelligenzen (KI) mit große Datenmengen (Deep Learning) eine hohe Erfolgsquote erreicht werden.
+So konnten bereits mehrere CAPTCHAs von hochrangigen Unternehmen durch diese Weise erfolgreich erledigt werden.
 Mit der zunehmenden Komplexität dieser CAPTCHAs steigt auch der Bedarf an künstlichen Intelligenzen, um die verschiedenen Technologien brechen zu können.
 Da es bereits vermehrt sehr hohe Erfolgsquoten bei der Absolvierung von CAPTCHAs durch KIs und die Nutzung von OpenCV gab,
 müssen für beide Techniken zur Umgehung dieser CAPTCHAs im Kontext Sicherheit 2 Punkte abgezogen werden.
 CAPTCHAs, welche über das Verschieben von Reglern funktionieren, sind durch ihr teilweise sehr aufwändiges Tracking von Mausbewegungen,
 Reaktionszeit und anderen Metadaten etwas sicherer als selection-based CAPTCHAs. \cite[p.77f]{surveyofresearch}
 
-In \autoref{table:matrix:bild} kann die entsprechende Benotung nachvollzogen werden.
+In \autoref{table:matrix:bild} kann die entsprechende Bewertung nachvollzogen werden.
 
 \begin{table}[h!]
     \caption{Bewertungsmatrix für bildbasierte CAPTCHAs}
@@ -154,7 +157,7 @@ In \autoref{table:matrix:bild} kann die entsprechende Benotung nachvollzogen wer
 \section{Videobasierte CAPTCHA}
 Das Anschauen des jeweiligen Videos nimmt einige Sekunden in Anspruch und man muss dies je nach Komplexität wiederholen, 
 da man eventuell nicht alle Aspekte bei dem ersten Durchlauf mitbekommt.
-Wie ein Video als CAPTCHA auf Nutzer*innen wirken kann ist nicht genau festzulegen.
+Wie ein Video als CAPTCHA auf Nutzer*innen wirken kann, ist nicht genau festzulegen.
 Einerseits handelt es sich dabei um etwas aufregenderes als einen simplen Text, andererseits kann dies auch schnell frustrieren.
 
 Videobasierte CAPTCHAs brauchen eine schnelle Internetverbindung, um abgespielt werden zu können. 
@@ -163,9 +166,9 @@ Dies führt dazu, dass videobasierte CAPTCHAs eine geringere Accessibility haben
 
 Videobasierte CAPTCHA sind vergleichsweise wenig verbreitet. 
 Ein bekannter Anbieter ist die Firma NuData Security mit NuCaptcha.
-Nachdem \citeauthor{elie} in ihrem Blogartikel \citetitle{elie} darüber berichtete, 
+Nachdem \citeauthor{elie} in ihrem Blogartikel \citetitle{elie} (\cite{elie}) darüber berichtete, 
 dass NuCaptcha mit einer 90 prozentigen Erfolgsrate von einem Bot absolviert werden konnte,
-wurden zwar einige Änderungen an NuCaptcha vorgenommen, jedoch existiert zum heutigen Tage keinerlei Dokumentation oder ähnliches für NuCaptcha.
+wurden zwar einige Änderungen an NuCaptcha vorgenommen, jedoch existiert zum heutigen Tage keine frei zugängliche Dokumentation für NuCaptcha.
 
 Im Jahre 2015 gab es Verfahren, mit denen ein videobasiertes reCAPTCHA mit 31,75 prozentiger Erfolgsrate gebrochen werden konnte. 
 Auch hier wirkt sich die Entwicklung besserer Bilderkennungstools und das Trainieren von KI negativ auf die Sicherheit aus.\cite[p.79]{surveyofresearch}
@@ -196,10 +199,10 @@ Bei einer sehr komplexen Kombination von Tönen kann ein Punkt bei der Bedienfre
 Accessibility ist bei audiobasierten CAPTCHAs relativ gut. 
 Jedoch werden hier gehörlose Menschen ausgeschlossen, sofern es sich um ausschließlich audiobasierte CAPTCHAs handelt.
 Eine Kombination von visuellen und audiobasierten CAPTCHAs wurde bereits in \autoref{ch:bewertung:text} in die Betrachtung mit einbezogen,
-da die textbasierten CAPTCHAs hier eher im Fokus liegen.
-Hier werden ebenfalls durch diese schwere Einschränkung 5 Punkte abgezogen.
-Zusätzlich ist zu beachten, dass abgespielte Töne vor allem in der Öffentlichkeit, beispielsweise auf Mobilgeräten, als störend für andere wahrgenommen werden kann,
-und dies eventuell zu einem Meiden dieser CAPTCHAs führen kann.
+da die textbasierten CAPTCHAs bei der Kombination eher im Fokus liegen.
+Bei audiobasierten CAPTCHAs werden durch den Ausschluss ebenfalls 5 Punkte abgezogen.
+Zusätzlich ist zu beachten, dass abgespielte Töne vor allem in der Öffentlichkeit, beispielsweise auf Mobilgeräten, als störend für andere wahrgenommen werden können,
+und dies eventuell zu einem Meiden dieser CAPTCHAs führen können.
 Auch hierfür wird deshalb ein Punkt abgezogen werden. 
 
 In der Praxis sind Audio-CAPTCHAs fast ausschließlich als direkte Alternative zu textbasierten CAPTCHAs anzutreffen.
@@ -208,9 +211,8 @@ Jedoch müssen in Anbetracht fehlender Dokumentationen für reine audiobasierte 
 
 Sicherheit ist insbesondere bei simplen audiobasierten CAPTCHAs ein Problem.
 Es gibt mehrere Berichte über Algorithmen, welche verschiedene audiobasierte CAPTCHAs selbstständig lösen können.
-Hierbei konnten abhängig von der verwendeten Technik Erfolgsraten von 45 bis zu 90 Prozent erreicht werden.
-Beispielsweise ist “Buster” ein Browser Addon, das reCAPTCHA audio challenges per speech recognition löst.
-Da bereits sehr viele audiobasierte CAPTCHAs erfolgreich durch Bots absolivert werden konnten,
+Hierbei konnten abhängig von der verwendeten Technik Erfolgsraten von 45 bis zu 90 Prozent erreicht werden \cite[p.78f]{surveyofresearch}.
+Da bereits sehr viele audiobasierte CAPTCHAs erfolgreich durch Bots absolviert werden konnten,
 müssen hier ebenfalls 5 Punkte abgezogen werden.
 
 Es ergibt sich die in \autoref{table:matrix:audio} angegebene Bewertung.
@@ -242,7 +244,8 @@ Durch Alternativtexte könnten jedoch die Cartoon-Panele beschrieben werden.
 Dadurch kann auch, wenn der Inhalt visuell nicht erkannt werden kann, entsprechend geordnet werden.
 
 Technisch sind Gamification-CAPTCHAs identisch zu bildbasierten CAPTCHAs.
-Diese Art des CAPTCHAs heute kaum noch verwendet.
+
+Gamification-CAPTCHAs werden heute kaum noch verwendet.
 Ehemals verbreitete Techniken, wie PlayThru von AreYouAHuman, sind nicht mehr nutzbar. (Vgl. \cite{ivan})
 
 Aus diesem Grund werden auch Gamification CAPTCHAs in \autoref{ch:empfehlung} nicht berücksichtigt.
@@ -269,7 +272,7 @@ zu visuellen und audiobasierten CAPTCHAs.
 \subsection{Honeypot}
 Honeypots sind dadurch, dass lediglich geprüft wird, ob ein Textfeld ausgefüllt wurde, sehr bedienfreundlich.
 Nutzer*innen haben keinen Mehraufwand bei Besuch der Webseite. 
-Im Kontext Bedienfreundlichkeit kann volle Punktzahl vergeben werden.
+In der Kategorie Bedienfreundlichkeit kann volle Punktzahl vergeben werden.
 
 Dadurch kann auch eine hohe Accessibility gewährleistet werden. 
 Zu bedenken ist jedoch, dass diese zusätzlichen Textfelder Screenreadern eventuell Probleme bereiten können.
@@ -277,9 +280,9 @@ Deshalb wird hier ein Punkt abgezogen.
 
 Da Honeypots händisch, also ohne Hilfe von APIs oder Ähnlichem, implementiert werden müssen, ist ein gewisses technisches Know-How nötig.
 Jedoch lassen sich ausreichend Tutorials finden, um die Implementation schnell durchführen zu können.
-Aus diesem Grund wird nur ein Punkt abgezogen.
+Aus diesem Grund wird nur ein Punkt bei der Kategorie Technische Umsetzbarkeit abgezogen.
 
-Die Sicherheit von Honeypots kann eingeschränkt werden, wenn beispielsweise die CSS ebenfalls untersucht wird. 
+Die Sicherheit von Honeypots kann eingeschränkt werden, wenn beispielsweise das CSS ebenfalls untersucht wird. 
 Dabei kann erkannt werden, dass ein Feld ausgeblendet ist, was den Honeypot gänzlich nutzlos macht.
 Im Gegensatz zu CAPTCHAs gibt es hier keine Abstufungen - wurde der Honeypot erkannt, gibt es keinen Schutz mehr vor Spam.
 Aus diesem relativ schwerwiegenden Grund werden 5 Punkte abgezogen.
@@ -301,12 +304,12 @@ Aus diesem relativ schwerwiegenden Grund werden 5 Punkte abgezogen.
 
 \subsection{Anti-Spam-Plugins}
 Anti-Spam-Plugins sind, ähnlich wie andere CAPTCHA-Alternativen, kaum zu bemerken, da sie hauptsächlich mit Metadaten arbeiten.
-Dies macht sie sehr bedienfreundlich, sodass auch hier volle Punktzahl vergeben werden kann.
+Dies macht sie sehr bedienfreundlich, sodass hier volle Punktzahl vergeben werden kann.
 Bei der Accessibility gibt es die Einschränkung, dass durch das Filtern aufgrund von Sprache oder Land auch Nutzer*innen ausgeschlossen werden,
 die keine bösen Absichten haben. Aus diesem Grund wird ein Punkt abgezogen.
-Dieser Ausschluss kann jedoch durch VPNs umgangen werden,
-was wiederum eine schwere Sicherheitseinschränkung ist, weshalb 2 Punkte hier abgezogen werden.
-Auch die technische Umsetzbarkeit ist sehr einfach, da Plugins insbesondere bei Wordpress einfach installiert werden können.
+Dieser Ausschluss kann jedoch durch VPNs\footnote[6]{Virtual Private Networks erlauben eine Verbindung zu fremden Netzen und somit auch ein Ändern des übermittelten Standorts} umgangen werden,
+was wiederum eine schwere Sicherheitseinschränkung ist, weshalb 6 Punkte hier abgezogen werden.
+Die technische Umsetzbarkeit ist sehr einfach, da Plugins insbesondere bei Wordpress einfach installiert werden können.
 Deshalb kann hier die volle Punktzahl vergeben werden.
 
 \begin{table}[h!]
@@ -317,7 +320,7 @@ Deshalb kann hier die volle Punktzahl vergeben werden.
             Bedienfreundlichkeit            & 10         \\
             Accessibility                   & 9        \\
             Technische Umsetzbarkeit        & 10         \\
-            Sicherheit                      & 8         
+            Sicherheit                      & 4         
         \end{tabular}
     \end{center}
 \end{table} 
@@ -330,7 +333,7 @@ Deshalb werden sie in \autoref{ch:empfehlung} nicht berücksichtigt.
 CAPTCHAs mit minimalem User-Input sind die mit Abstand meistgenutzte Art von CAPTCHAs. (Vgl. \cite{stats})
 
 Trotz ihrer unauffälligen Natur ist es möglich, dass Menschen fälschlicherweise als Maschinen eingestuft werden,
-da ihr Score zu niedrig ist. 
+da der vergebene Score zu niedrig ist. 
 Dann müssen als Backup weitere CAPTCHAs ausgefüllt werden.
 Deshalb wird bei der Bedienfreundlichkeit ein Punkt abgezogen.
 
@@ -341,8 +344,8 @@ können mehrere Alternativen angeboten werden, damit jede Nutzer*in diese ausfü
 Technisch können Invisible CAPTCHAs leicht über APIs implementiert werden, weshalb hier auch die volle Punktzahl vergeben werden kann.
 
 Im Bereich der Sicherheit müssen mehrere Punkte angemerkt werden.
-Es ist eine Methode bekannt, mithilfe welcher reCAPTCHA v3 mit einer Erfolgsrate von 96.7\% bis 97.4\% durch Algorithmen gelöst werden konnten.
-\cite{DBLP:journals/corr/abs-1903-01003}
+Es ist eine Methode bekannt, mithilfe welcher reCAPTCHA v3 mit einer Erfolgsrate von 96.7\% bis 97.4\% durch Algorithmen gelöst werden konnten
+\cite{DBLP:journals/corr/abs-1903-01003}.
 
 Außerdem gibt es immer wieder Bedenken über die Nutzung der gesammelten Metadaten durch große Firmen wie Google.
 Trotzdem kann in verschiedensten Medien (\cite{sueddt} \cite{hackernoon} \cite{towardsdatascience}) regelmäßig davon gelesen werden,

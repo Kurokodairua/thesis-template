@@ -16,7 +16,7 @@ da eine Störung des Systems fatal für Kund*innen und die Bank selbst sein kön
 Außerdem sollte möglichst allen Kund*innen der Zugriff möglich sein, 
 weshalb Accessability ebenfalls eine große Rolle spielt.
 Aus diesem Grund kann in Sachen Bedienfreundlichkeit 
-und auch bei der technischen Umsetzbarkeit zu Gunsten der Ausfallsicherheit zurückgesteckt werden.
+und auch bei der technischen Umsetzbarkeit zu Gunsten der Ausfallsicherheit verzichtet werden.
 Daraus ergeben sich folgende Gewichtungen:
 
 \begin{table}[h!]
@@ -32,24 +32,8 @@ Daraus ergeben sich folgende Gewichtungen:
     \end{center}
 \end{table}
 
-In \autoref{tabellen1} sind die ausführlichen Matrizen für Beispiel 1 zu finden. 
-Aus diesen Tabellen lassen sich folgende Bewertungen entnehmen: 
-
-\begin{table}[h!]
-    \caption{Bewertungen für Beispiel 1}
-    \begin{center}
-        \begin{tabular}{l|c}
-            CAPTCHA-Art                       & Gesamtnote \\\hline
-            textbasiert            &  5.55-7.85       \\
-            bildbasiert                   &  6.3-8.4      \\
-            audiobasiert        & 5.75-5.9         \\
-            invisible*                      & 9.05         \\
-            Honeypots       & 7.55\\
-            \multicolumn{2}{l}{\footnotesize * Invisible steht hier für jegliche CAPTCHAs} \\
-            \multicolumn{2}{l}{\footnotesize \space \space mit minimalem User-Input}
-        \end{tabular}
-    \end{center}
-\end{table}
+In \autoref{tabellen1} sind die ausführlichen Bewertungsmatrizen für Beispiel 1 zu finden. 
+Aus diesen Tabellen lassen sich folgende Bewertungen entnehmen.
 
 Aus den vorliegenden Ergebnissen lässt sich erkennen, dass Invisible \linebreak CAPTCHAs die höchste Gesamtnote erreichen konnten.
 Insbesondere bei der Accessibility können sie überzeugen, 
@@ -95,12 +79,29 @@ So kann eine maximale Accessibility erreicht werden.
 Im Bereich der Sicherheit ist vor allem darauf zu achten, stets die neuste Version des gewählten CAPTCHAs zu nutzen 
 und sich über eventuelle Sicherheitslücken zu informieren.
 
+\begin{table}[h!]
+    \caption{Bewertungen für Beispiel 1}
+    \begin{center}
+        \begin{tabular}{l|c}
+            CAPTCHA-Art                       & Gesamtnote \\\hline
+            textbasiert            &  5.55-7.85       \\
+            bildbasiert                   &  6.3-8.4      \\
+            audiobasiert        & 5.75-5.9         \\
+            invisible*                      & 9.05         \\
+            Honeypots       & 7.55\\
+            \multicolumn{2}{l}{\footnotesize * Invisible steht hier für jegliche CAPTCHAs} \\
+            \multicolumn{2}{l}{\footnotesize \space \space mit minimalem User-Input}
+        \end{tabular}
+    \end{center}
+\end{table}
+
 \subsubsection*{Beispiel 2 - Forum}
-Das zweite Szenario soll ein kleines Forum sein, in dem ein CAPTCHA ausgefüllt wird, bevor ein Beitrag veröffentlicht wird.
+Das zweite Szenario soll ein kleines Internetforum sein, in dem ein CAPTCHA ausgefüllt wird, bevor ein Beitrag veröffentlicht wird.
 Hierbei ist besonders auf die Bedienfreundlichkeit zu achten, damit Nutzer*innen sich mit möglichst wenig Irritation austauschen können.
 Außerdem soll die gewählte Technologie möglichst einfach technisch umzusetzen sein, um Kosten und Ressourcenverbrauch gering halten zu können.
-Accessibility ist zwar auch von Relevanz, jedoch nicht so stark wie zuvor genannte Kategorien.
+Accessibility ist zwar auch von Relevanz, jedoch nicht so stark wie zuvor genannte Kategorien, da dieses Forum nicht unbedingt von jeder Person genutzt werden können soll.
 Die Sicherheit ist aufgrund der geringen Anzahl an abgegebenen Beiträgen vergleichsweise unwichtig.
+Sollten viele Nachrichten durch Bots veröffentlicht werden, können diese durch Administrator*innen leicht wieder entfernt werden.
 
 \begin{table}[h!]
     \caption{Gewichtung für Beispiel 2}
@@ -148,7 +149,7 @@ Textbasierte CAPTCHAs erzielen im Best Case ebenfalls eine hohe Punktzahl.
 Dies liegt daran, dass besonders der Punkt Sicherheit keine große Rolle spielt
 und die niedrige Bewertung die Gesamtnote deshalb nicht so stark beeinflusst wie es bei Beispiel 1 der Fall ist. 
 
-Durch die große Spannweite in den Kategorien Bedienfreundlichkeit und Accessibility, 
+Durch die große Spannweite in den Kategorien Bedienfreundlichkeit und Accessibility
 liegen die Bewertungen des Worst Case und Best Case bei textbasierten CAPTCHAs weit auseinander.
 Hier ist es also stark von der Einzellösung abhängig, ob diese wirklich eine gute Wahl für diesen Anwendungsfall darstellen würde.
 
