@@ -5,8 +5,11 @@ Basierend auf den im vorherigen Kapitel aufgestellten Bewertungen werden für ve
 und mithilfe dieser Empfehlungen hinsichtlich der Wahl des CAPTCHA ausgesprochen. 
 Dies soll einerseits als Beispiel zur Anwendung dienen, 
 andererseits auch eine erste Orientierung bei der Auswahl der zu prüfenden Techniken geben. 
+Erwartet wird, dass trotz eindeutiger Bewertungen in \autoref{ch:bewertung} durch unterschiedliche Gewichtigungen
+individuelle Empfehlungen ausgesprochen werden können. 
+Dabei sollen die errechneten Scores positive und negative Eigenschaften der einzelnen CAPTCHA-Arten wiederspiegeln.
 
-\subsubsection*{Beispiel 1}
+\subsubsection*{Beispiel 1 - Bank}
 Als erstes Szenario soll eine Bank dienen, die für ihr Online Banking mit CAPTCHAs arbeitet.
 Sicherheit ist hier besonders wichtig, 
 da eine Störung des Systems fatal für Kund*innen und die Bank selbst sein könnte.
@@ -41,7 +44,7 @@ Aus diesen Tabellen lassen sich folgende Bewertungen entnehmen:
             bildbasiert                   &  6.3-8.4      \\
             audiobasiert        & 5.75-5.9         \\
             invisible*                      & 9.05         \\
-            Honeypots       & 8.35\\
+            Honeypots       & 7.55\\
             \multicolumn{2}{l}{\footnotesize * Invisible steht hier für jegliche CAPTCHAs} \\
             \multicolumn{2}{l}{\footnotesize \space \space mit minimalem User-Input}
         \end{tabular}
@@ -92,7 +95,7 @@ So kann eine maximale Accessibility erreicht werden.
 Im Bereich der Sicherheit ist vor allem darauf zu achten, stets die neuste Version des gewählten CAPTCHAs zu nutzen 
 und sich über eventuelle Sicherheitslücken zu informieren.
 
-\subsubsection*{Beispiel 2}
+\subsubsection*{Beispiel 2 - Forum}
 Das zweite Szenario soll ein kleines Forum sein, in dem ein CAPTCHA ausgefüllt wird, bevor ein Beitrag veröffentlicht wird.
 Hierbei ist besonders auf die Bedienfreundlichkeit zu achten, damit Nutzer*innen sich mit möglichst wenig Irritation austauschen können.
 Außerdem soll die gewählte Technologie möglichst einfach technisch umzusetzen sein, um Kosten und Ressourcenverbrauch gering halten zu können.
@@ -124,7 +127,7 @@ Es ergeben sich folgende Gesamtnoten:
             bildbasiert                   & 7.2-9.6       \\
             audiobasiert        & 7.25-7.4         \\
             invisible*                      & 9.45         \\
-            Honeypots & 9.15 \\
+            Honeypots & 8.95 \\
            \multicolumn{2}{l}{\footnotesize * Invisible steht hier für jegliche CAPTCHAs} \\
            \multicolumn{2}{l}{\footnotesize   \enspace mit minimalem User-Input}
         \end{tabular}
