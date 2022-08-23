@@ -13,19 +13,21 @@ Alan M. Turing $($1912-1954$)$ ist einer der Mitbegründer der heutigen Informat
 und legte mit seiner Forschung einen der Grundsteine für die Entwicklung von künstlicher Intelligenz. 
 In seinem Paper ''On computable numbers, with an application to the Entscheidungsproblem'' \cite{turing} 
 beschreibt er den Umgang mit ''computable numbers'' und wie diese durch eine - später als Turing Machine bezeichnete - Maschine berechnet werden könnte.
-Diese Turing Machine ''[\dots] ist damit ein Model physischer digitaler Computer, die zu jener Zeit jedoch noch nicht existieren. [\dots]'' \cite[p.4]{pallay2020turing}
+Diese Turing Machine ''[\dots] ist damit ein Model physischer digitaler Computer, die zu jener Zeit jedoch noch nicht existieren [\dots]'' \cite[p.4]{pallay2020turing}.
 Hierbei kam er zur Erkenntnis, dass sich nicht alle mathematischen Probleme durch eine fixe Vorgehensweise, also einen Algorithmus, lösen lassen. 
-Erst später wurde festgestellt, dass Turing Maschinen und Computer jeweils vom anderen simuliert werden können. \cite[p.647]{geniusofturing} \cite[p.4]{pallay2020turing} %TODO: Formulierung
+Erst später wurde festgestellt, dass Turing Maschinen und Computer jeweils vom anderen simuliert werden können. (Vgl.\cite[p.647]{geniusofturing} \cite[p.4]{pallay2020turing}) %TODO: Formulierung
 
 Turing beschäftigte sich bis zu seinem frühen Tod weiterhin mit maschineller Intelligenz 
-und ''[\dots] beschreibt [\dots] das, was man heute als [\dots] künstliche Intelligenz bezeichnet.'' \cite[p.10]{pallay2020turing}
+und ''[\dots] beschreibt [\dots] das, was man heute als [\dots] künstliche Intelligenz bezeichnet'' \cite[p.10]{pallay2020turing}.
 
 Durch seine Überzeugung, dass eines Tages maschinelle Intelligenzen entwickelt werden (können), 
 entwickelte Turing in seinem Paper ''Computing Machinery and Intelligence'' \cite[p.23ff]{turing2009computing} 
 eine Methode des Testens der Intelligenz einer Maschine. 
+
 Um die Notwendigkeit von genauen Definitionen zu vermeiden, nutzt er deshalb eine Abwandlung eines Verfahren - das ``imitation game''. 
-''Hierbei kommuniziert ein Juror maschinen-schriftlich mit einem Menschen und einer Maschine.'' \cite[p.12]{pallay2020turing}
-Sollte der Juror nicht feststellen können, welcher Gesprächspartner der Mensch ist, gilt der Test als bestanden. \cite[p.11ff]{pallay2020turing}
+\citeauthor{pallay2020turing} beschreibt dieses Verfahren in \cite[p.11ff]{pallay2020turing} folgendermaßen:
+Ein Juror kommuniziert ``maschinen-schriftlich'' mit zwei Gesprächspartnern. Einer dieser Gesprächspartner ist ein Mensch, der zweite Gesprächspartner ist eine Maschine.
+Sollte der Juror nicht feststellen können, welcher Gesprächspartner der Mensch ist, gilt der Test als bestanden.
 
 Die Idee dieses Verfahrens wird heute in sogenannten Turing Tests verwendet.
 Bei dem Juror kann es sich auch um einen anderen Computer handeln.
@@ -62,7 +64,7 @@ Eine weitere Variante textbasierter CAPTCHA ist die einer einfachen Rechenaufgab
 Auch hier soll erreicht werden, dass ein Bot die angegebenen Zahlen nicht korrekt erkennen kann und die Gleichung somit nicht lösen kann. \cite[p.1]{usabilityofcaptchas} \cite[p.75]{surveyofresearch} \cite{shinde2018DIFFERENTTO} %TODO SEITEN!!!!!!!!!
 
 Bei der Darstellung dieser Zeichen und Symbole können verschiedene Ansätze verfolgt werden.
-\citeauthor{surveyofresearch} beschreiben hierbei ``anti-segmentation techniques'' und ``anti-recognition techniques''. \cite[p.76]{surveyofresearch}
+\citeauthor{surveyofresearch} beschreiben hierbei ``anti-segmentation techniques'' und ``anti-recognition techniques'' \cite[p.76]{surveyofresearch}.
 
 \begin{figure}[h!]
     \centering
@@ -81,14 +83,15 @@ Eine weitere Methode ist, Zeichen nah beieinander oder sogar überlappend darzus
 was von \citeauthor{surveyofresearch} als ``crowing characters together $($CCT$)$ and overlapping'' bezeichnet wird.
 Auch unruhige Hintergründe können Segmentierung behindern.
 Ebenfalls beschrieben wird die Kombination von mehreren der beschriebenen CAPTCHAs zu einer ``two-layer'' Struktur,
-wobei die Tatsache, dass es sich um mehrere Zeilen Text handelt, nicht erkannt werden kann. \cite[p.76]{surveyofresearch} \cite[p.132f]{Beheshti}
+wobei die Tatsache, dass es sich um mehrere Zeilen Text handelt, nicht erkannt werden kann. 
+Solche Arten werden neben \cite[p.76]{surveyofresearch} auch in \cite[p.132f]{Beheshti} beschrieben.
 
-Anti-Recognition Techniques sind zum Beispiel verschiedene Schriftarten, die Rotation von Zeichen und ``Waving'', 
+Anti-Recognition Techniques sind laut \citeauthor{surveyofresearch} (\cite[p.77]{surveyofresearch}) zum Beispiel verschiedene Schriftarten, die Rotation von Zeichen und ``Waving'', 
 welche es erschweren, Zeichen als solche zu erkennen. 
 Außerdem können in einigen Fällen auch sehr große Zeichensätze, beispielsweise Mandarin oder Japanisch, genutzt werden, 
 wodurch das Finden von eindeutigen Lösungen erschwert werden kann.
 Diese Techniken werden oftmals miteinander kombiniert.
-\cite[p.77]{surveyofresearch}
+
 
 Eine Kombination von Anti-Segmentation und Anti-Recognition Techniken ist in \autoref{fig:textbased} zu sehen.
 
@@ -111,7 +114,7 @@ In Abbildung \ref{fig:fortnite} sollen Hunde mit geschlossenen Augen ausgewählt
 was die Notwendigkeit der Zunahme der Komplexität dieser CAPTCHAs gut widerspiegelt. 
 Außerdem kann auch auf das Erkennen von Gesichtern durch Menschen gesetzt werden.
 Nähere Informationen zu genauen Techniken können in \cite[p.77ff]{surveyofresearch} nachgelesen werden.
-Die beschriebenen ``selection-based CAPTCHA'' bezeichnen \citeauthor{surveyofresearch} als einfachste Form bildbasierter CAPTCHA. \cite[p.77]{surveyofresearch}
+Die beschriebenen ``selection-based CAPTCHA'' bezeichnen \citeauthor{surveyofresearch} als einfachste Form bildbasierter CAPTCHA \cite[p.77]{surveyofresearch}. 
 
 In Abbildung \ref{fig:genshin} sind zwei weitere Arten bildbasierter CAPTCHA dargestellt.
 Links ist ein ``drag-based CAPTCHA'' zu sehen.
@@ -132,9 +135,9 @@ Auch hier kann in \cite[p.77]{surveyofresearch} genauer nachgelesen werden.
     \label{fig:genshin}
 \end{figure}
 
-``Click-based CAPTCHA'' zeichnen sich dadurch aus, dass bestimmte Symbole oder Zeichen auf einem komplexen Hinter\-grund, 
+``Click-based CAPTCHA'' zeichnen sich laut \citeauthor{surveyofresearch} dadurch aus, dass bestimmte Symbole oder Zeichen auf einem komplexen Hinter\-grund, 
 teilweise auch in einer bestimmten Reihenfolge, angeklickt werden sollen.
-Hierbei wird auf ``anti-detection'' und ``anti-recognition'' gesetzt. \cite[p.77]{surveyofresearch}
+Hierbei wird auf ``anti-detection'' und ``anti-recognition'' gesetzt \cite[p.77]{surveyofresearch}. 
 
 Ein Beispiel hierfür ist \ref{fig:genshin} (b).
 Eine weitere Form der click-basierten CAPTCHAs sieht vor, dass Objekte ausgewählt werden sollen,
@@ -156,34 +159,35 @@ Zum Lösen des CAPTCHAs muss deshalb auf die grüne Kugel geklickt werden.
 \subsubsection*{Gamification}
 Bei Gamification CAPTCHAs liegt der Fokus darauf, eventuell langwieriges Ausfüllen von CAPTCHAs so zu gestalten, dass Nutzer*innen dabei Spaß haben,
 und es nicht als lästige Aufgabe ansehen.
-\citeauthor{gamified} schreiben in ihrem Paper \citetitle{gamified} darüber, wie spielerisch lösbare CAPTCHAs die Nutzererfahrung verbessern können.
+\citeauthor{gamified} schreiben in ihrem Paper \citetitle{gamified} (\cite{gamified}) darüber, wie spielerisch lösbare CAPTCHAs die Nutzererfahrung verbessern können.
 Hierbei werden Ideen wie das Ordnen von Cartoon-Panelen näher erläutert.
 \pagebreak
 
 Nicht nur lesen Nutzer*innen den Cartoon, sie wollen bei Fehlschlägen durch den Quizcharakter des CAPTCHAs die richtige Lösung in einem weiteren Versuch finden,
-ohne über die Notwendigkeit der Wiederholung zur Verifizierung nachzudenken. \cite[p.41ff]{gamified}
+ohne über die Notwendigkeit der Wiederholung zur Verifizierung nachzudenken \cite[p.41ff]{gamified}. 
 
 
 \subsubsection*{Videobasierte CAPTCHA}
-Eine weitere Form visueller CAPTCHAs sind videobasierte CAPTCHA. 
+Eine weitere von \citeauthor{surveyofresearch} (\cite[p.79]{surveyofresearch}) beschriebene Form visueller CAPTCHAs sind videobasierte CAPTCHA. 
 Nutzer*innen müssen beispielsweise verschiedene Bewegungen erkennen, die im Video ausgeführt werden,
 oder auch angezeigte Werbung.
 Dabei werden verschiedene Antwortmöglichkeiten vorgegeben, welche durch Raten auch durch Bots erfolgreich absolviert werden können.
-Um dies zu umgehen gibt es Alternativen, die über das Beschreiben des gesehenen Videos funktionieren. \cite[p.79]{surveyofresearch} 
+Um dies zu umgehen gibt es Alternativen, die über das Beschreiben des gesehenen Videos funktionieren. 
 
 \subsubsection*{Audiobasierte CAPTCHA}
 Als Alternative von visuellen CAPTCHAs können audiobasierte CAPTCHA genutzt werden.
 Diese bieten sich vor allem für sehbehinderte Nutzer*innen an, welche bild- oder textbasierte CAPTCHA nur schwer oder gar nicht sehen und erkennen können.
 
+\citeauthor{surveyofresearch} (\cite[p.78]{surveyofresearch}) beschreiben verschiedene Techniken, die bei audiobasierten CAPTCHAs verwendet werden können.
 Oft wird hier Text-To-Speech verwendet, wobei die gehörten Wörter durch die Nutzer*innen wiederholt werden sollen.
 Eine weitere Möglichkeit ist das Abspielen bestimmter Töne, wie die einer Glocke oder eines Klaviers. 
 Dies kann auch in Kombination mit verschiedenen Hintergrundgeräuschen angewandt werden, was das Erkennen eines bestimmten Tons für Roboter zusätzlich erschwert.
 Außerdem gibt es Methoden, bei denen eine bestimmte Frage beantwortet werden muss, für die gesunder Menschenverstand notwendig ist. 
-Beispielsweise kann nach einer Aussage wie ``Sally hat einen Nagel in den Boden gehämmert.'' gefragt werden, ob dieser Nagel vertikal oder horizontal war. \cite[p.3]{commonsense}
+Beispielsweise kann nach einer Aussage wie ``Sally hat einen Nagel in den Boden gehämmert.'' gefragt werden, ob dieser Nagel vertikal oder horizontal war \cite[p.3]{commonsense}. 
 
-Neben Techniken, die hauptsächlich auf das Hören ausgelegt sind, kann der Fokus auch auf das Einsprechen von Phrasen durch die Nutzer*innen gelegt werden.
+Neben Techniken, die hauptsächlich auf das Hören ausgelegt sind, kann nach \citeauthor{surveyofresearch} (\cite[p.78]{surveyofresearch}) der Fokus auch auf das Einsprechen von Phrasen durch die Nutzer*innen gelegt werden.
 Es soll so erkannt werden, ob es sich um eine menschliche Stimme handelt.
-\cite[p.78]{surveyofresearch}
+
 
 \begin{figure}[h!]
     \centering
@@ -206,7 +210,7 @@ Vielmehr wird anhand verschiedener Faktoren bewertet, ob es sich um einen Bot od
 Die Betrachtung von Cookies oder der Häufigkeit von Anfragen durch die gegebene IP-Adresse werden hierbei unter anderem betrachtet.
 In der Dokumentation wird angegeben, dass ein Score von 0.0 bis 1.0 vergeben werden kann. 
 Hier gilt: Je niedriger der Score, desto wahrscheinlicher handelt es sich um einen Bot statt einer echten Nutzer*in. (Vgl. \cite{recaptchadoc})
-Laut Google selbst soll reCAPTCHA v3 eine sehr gute Nutzererfahrung bieten, da es kaum bis gar keine Zuarbeit durch den Nutzer verlangt. \cite{googleblog:recaptcha}
+Laut Google selbst soll reCAPTCHA v3 (\cite{googleblog:recaptcha}) eine sehr gute Nutzererfahrung bieten, da es kaum bis gar keine Zuarbeit durch den Nutzer verlangt. 
 
 ReCAPTCHA kann durch das Fehlen eines klassischen Turing Tests auch als eine CAPTCHA-Alternative interpretiert werden.
 
@@ -226,7 +230,7 @@ Eine andere Variation verlangt von den Nutzer*innen, dass ein Button angeklickt 
 
 \subsubsection*{Honeypots}
 Eine weitere Alternative zu klassischen CAPTCHA sind sogenannte Honeypots. 
-Geprägt wurde der Begriff erstmals im Kalten Krieg, wo diese als Spionagetechnik eingesetzt wurde. \cite[p.2]{joshi:2011} 
+Geprägt wurde der Begriff erstmals im Kalten Krieg, wo diese als Spionagetechnik eingesetzt wurde \cite[p.2]{joshi:2011}.  
 
 Auch heute werden Honeypots eingesetzt, und zwar in der IT-Sicherheit. 
 Oft werden sie mit Fallen assoziiert, welche Hacker anlocken sollen. 
@@ -279,9 +283,27 @@ Das Ziel ist, diese Nutzererfahrung möglichst positiv zu halten.
 Im Kontext dieser Ausarbeitung wird die Definition des  ``international standard on ergonomics of human-system interaction'' $($ISO 9241-210$)$
 aus dem Jahre 2010 verwendet. 
 Diese definitiert UX als die Wahrnehmungen und Resonanzen einer Person, 
-welche aus der $($voraussichtlichen$)$ Nutzung eines Produkts, Systems oder Services entstehen. \cite[p.1629]{berni_borgianni_2021}
+welche aus der $($voraussichtlichen$)$ Nutzung eines Produkts, Systems oder Services entstehen \cite[p.1629]{berni_borgianni_2021}.
 
 Die Nutzererfahrung bei der Wahl und Nutzung von CAPTCHA ist neben der Sicherheit ein essentieller Bestandteil.
 Bei der Entwicklung einer Bewertungsmatrix soll deshalb hier der Hauptfokus liegen.
 Denn wenn ein CAPTCHA schwierig zu lösen ist, oder von bestimmten Personengruppen gar nicht bearbeitet werden kann, so stört dies nicht nur den Nutzungsfluss,
 sondern führt gegebenenfalls auch dazu, dass Nutzer*innen die Seite verlassen, ohne ihre gewünschte Aktion zu vollenden. 
+
+\subsection*{Zwischenfazit}
+Den Grundstein für heutige CAPTCHAs legte Alan Turing durch seine Forschung an maschineller (künstlicher) Intelligenz.
+Aus seinem entwickelten Turing Test enstanden verschiedenste Arten von CAPTCHAs.
+Diese basieren auf verschiedenen Methoden, wie beispielsweise dem Erkennen von verzerrten Texten, dem Erkennen und Auswählen von Objekten oder
+der Nutzung von Logik zur Beantwortung einer Frage.
+Neben klassischen CAPTCHAs gibt es noch weitere Optionen, die zur Spam-Prävention genutzt werden können.
+Dabei werden unter anderem Browseraktivitäten oder auch Eigenschaften wie Sprache, Land oder IP-Adresse untersucht.
+Dies geschieht durch Plugins oder CAPTCHAs mit geringem User-Input.
+Letztere werden oftmals mit klassischen CAPTCHAs kombiniert, um bei auffälliger Browseraktivität auf einer weiteren Ebene überprüfen zu können,
+ob es sich um eine menschliche Nutzer*in handelt.
+Auch Honeypots können verwendet werden, um Bots auszusortieren.
+
+Verfahren wie Multi-Faktor-Authentifikation und die Nutzung von Biometrie verfolgen einen anderen Zweck 
+und bieten keinen ausreichenden Schutz vor Spamangriffen, sondern dienen dem Schutz von Nutzer*innen vor Account-Diebstahl und Ähnlichem.
+
+Aufgrund der Wichtigkeit von UX wird bei der nachfolgenden Betrachtung der verschiedenen CAPTCHA-Arten 
+besonders wert auf die verschiedenen Aspekte der Nutzererfahrung gelegt.
