@@ -34,6 +34,7 @@ Textbasierte CAPTCHA allein sind für sehbehinderte Menschen nicht nutzbar.
 Da dies eine Personengruppe vollständig ausschließt, werden zwei Punkte abgezogen.
 
 Ebenso können die verschiedenen Techniken, die bei textbasierten CAPTCHAs angewandt werden, zu Problemen für Legastheniker führen.
+
 Auch Menschen mit Farbfehlsichtigkeiten können durch eine Kombination von ungünstig generierten Hintergründen und Schriftfarben irritiert werden.
 Aus diesem Grund wird auch hier jeweils ein Punkt abgezogen.
 
@@ -82,6 +83,7 @@ Auf Basis dieser Erkenntnisse werden textbasierte CAPTCHAs wie in Tabelle \ref{t
 Bildbasierte CAPTCHAs benötigen etwas mehr Aufwand beim Ausfüllen als beispielsweise textbasierte CAPTCHAs.
 Je nach verwendeter Technik muss auf eine Reihenfolge geachtet werden. 
 Es ist auch möglich, dass bei einigen Bildern genau darauf geachtet werden muss, ob die gegebenen Antworten wirklich korrekt sind.
+
 In \autoref{fig:fortnite} (a) ist beispielsweise nur schwer zu erkennen, ob manche Hunde wirklich geschlossene Augen haben, 
 oder ob der Kontrast zwischen Fell und Iris lediglich zu gering ist.
 
@@ -94,7 +96,6 @@ oder ob der Kontrast zwischen Fell und Iris lediglich zu gering ist.
 \end{figure}
 
 Bei sehr detailreichen Bildern kann es vorkommen, dass auch ein Mensch mehrere Versuche benötigt, da eventuell nicht jedes gesuchte Objekt sofort erkannt wird.
-
 Deshalb werden bei sehr hoher Komplexität oder bei schwer zu erkennenden Bildern zwischen 2 und 4 Punkte bei der Bedienfreundlichkeit abgezogen.
 Bei bildbasierten CAPTCHAs kommen bemerkbare zeitliche Begrenzungen eher selten vor. 
 
@@ -107,6 +108,9 @@ sodass bildbasierte CAPTCHAs nicht mehr ausgefüllt werden müssen, wie in \auto
 Ist dies nicht gegeben, müssen für diese Einschränkung 5 Punkte in der Kategorie Accessibility abgezogen werden.
 
 Doch auch für Menschen ohne Behinderung kann es, wie bereits erwähnt, schwierig sein, sie erfolgreich zu absolvieren.
+
+\pagebreak
+
 In \autoref{fig:keineloesung} soll der CAPTCHA übersprungen werden, sollte man keine Fahrräder erkennen.
 Dies ist der Fall. 
 Jedoch ist die Anweisung hierfür im Vergleich zum Schlüsselwort ``Fahrrädern'' so klein dargestellt, sodass sie nicht sofort erkannt wird,
@@ -120,8 +124,6 @@ Hier verschwimmen die Grenzen bei der Einschätzung der Bedienfreundlichkeit und
     \label{fig:keineloesung}
 \end{figure}
 
-\pagebreak
-
 Die technische Umsetzbarkeit erfolgt bei bildbasierten CAPTCHAs ebenfalls über APIs. (Vgl. \cite{hcaptcha} \cite{arkoselabs} \cite{geetest})
 Analog zu textbasierten CAPTCHAs kann bei der technischen Umsetzung deshalb volle Punktzahl vergeben werden.
 
@@ -133,6 +135,9 @@ ermöglicht, bestimmte Merkmale in Bildern algorithmisch zu analysieren.
 Ebenso kann durch Trainieren von künstlichen Intelligenzen (KI) mit große Datenmengen (Deep Learning) eine hohe Erfolgsquote erreicht werden.
 So konnten bereits mehrere CAPTCHAs von hochrangigen Unternehmen durch diese Weise erfolgreich erledigt werden.
 Mit der zunehmenden Komplexität dieser CAPTCHAs steigt auch der Bedarf an künstlichen Intelligenzen, um die verschiedenen Technologien brechen zu können.
+
+\pagebreak
+
 Da es bereits vermehrt sehr hohe Erfolgsquoten bei der Absolvierung von CAPTCHAs durch KIs und die Nutzung von OpenCV gab,
 müssen für beide Techniken zur Umgehung dieser CAPTCHAs im Kontext Sicherheit 2 Punkte abgezogen werden.
 CAPTCHAs, welche über das Verschieben von Reglern funktionieren, sind durch ihr teilweise sehr aufwändiges Tracking von Mausbewegungen,
@@ -194,8 +199,6 @@ doch auch für sehende Nutzer*innen sind sie leicht zu absolvieren.
 Auch zeitliche Begrenzungen treten nicht auf.
 Bei einer sehr komplexen Kombination von Tönen kann ein Punkt bei der Bedienfreundlichkeit abgezogen werden müssen.
 
- \pagebreak
-
 Accessibility ist bei audiobasierten CAPTCHAs relativ gut. 
 Jedoch werden hier gehörlose Menschen ausgeschlossen, sofern es sich um ausschließlich audiobasierte CAPTCHAs handelt.
 Eine Kombination von visuellen und audiobasierten CAPTCHAs wurde bereits in \autoref{ch:bewertung:text} in die Betrachtung mit einbezogen,
@@ -230,6 +233,8 @@ Es ergibt sich die in \autoref{table:matrix:audio} angegebene Bewertung.
     \end{center}
     \label{table:matrix:audio}
 \end{table}
+
+\pagebreak
 
 \section{Gamification}
 Zwar ist im Bereich der Bedienfreundlichkeit bei Gamification-CAPTCHAs anzumerken, 
@@ -299,8 +304,6 @@ Aus diesem relativ schwerwiegenden Grund werden 5 Punkte abgezogen.
         \end{tabular}
     \end{center}
 \end{table}
-
-\pagebreak
 
 \subsection{Anti-Spam-Plugins}
 Anti-Spam-Plugins sind, ähnlich wie andere CAPTCHA-Alternativen, kaum zu bemerken, da sie hauptsächlich mit Metadaten arbeiten.

@@ -76,6 +76,8 @@ Bei der Darstellung dieser Zeichen und Symbole können verschiedene Ansätze ver
     \label{fig:textbased}
 \end{figure}
 
+\pagebreak
+
 Anti-Segmentation Techniques zielen darauf ab, das Separieren der einzelnen Buchstaben durch Algorithmen zu erschweren. 
 Um dies zu erreichen, gibt es verschiedene Herangehensweisen.
 Eine von ihnen besteht daraus, dass nur die Konturen der verschiedenen Zeichen angezeigt werden, sodass diese nur von Menschen leicht erkannt werden können,
@@ -114,6 +116,7 @@ Die Bilder in der Teilmenge sollen ausgewählt werden.
 In Abbildung \ref{fig:fortnite} sollen Hunde mit geschlossenen Augen ausgewählt werden,
 was die Notwendigkeit der Zunahme der Komplexität dieser CAPTCHAs gut widerspiegelt. 
 Außerdem kann auch auf das Erkennen von Gesichtern durch Menschen gesetzt werden.
+
 Nähere Informationen zu genauen Techniken können in \cite[p.77ff]{surveyofresearch} nachgelesen werden.
 Die beschriebenen ``selection-based CAPTCHA'' bezeichnen \citeauthor{surveyofresearch} als einfachste Form bildbasierter CAPTCHA \cite[p.77]{surveyofresearch}. 
 
@@ -162,11 +165,9 @@ Bei Gamification CAPTCHAs liegt der Fokus darauf, eventuell langwieriges Ausfül
 und es nicht als lästige Aufgabe ansehen.
 \citeauthor{gamified} schreiben in ihrem Paper \citetitle{gamified} (\cite{gamified}) darüber, wie spielerisch lösbare CAPTCHAs die Nutzererfahrung verbessern können.
 Hierbei werden Ideen wie das Ordnen von Cartoon-Panelen näher erläutert.
-\pagebreak
 
 Nicht nur lesen Nutzer*innen den Cartoon, sie sollen bei Fehlschlägen durch den Quizcharakter des CAPTCHAs die richtige Lösung in einem weiteren Versuch finden wollen,
 ohne über die Notwendigkeit der Wiederholung zur Verifizierung nachzudenken \cite[p.41ff]{gamified}. 
-
 
 \subsubsection*{Videobasierte CAPTCHA}
 Eine weitere von \citeauthor{surveyofresearch} (\cite[p.79]{surveyofresearch}) beschriebene Form visueller CAPTCHAs sind videobasierte CAPTCHA. 
@@ -266,6 +267,7 @@ Dieser zweite Schritt, der vor dem Login durchgeführt werden muss, ist beispiel
 welcher über eine App oder SMS zugeschickt wurde.
 Jedoch ersetzt dies nicht das Ausfüllen von CAPTCHAs.
 Auch ein Algorithmus kann diese Aktionen mit Leichtigkeit ausführen. 
+
 Multi-Faktor-Authentifikation kann nur bestimmte Nutzer*innen erkennen, jedoch nicht, ob es sich um Mensch oder Maschine handelt.
 Die Nutzung von Multi-Faktor-Authentifikation ist zwar nicht schlecht,
 bietet aber keine adäquate Alternative zu der Nutzung von CAPTCHAs. 
@@ -296,7 +298,9 @@ sondern führt gegebenenfalls auch dazu, dass Nutzer*innen die Seite verlassen, 
 \subsection*{Zwischenfazit}
 Den Grundstein für heutige CAPTCHAs legte Alan Turing durch seine Forschung an maschineller (künstlicher) Intelligenz.
 Aus seinem entwickelten Turing Test enstanden verschiedenste Arten von CAPTCHAs.
-Diese basieren auf verschiedenen Methoden, wie beispielsweise dem Erkennen von verzerrten Texten, dem Erkennen und Auswählen von Objekten oder
+
+Diese basieren auf verschiedenen Methoden,
+beispielsweise dem Erkennen von verzerrten Texten, dem Erkennen und Auswählen von Objekten oder
 der Nutzung von Logik zur Beantwortung einer Frage.
 Neben klassischen CAPTCHAs gibt es noch weitere Optionen, die zur Spam-Prävention genutzt werden können.
 Dabei werden unter anderem Browseraktivitäten oder auch Eigenschaften wie Sprache, Land oder IP-Adresse untersucht.
